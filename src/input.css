@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   ARJFIT — base
+   ============================================================ */
+@layer base {
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    @apply bg-ink text-bone font-sans antialiased;
+    overflow-x: hidden;
+  }
+  ::selection { background: #CCFF33; color: #0A0A0B; }
+  :focus-visible { outline: 2px solid #CCFF33; outline-offset: 3px; border-radius: 2px; }
+
+  h1, h2, h3 { @apply font-display uppercase; line-height: 0.92; letter-spacing: 0.01em; }
+
+  /* Respect users who don't want motion. */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+    .reveal { opacity: 1 !important; transform: none !important; }
+  }
+}
+
+/* ============================================================
+   ARJFIT — components
+   ============================================================ */
+@layer components {
+
+  .shell { @apply mx-auto w-full max-w-shell px-5 sm:px-8; }
+
+  /* --- type ------------------------------------------------ */
+  .eyebrow {
+    @apply font-sans text-[0.68rem] font-semibold uppercase tracking-eyebrow text-volt;
+  }
+  .eyebrow-muted { @apply eyebrow text-muted; }
+
+  .h-display { @apply font-display uppercase text-[clamp(2.75rem,8vw,7.5rem)]; }
+  .h-section { @apply font-display uppercase text-[clamp(2rem,5vw,4rem)]; }
+  .h-card    { @apply font-display uppercase text-[clamp(1.25rem,2vw,1.75rem)]; }
+  .lede      { @apply text-base sm:text-lg leading-relaxed text-muted max-w-2xl; }
+
+  /* --- buttons --------------------------------------------- */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5
+           text-[0.78rem] font-semibold uppercase tracking-[0.14em]
+           transition-all duration-300 ease-cine;
+  }
+  .btn-volt {
+    @apply btn bg-volt text-ink hover:bg-bone;
+  }
+  .btn-ghost {
+    @apply btn border border-line text-bone hover:border-volt hover:text-volt;
+  }
+  .btn-solid {
+    @apply btn bg-bone text-ink hover:bg-volt;
+  }
+
+  /* --- surfaces -------------------------------------------- */
+  .card {
+    @apply rounded-2xl border border-line bg-surface p-7
+           transition-colors duration-300 ease-cine hover:border-volt/40;
+  }
+  .rule { @apply h-px w-full bg-line; }
+
+  /* Numbered section marker, e.g. 01 / PROGRAMS */
+  .marker { @apply flex items-center gap-3 text-[0.68rem] uppercase tracking-eyebrow text-muted; }
+  .marker::before { content: ''; @apply block h-px w-10 bg-volt; }
+
+  /* --- header ---------------------------------------------- */
+  .nav-link {
+    @apply relative text-[0.8rem] font-medium uppercase tracking-[0.1em] text-muted
+           transition-colors duration-200 hover:text-bone;
+  }
+  .nav-link.is-active { @apply text-bone; }
+  .nav-link.is-active::after {
+    content: ''; @apply absolute -bottom-1.5 left-0 h-px w-full bg-volt;
+  }
+
+  /* --- media ----------------------------------------------- */
+  .media { @apply relative overflow-hidden rounded-2xl bg-surface2; }
+  .media img { @apply h-full w-full object-cover; }
+  /* Cinematic darkening so white type stays legible over photography. */
+  .media-scrim::after {
+    content: '';
+    @apply pointer-events-none absolute inset-0;
+    background: linear-gradient(180deg, rgba(10,10,11,0) 35%, rgba(10,10,11,0.85) 100%);
+  }
+
+  /* --- placeholder marking --------------------------------- */
+  /* Every stand-in asset/copy carries data-placeholder. This dotted
+     rail makes them visible in dev without touching production styling. */
+  .ph-badge {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-dashed
+           border-volt/40 px-2.5 py-1 text-[0.6rem] font-semibold uppercase
+           tracking-[0.14em] text-volt/70;
+  }
+
+  /* --- accordion ------------------------------------------- */
+  .faq-icon { @apply shrink-0 text-volt transition-transform duration-300 ease-cine; }
+  button[aria-expanded="true"] .faq-icon { transform: rotate(45deg); }
+
+  /* --- scroll reveal --------------------------------------- */
+  .reveal { opacity: 0; transform: translateY(28px); }
+}
