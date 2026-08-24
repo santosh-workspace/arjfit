@@ -102,6 +102,20 @@
            tracking-[0.14em] text-volt/70;
   }
 
+  /* --- hero carousel --------------------------------------- */
+  /* Crossfade rather than slide — keeps the hero cinematic instead of
+     reading as a promo banner rotator. */
+  .hero-slide {
+    @apply absolute inset-0 opacity-0;
+    transition: opacity 1400ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .hero-slide.is-active { @apply opacity-100; }
+
+  .hero-dot {
+    @apply h-1 w-8 rounded-full bg-bone/25 transition-colors duration-300;
+  }
+  .hero-dot.is-active { @apply bg-volt; }
+
   /* --- accordion ------------------------------------------- */
   .faq-icon { @apply shrink-0 text-volt transition-transform duration-300 ease-cine; }
   button[aria-expanded="true"] .faq-icon { transform: rotate(45deg); }

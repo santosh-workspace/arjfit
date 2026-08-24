@@ -53,6 +53,46 @@
     });
   });
 
+  /* ---------- hero carousel ---------- */
+  /* Crossfades the hero imagery. Auto-advance is suppressed entirely under
+     reduced-motion; the first slide simply stays put. */
+  var carousel = document.querySelector('[data-carousel]');
+  if (carousel) {
+    var slides = [].slice.call(carousel.querySelectorAll('[data-slide]'));
+    var dots = [].slice.call(document.querySelectorAll('[data-dot]'));
+    var index = 0;
+    var timer = null;
+
+    var go = function (i) {
+      index = (i + slides.length) % slides.length;
+      slides.forEach(function (s, n) { s.classList.toggle('is-active', n === index); });
+      dots.forEach(function (d, n) {
+        d.classList.toggle('is-active', n === index);
+        d.setAttribute('aria-selected', String(n === index));
+      });
+    };
+
+    var start = function () {
+      if (reduced || slides.length < 2) return;
+      stop();
+      timer = setInterval(function () { go(index + 1); }, 6000);
+    };
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+    dots.forEach(function (d, n) {
+      d.addEventListener('click', function () { go(n); start(); });
+    });
+
+    carousel.addEventListener('mouseenter', stop);
+    carousel.addEventListener('mouseleave', start);
+    document.addEventListener('visibilitychange', function () {
+      document.hidden ? stop() : start();
+    });
+
+    go(0);
+    start();
+  }
+
   /* ---------- scroll reveal ---------- */
   var nodes = document.querySelectorAll('.reveal');
 

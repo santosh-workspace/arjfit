@@ -64,7 +64,15 @@ quotes, or delete the section entirely.
 
 These assert things about the business. Verify each before publishing.
 
-## 5. Not yet wired up
+## 5. Reviews and ratings — new
+
+The trust row on `index.html` shows `0.0 average from 000 reviews` and links to
+Google Reviews, JustDial and Instagram, all `href="#"`.
+
+Replace with your real aggregate rating and real profile URLs, **or delete the row**.
+A fabricated star rating is a business claim, not decoration.
+
+## 6. Not yet wired up
 
 | Item | Where | Action |
 |---|---|---|
@@ -74,7 +82,7 @@ These assert things about the business. Verify each before publishing.
 | Social links | footer, all pages | 25 `href="#"` → real Instagram / Facebook / WhatsApp |
 | Timetable | `schedule.html` | Placeholder grid — replace with real class times |
 
-## 6. Copy to rewrite
+## 7. Copy to rewrite
 
 `data-placeholder="copy"` (19 markers). The largest block is the founder story in
 `about.html`, which is written as guidance-for-the-writer rather than finished prose.
@@ -90,6 +98,7 @@ policy that must be confirmed.
 - [ ] Real photography replacing all 46 stock images
 - [ ] Real coaches, or delete the role slots
 - [ ] Real testimonials, or delete the section
+- [ ] Real rating + review profile URLs in the trust row, or delete it
 - [ ] Verified stats, prices and timeline dates
 - [ ] Form, map and booking connected
 - [ ] Social profile URLs
