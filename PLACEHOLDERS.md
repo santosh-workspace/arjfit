@@ -64,7 +64,18 @@ quotes, or delete the section entirely.
 
 These assert things about the business. Verify each before publishing.
 
-## 5. Reviews and ratings — new
+## 5. Product catalogue — new
+
+`product.html` ships **8 placeholder categories with 48 invented product names**
+(`data-placeholder="product"`). These are generic, industry-standard equipment
+terms, not a real ARJFIT range, and every one shows *Price on request*.
+
+Before launch: replace with the real product list, add real specs and photography,
+and decide whether prices are published or stay quote-only. Enquiry links point at
+`contact.html?enquiry=<product>` — the contact form does not yet read that
+parameter, so the enquiry arrives without the product name attached.
+
+## 6. Reviews and ratings — new
 
 The trust row on `index.html` shows `0.0 average from 000 reviews` and links to
 Google Reviews, JustDial and Instagram, all `href="#"`.
@@ -72,7 +83,7 @@ Google Reviews, JustDial and Instagram, all `href="#"`.
 Replace with your real aggregate rating and real profile URLs, **or delete the row**.
 A fabricated star rating is a business claim, not decoration.
 
-## 6. Not yet wired up
+## 7. Not yet wired up
 
 | Item | Where | Action |
 |---|---|---|
@@ -82,7 +93,7 @@ A fabricated star rating is a business claim, not decoration.
 | Social links | footer, all pages | 25 `href="#"` → real Instagram / Facebook / WhatsApp |
 | Timetable | `schedule.html` | Placeholder grid — replace with real class times |
 
-## 7. Copy to rewrite
+## 8. Copy to rewrite
 
 `data-placeholder="copy"` (19 markers). The largest block is the founder story in
 `about.html`, which is written as guidance-for-the-writer rather than finished prose.
@@ -99,6 +110,9 @@ policy that must be confirmed.
 - [ ] Real coaches, or delete the role slots
 - [ ] Real testimonials, or delete the section
 - [ ] Real rating + review profile URLs in the trust row, or delete it
+- [ ] Real product range, specs and photography on product.html
+- [ ] Decide: published prices or quote-only
+- [ ] Wire contact form to read the ?enquiry= parameter
 - [ ] Verified stats, prices and timeline dates
 - [ ] Form, map and booking connected
 - [ ] Social profile URLs

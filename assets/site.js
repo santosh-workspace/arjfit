@@ -53,6 +53,37 @@
     });
   });
 
+  /* ---------- gallery filter ---------- */
+  var gallery = document.querySelector('[data-gallery]');
+  if (gallery) {
+    var figures = [].slice.call(gallery.querySelectorAll('[data-cat]'));
+    var buttons = [].slice.call(document.querySelectorAll('[data-filter]'));
+    var readout = document.querySelector('[data-gallery-count]');
+
+    var applyFilter = function (key) {
+      var shown = 0;
+      figures.forEach(function (fig) {
+        var match = key === 'all' || fig.getAttribute('data-cat') === key;
+        fig.hidden = !match;
+        if (match) shown++;
+      });
+      buttons.forEach(function (b) {
+        var on = b.getAttribute('data-filter') === key;
+        b.classList.toggle('is-filter-active', on);
+        b.setAttribute('aria-pressed', String(on));
+      });
+      if (readout) {
+        readout.textContent = key === 'all'
+          ? 'Showing all ' + shown + ' images'
+          : 'Showing ' + shown + ' of ' + figures.length + ' images';
+      }
+    };
+
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () { applyFilter(b.getAttribute('data-filter')); });
+    });
+  }
+
   /* ---------- hero carousel ---------- */
   /* Crossfades the hero imagery. Auto-advance is suppressed entirely under
      reduced-motion; the first slide simply stays put. */

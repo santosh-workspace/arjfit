@@ -116,6 +116,9 @@
   }
   .hero-dot.is-active { @apply bg-volt; }
 
+  /* --- gallery filter -------------------------------------- */
+  .is-filter-active { @apply border-volt bg-volt text-ink; }
+
   /* --- accordion ------------------------------------------- */
   .faq-icon { @apply shrink-0 text-volt transition-transform duration-300 ease-cine; }
   button[aria-expanded="true"] .faq-icon { transform: rotate(45deg); }
