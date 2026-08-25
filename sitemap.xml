@@ -28,35 +28,10 @@
   <url>
     <loc>https://arjfit.example/gallery.html</loc>
     <lastmod>2026-08-25</lastmod>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://arjfit.example/testimonials.html</loc>
-    <lastmod>2026-08-25</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://arjfit.example/programs.html</loc>
-    <lastmod>2026-08-25</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://arjfit.example/membership.html</loc>
-    <lastmod>2026-08-25</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://arjfit.example/facilities.html</loc>
-    <lastmod>2026-08-25</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://arjfit.example/trainers.html</loc>
-    <lastmod>2026-08-25</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://arjfit.example/schedule.html</loc>
     <lastmod>2026-08-25</lastmod>
     <priority>0.6</priority>
   </url>

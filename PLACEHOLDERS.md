@@ -13,6 +13,22 @@ rebuild before launch.
 
 ---
 
+> **Positioning changed.** ARJFIT is a gym equipment manufacturer, seller and
+> service provider. The five training-gym pages (programs, membership, schedule,
+> trainers, facilities) were retired — recoverable from commit `9df92ee`.
+> See `RECOMMENDATIONS.md` for the improvement roadmap.
+
+## 0. New placeholders — certifications & credentials
+
+`data-placeholder="cert"` marks ISO 9001 / 14001 / 45001, CE / RoHS, "Make in
+India", GSTIN, CIN and founding year on both the home page and `about.html`.
+
+**Publish only certifications you actually hold**, with real certificate numbers.
+Displaying an ISO badge you do not hold is a legal exposure, not a design choice.
+
+The manufacturing section carries placeholder unit area, monthly capacity and
+team size. The four homepage counters all read `0+`.
+
 ## 1. Business facts — blocking
 
 All defined in one place: `BIZ` at the top of the page generator, and mirrored into
