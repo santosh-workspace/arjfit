@@ -254,31 +254,25 @@
 
   /* --- custom cursor --- */
   if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-    var dot = document.createElement('div');
     var ring = document.createElement('div');
-    dot.className = 'cur-dot';
     ring.className = 'cur-ring';
     var label = document.createElement('span');
     label.className = 'cur-label';
     ring.appendChild(label);
-    document.body.appendChild(dot);
     document.body.appendChild(ring);
-    document.documentElement.classList.add('has-cursor');
 
-    gsap.set([dot, ring], { xPercent: -50, yPercent: -50 });
-    var dx = gsap.quickTo(dot, 'x', { duration: 0.12, ease: 'power3' });
-    var dy = gsap.quickTo(dot, 'y', { duration: 0.12, ease: 'power3' });
+    gsap.set(ring, { xPercent: -50, yPercent: -50 });
     var rx = gsap.quickTo(ring, 'x', { duration: 0.45, ease: 'power3' });
     var ry = gsap.quickTo(ring, 'y', { duration: 0.45, ease: 'power3' });
     var shown = false;
 
     window.addEventListener('mousemove', function (e) {
-      if (!shown) { gsap.to([dot, ring], { opacity: 1, duration: 0.3 }); shown = true; }
-      dx(e.clientX); dy(e.clientY); rx(e.clientX); ry(e.clientY);
+      if (!shown) { gsap.to(ring, { opacity: 1, duration: 0.3 }); shown = true; }
+      rx(e.clientX); ry(e.clientY);
     }, { passive: true });
 
     document.addEventListener('mouseleave', function () {
-      gsap.to([dot, ring], { opacity: 0, duration: 0.25 }); shown = false;
+      gsap.to(ring, { opacity: 0, duration: 0.25 }); shown = false;
     });
 
     // Interactive targets grow the ring; media and cards can name a label.

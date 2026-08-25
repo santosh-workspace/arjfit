@@ -224,12 +224,11 @@
   .img-reveal img { transform: scale(1.18); will-change: transform; }
 
   /* --- custom cursor ---------------------------------------- */
-  .cur-dot, .cur-ring {
+  .cur-ring {
     @apply pointer-events-none fixed left-0 top-0 z-[100] rounded-full;
     opacity: 0;
     will-change: transform;
   }
-  .cur-dot  { @apply h-1.5 w-1.5 bg-volt; }
   .cur-ring {
     @apply h-9 w-9 border border-volt/50;
     transition: width .35s cubic-bezier(.22,1,.36,1),
@@ -242,6 +241,8 @@
   .cur-ring.is-label {
     @apply h-20 w-20 border-transparent bg-volt;
   }
+  /* Slightly softer so the real cursor stays the primary focus. */
+  .cur-ring { opacity: 0; }
   .cur-label {
     @apply pointer-events-none absolute inset-0 flex items-center justify-center
            text-[0.55rem] font-bold uppercase tracking-[0.14em] text-onAccent;
@@ -249,10 +250,10 @@
     transition: opacity .25s;
   }
   .cur-ring.is-label .cur-label { opacity: 1; }
-  /* Hide the native pointer only where the custom one is actually running. */
-  html.has-cursor, html.has-cursor * { cursor: none !important; }
+  /* The native pointer is always kept. The ring is an accent that trails it,
+     never a replacement for it. */
 
   @media (hover: none), (pointer: coarse) {
-    .cur-dot, .cur-ring { display: none; }
+    .cur-ring { display: none; }
   }
 }
