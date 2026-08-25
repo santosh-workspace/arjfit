@@ -53,6 +53,42 @@
     });
   });
 
+  /* ---------- TEMPORARY palette picker ---------- */
+  /* Remove this whole block once a palette is chosen. */
+  var picker = document.querySelector('[data-theme-picker]');
+  if (picker) {
+    var panel = picker.querySelector('[data-theme-panel]');
+    var pToggle = picker.querySelector('[data-theme-toggle]');
+    var setters = [].slice.call(picker.querySelectorAll('[data-theme-set]'));
+
+    var markActive = function (key) {
+      setters.forEach(function (b) {
+        var on = b.getAttribute('data-theme-set') === key;
+        b.setAttribute('aria-pressed', String(on));
+        b.classList.toggle('border-volt', on);
+      });
+    };
+
+    var applyTheme = function (key) {
+      document.documentElement.setAttribute('data-theme', key);
+      try { localStorage.setItem('arjfit-theme', key); } catch (e) {}
+      markActive(key);
+    };
+
+    pToggle.addEventListener('click', function () {
+      var open = panel.classList.contains('w-0');
+      panel.classList.toggle('w-0', !open);
+      panel.classList.toggle('w-[248px]', open);
+      pToggle.setAttribute('aria-expanded', String(open));
+    });
+
+    setters.forEach(function (b) {
+      b.addEventListener('click', function () { applyTheme(b.getAttribute('data-theme-set')); });
+    });
+
+    markActive(document.documentElement.getAttribute('data-theme') || 'volt-noir');
+  }
+
   /* ---------- gallery filter ---------- */
   var gallery = document.querySelector('[data-gallery]');
   if (gallery) {

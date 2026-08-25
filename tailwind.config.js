@@ -6,15 +6,19 @@ module.exports = {
   content: ['./*.html', './assets/*.js'],
   theme: {
     extend: {
+      // Colours resolve through CSS variables so the whole palette can be
+      // swapped at runtime. Values are space-separated RGB triplets so that
+      // Tailwind's /opacity modifiers keep working.
       colors: {
-        ink: '#0A0A0B',        // page ground
-        surface: '#131316',    // raised panels
-        surface2: '#1C1C21',   // cards on panels
-        line: '#2A2A31',       // hairline borders
-        bone: '#F4F2ED',       // primary text, warm white
-        muted: '#9A9AA4',      // secondary text
-        volt: '#CCFF33',       // single accent — used sparingly
-        ember: '#FF5A1F'       // rare secondary accent
+        ink:      'rgb(var(--c-ink) / <alpha-value>)',
+        surface:  'rgb(var(--c-surface) / <alpha-value>)',
+        surface2: 'rgb(var(--c-surface2) / <alpha-value>)',
+        line:     'rgb(var(--c-line) / <alpha-value>)',
+        bone:     'rgb(var(--c-bone) / <alpha-value>)',
+        muted:    'rgb(var(--c-muted) / <alpha-value>)',
+        volt:     'rgb(var(--c-volt) / <alpha-value>)',
+        ember:    'rgb(var(--c-ember) / <alpha-value>)',
+        onAccent: 'rgb(var(--c-on-accent) / <alpha-value>)'
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
