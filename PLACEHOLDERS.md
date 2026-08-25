@@ -66,9 +66,28 @@ These assert things about the business. Verify each before publishing.
 
 ## 5. Product catalogue — new
 
-`product.html` ships **8 placeholder categories with 48 invented product names**
+`product.html` ships **3 setup packages** (Home / Studio / Commercial) plus
+**8 placeholder categories with 48 invented product names**
 (`data-placeholder="product"`). These are generic, industry-standard equipment
 terms, not a real ARJFIT range, and every one shows *Price on request*.
+
+Each package now has a **full detail section** (`#plan-home`, `#plan-studio`,
+`#plan-commercial`) carrying an equipment breakdown table with quantities, the
+service included, four optional add-ons, lead time, warranty and payment terms.
+
+**Every price is a zero placeholder** — `₹0,00,000` / `₹00,00,000` on the packages
+and `₹00,000`-style figures on the 18 add-ons. No real amount appears anywhere.
+Prices are marked *ex-GST*; confirm whether you quote inclusive or exclusive.
+
+Four things in these sections are commercial commitments, not marketing copy, and
+each needs sign-off before launch:
+
+| Item | Current placeholder |
+|---|---|
+| Lead times | 2-3 / 4-6 / 8-12 weeks from confirmed order |
+| Warranty | 1-3 yrs frames, 6mo-2yrs moving parts, 1 yr electronics |
+| Payment terms | Deposit / staged / phased — all marked placeholder |
+| Quantities | Indicative; stated as adjusted to floor plan |
 
 Before launch: replace with the real product list, add real specs and photography,
 and decide whether prices are published or stay quote-only. Enquiry links point at
@@ -111,6 +130,10 @@ policy that must be confirmed.
 - [ ] Real testimonials, or delete the section
 - [ ] Real rating + review profile URLs in the trust row, or delete it
 - [ ] Real product range, specs and photography on product.html
+- [ ] Confirm the 3 package inclusion lists, floor-area bands and lead times
+- [ ] Set real package prices and add-on costs (18 figures, all zeros today)
+- [ ] Confirm GST handling — prices currently marked ex-GST
+- [ ] Sign off warranty periods and payment terms (these are contractual)
 - [ ] Decide: published prices or quote-only
 - [ ] Wire contact form to read the ?enquiry= parameter
 - [ ] Verified stats, prices and timeline dates
