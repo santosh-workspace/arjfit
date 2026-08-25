@@ -199,4 +199,60 @@
 
   /* --- scroll reveal --------------------------------------- */
   .reveal { opacity: 0; transform: translateY(28px); }
+
+  /* --- split-text reveal ------------------------------------ */
+  /* Each word sits in a clipping box so its inner span can slide up
+     from beneath the baseline. The padding/margin pair stops descenders
+     (g, y, p) being shaved off by the overflow clip. */
+  .w {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+    padding-bottom: 0.14em;
+    margin-bottom: -0.14em;
+  }
+  .w-i {
+    display: inline-block;
+    will-change: transform;
+    transform: translateY(110%);
+  }
+  /* If JS never runs, text must still be visible. */
+  .no-js-safe .w-i { transform: none; }
+
+  /* --- image clip reveal ------------------------------------ */
+  .img-reveal { clip-path: inset(0 0 100% 0); }
+  .img-reveal img { transform: scale(1.18); will-change: transform; }
+
+  /* --- custom cursor ---------------------------------------- */
+  .cur-dot, .cur-ring {
+    @apply pointer-events-none fixed left-0 top-0 z-[100] rounded-full;
+    opacity: 0;
+    will-change: transform;
+  }
+  .cur-dot  { @apply h-1.5 w-1.5 bg-volt; }
+  .cur-ring {
+    @apply h-9 w-9 border border-volt/50;
+    transition: width .35s cubic-bezier(.22,1,.36,1),
+                height .35s cubic-bezier(.22,1,.36,1),
+                background-color .35s, border-color .35s;
+  }
+  .cur-ring.is-hover {
+    @apply h-14 w-14 border-volt bg-volt/10;
+  }
+  .cur-ring.is-label {
+    @apply h-20 w-20 border-transparent bg-volt;
+  }
+  .cur-label {
+    @apply pointer-events-none absolute inset-0 flex items-center justify-center
+           text-[0.55rem] font-bold uppercase tracking-[0.14em] text-onAccent;
+    opacity: 0;
+    transition: opacity .25s;
+  }
+  .cur-ring.is-label .cur-label { opacity: 1; }
+  /* Hide the native pointer only where the custom one is actually running. */
+  html.has-cursor, html.has-cursor * { cursor: none !important; }
+
+  @media (hover: none), (pointer: coarse) {
+    .cur-dot, .cur-ring { display: none; }
+  }
 }
