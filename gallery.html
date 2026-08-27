@@ -21,13 +21,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com">
-<!-- TEMPORARY: all five candidate pairings load while the type picker is live.
-     Baking one in drops this back to a single family pair. -->
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=Barlow:wght@400;500;600;700&family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&family=Teko:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
 <!-- TEMPORARY: applies the previewed palette before paint. Remove with the picker. -->
-<script>try{var f=localStorage.getItem('arjfit-font');if(f)document.documentElement.setAttribute('data-font',f);
-var m=localStorage.getItem('arjfit-mode');
+<script>try{var m=localStorage.getItem('arjfit-mode');
 if(!m&&window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches)m='light';
 if(m==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}</script>
 <script type="application/ld+json">
@@ -367,63 +364,6 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
     </div>
   </div>
 </footer>
-<div data-type-picker class="fixed right-0 top-1/2 z-[60] -translate-y-1/2 print:hidden">
-  <div class="flex items-stretch">
-    <button data-type-toggle aria-expanded="false" aria-controls="type-panel"
-            class="flex w-9 items-center justify-center rounded-l-xl border border-r-0 border-line bg-surface py-5 text-[0.6rem] font-semibold uppercase tracking-[0.2em] text-muted transition-colors hover:text-volt"
-            style="writing-mode:vertical-rl">Type</button>
-    <div id="type-panel" data-type-panel
-         class="w-0 overflow-hidden border-y border-line bg-surface transition-[width] duration-400 ease-cine">
-      <div class="w-[264px] p-4">
-        <p class="eyebrow">Type options</p>
-        <p class="mt-1.5 text-[0.68rem] leading-relaxed text-muted">Pick one, then I will bake it in and remove this panel.</p>
-        <ul class="mt-4 space-y-2">
-          <li>
-            <button type="button" data-type-set="anton" aria-pressed="false"
-                    class="w-full rounded-xl border border-line p-3 text-left transition-colors hover:border-volt">
-              <span class="block text-[1.35rem] leading-none text-bone" style="font-family:'Anton', Impact, sans-serif">ARJFIT</span>
-              <span class="mt-1.5 block text-[0.68rem] font-semibold text-volt">Anton <span class="text-muted">+ Inter</span></span>
-              <span class="mt-0.5 block text-[0.62rem] text-muted">Heavy condensed. Current.</span>
-            </button>
-          </li>
-          <li>
-            <button type="button" data-type-set="oswald" aria-pressed="false"
-                    class="w-full rounded-xl border border-line p-3 text-left transition-colors hover:border-volt">
-              <span class="block text-[1.35rem] leading-none text-bone" style="font-family:'Oswald', Impact, sans-serif">ARJFIT</span>
-              <span class="mt-1.5 block text-[0.68rem] font-semibold text-volt">Oswald <span class="text-muted">+ Inter</span></span>
-              <span class="mt-0.5 block text-[0.62rem] text-muted">Narrow, industrial.</span>
-            </button>
-          </li>
-          <li>
-            <button type="button" data-type-set="archivo" aria-pressed="false"
-                    class="w-full rounded-xl border border-line p-3 text-left transition-colors hover:border-volt">
-              <span class="block text-[1.35rem] leading-none text-bone" style="font-family:'Archivo Black', Impact, sans-serif">ARJFIT</span>
-              <span class="mt-1.5 block text-[0.68rem] font-semibold text-volt">Archivo Black <span class="text-muted">+ Archivo</span></span>
-              <span class="mt-0.5 block text-[0.62rem] text-muted">Wide grotesk, corporate.</span>
-            </button>
-          </li>
-          <li>
-            <button type="button" data-type-set="bebas" aria-pressed="false"
-                    class="w-full rounded-xl border border-line p-3 text-left transition-colors hover:border-volt">
-              <span class="block text-[1.35rem] leading-none text-bone" style="font-family:'Bebas Neue', Impact, sans-serif">ARJFIT</span>
-              <span class="mt-1.5 block text-[0.68rem] font-semibold text-volt">Bebas Neue <span class="text-muted">+ Barlow</span></span>
-              <span class="mt-0.5 block text-[0.62rem] text-muted">Tall, classic gym.</span>
-            </button>
-          </li>
-          <li>
-            <button type="button" data-type-set="teko" aria-pressed="false"
-                    class="w-full rounded-xl border border-line p-3 text-left transition-colors hover:border-volt">
-              <span class="block text-[1.35rem] leading-none text-bone" style="font-family:'Teko', Impact, sans-serif">ARJFIT</span>
-              <span class="mt-1.5 block text-[0.68rem] font-semibold text-volt">Teko <span class="text-muted">+ Rajdhani</span></span>
-              <span class="mt-0.5 block text-[0.62rem] text-muted">Technical. Devanagari too.</span>
-            </button>
-          </li>
-        </ul>
-        <p class="mt-4 border-t border-line pt-3 text-[0.6rem] text-muted">Choice is remembered on this device only.</p>
-      </div>
-    </div>
-  </div>
-</div>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
 <script src="assets/site.js" defer></script>
