@@ -105,6 +105,27 @@
     });
   });
 
+  /* ---------- dark / light toggle ---------- */
+  var modeBtn = document.querySelector('[data-theme-toggle]');
+  if (modeBtn) {
+    var root = document.documentElement;
+    var syncLabel = function () {
+      var light = root.getAttribute('data-theme') === 'light';
+      modeBtn.setAttribute('aria-pressed', String(light));
+      modeBtn.setAttribute('title', light ? 'Switch to dark mode' : 'Switch to light mode');
+      modeBtn.setAttribute('aria-label', light ? 'Switch to dark mode' : 'Switch to light mode');
+    };
+    modeBtn.addEventListener('click', function () {
+      var light = root.getAttribute('data-theme') === 'light';
+      if (light) root.removeAttribute('data-theme');
+      else root.setAttribute('data-theme', 'light');
+      try { localStorage.setItem('arjfit-mode', light ? 'dark' : 'light'); } catch (e) {}
+      syncLabel();
+      if (window.ScrollTrigger) ScrollTrigger.refresh();
+    });
+    syncLabel();
+  }
+
   /* ---------- TEMPORARY type picker ---------- */
   /* Remove this whole block once a pairing is chosen. */
   var tPicker = document.querySelector('[data-type-picker]');

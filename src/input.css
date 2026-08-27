@@ -15,6 +15,20 @@
   --c-on-accent: 11 11 13;
 }
 
+/* Light mode. Accent darkened to #DA1C29 so it still passes on white;
+   the brand hue is preserved. Toggled bottom-left. */
+[data-theme="light"] {
+  --c-ink: 246 245 242;
+  --c-surface: 255 255 255;
+  --c-surface2: 237 235 230;
+  --c-line: 216 212 203;
+  --c-bone: 23 24 29;
+  --c-muted: 85 88 96;
+  --c-volt: 218 28 41;
+  --c-ember: 190 60 10;
+  --c-on-accent: 255 255 255;
+}
+
 /* ============================================================
    TYPE OPTIONS — TEMPORARY
    Five candidate pairings. Once one is chosen, copy its block into
@@ -82,6 +96,21 @@
     color: rgb(var(--c-bone) / 0.92);
     text-shadow: 0 1px 20px rgb(var(--c-ink) / 0.6);
   }
+  /* Hero photography is always dark-plated, so hero copy stays light in both
+     modes rather than flipping to dark text over a dark image. */
+  [data-theme="light"] .lede-hero,
+  [data-theme="light"] .marker-hero { color: rgb(255 255 255 / 0.94); text-shadow: 0 1px 20px rgb(0 0 0 / 0.7); }
+  [data-theme="light"] .hero-copy h1 { color: #fff; }
+
+  /* --- theme toggle ---------------------------------------- */
+  .theme-toggle {
+    @apply fixed bottom-5 left-5 z-40 inline-flex h-12 w-12 items-center justify-center
+           rounded-full border border-line bg-surface text-bone shadow-lg shadow-black/20
+           transition-all duration-300 ease-cine hover:border-volt hover:text-volt;
+  }
+  .theme-toggle .icon-sun { display: none; }
+  [data-theme="light"] .theme-toggle .icon-sun  { display: block; }
+  [data-theme="light"] .theme-toggle .icon-moon { display: none; }
 
   /* --- buttons --------------------------------------------- */
   .btn {
@@ -152,6 +181,10 @@
     content: '';
     @apply pointer-events-none absolute inset-0;
     background: linear-gradient(180deg, rgb(var(--c-ink) / 0) 28%, rgb(var(--c-ink) / 0.72) 68%, rgb(var(--c-ink) / 0.94) 100%);
+  }
+  /* Keep hero plates dark whatever the mode — the photos are dark. */
+  [data-theme="light"] .media-scrim::after {
+    background: linear-gradient(180deg, rgb(0 0 0 / 0.15) 0%, rgb(0 0 0 / 0.55) 60%, rgb(0 0 0 / 0.8) 100%);
   }
 
   /* --- placeholder marking --------------------------------- */
