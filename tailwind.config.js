@@ -20,9 +20,10 @@ module.exports = {
         ember:    'rgb(var(--c-ember) / <alpha-value>)',
         onAccent: 'rgb(var(--c-on-accent) / <alpha-value>)'
       },
+      // Driven by CSS variables so the pairing can be swapped at runtime.
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Anton', 'Impact', 'sans-serif']
+        sans: ['var(--f-body)', 'system-ui', 'sans-serif'],
+        display: ['var(--f-display)', 'Impact', 'sans-serif']
       },
       letterSpacing: {
         eyebrow: '0.22em'

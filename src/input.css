@@ -1,40 +1,9 @@
-
 /* ============================================================
-   PALETTE OPTIONS  —  TEMPORARY
-   Five candidate palettes for review. Once one is chosen, copy its
-   block into :root, delete the rest, delete the [data-theme] blocks,
-   and remove the picker from the page. See THEMES.md.
+   PALETTE — Iron & Crimson (locked in)
+   Chosen to match the ARJFIT logo. Every pair passes WCAG AA;
+   the behaviour suite fails the build if that regresses.
    ============================================================ */
-
-/* 1 — VOLT NOIR (current) */
-:root,
-[data-theme="volt-noir"] {
-  --c-ink: 10 10 11;
-  --c-surface: 19 19 22;
-  --c-surface2: 28 28 33;
-  --c-line: 42 42 49;
-  --c-bone: 244 242 237;
-  --c-muted: 154 154 164;
-  --c-volt: 204 255 51;
-  --c-ember: 255 90 31;
-  --c-on-accent: 10 10 11;
-}
-
-/* 2 — FORGE  (steel + amber, industrial) */
-[data-theme="forge"] {
-  --c-ink: 13 15 18;
-  --c-surface: 22 25 30;
-  --c-surface2: 31 36 43;
-  --c-line: 46 52 61;
-  --c-bone: 242 241 238;
-  --c-muted: 151 160 172;
-  --c-volt: 255 165 31;
-  --c-ember: 229 83 61;
-  --c-on-accent: 13 15 18;
-}
-
-/* 3 — IRON & CRIMSON  (classic strength) */
-[data-theme="crimson"] {
+:root {
   --c-ink: 11 11 13;
   --c-surface: 20 20 23;
   --c-surface2: 29 29 34;
@@ -46,31 +15,17 @@
   --c-on-accent: 11 11 13;
 }
 
-/* 4 — MIDNIGHT STEEL  (navy + cyan, technical) */
-[data-theme="midnight"] {
-  --c-ink: 8 13 20;
-  --c-surface: 15 22 32;
-  --c-surface2: 23 32 44;
-  --c-line: 36 48 63;
-  --c-bone: 238 243 248;
-  --c-muted: 143 163 184;
-  --c-volt: 34 211 238;
-  --c-ember: 245 158 11;
-  --c-on-accent: 8 13 20;
-}
-
-/* 5 — WORKS WHITE  (light, corporate B2B) */
-[data-theme="works-white"] {
-  --c-ink: 245 244 241;
-  --c-surface: 255 255 255;
-  --c-surface2: 237 235 230;
-  --c-line: 217 213 204;
-  --c-bone: 20 21 26;
-  --c-muted: 92 97 107;
-  --c-volt: 190 73 10;
-  --c-ember: 29 78 216;
-  --c-on-accent: 255 255 255;
-}
+/* ============================================================
+   TYPE OPTIONS — TEMPORARY
+   Five candidate pairings. Once one is chosen, copy its block into
+   :root, delete the rest and the picker. See TYPE.md.
+   ============================================================ */
+:root,
+[data-font="anton"]   { --f-display: 'Anton', Impact, sans-serif;        --f-body: 'Inter', system-ui, sans-serif; }
+[data-font="oswald"]  { --f-display: 'Oswald', Impact, sans-serif;       --f-body: 'Inter', system-ui, sans-serif; }
+[data-font="archivo"] { --f-display: 'Archivo Black', Impact, sans-serif;--f-body: 'Archivo', system-ui, sans-serif; }
+[data-font="bebas"]   { --f-display: 'Bebas Neue', Impact, sans-serif;   --f-body: 'Barlow', system-ui, sans-serif; }
+[data-font="teko"]    { --f-display: 'Teko', Impact, sans-serif;         --f-body: 'Rajdhani', system-ui, sans-serif; }
 
 @tailwind base;
 @tailwind components;

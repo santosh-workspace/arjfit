@@ -13,6 +13,11 @@ rebuild before launch.
 
 ---
 
+> **Brand locked.** Palette is Iron & Crimson, matched to the ARJFIT logo.
+> The logo ships as inline SVG (`logoMark()` in the generator) — transparent,
+> with the crescent on the accent token and the wordmark on `currentColor`.
+> Type is still being chosen; see `TYPE.md`.
+>
 > **Positioning changed.** ARJFIT is a gym equipment manufacturer, seller and
 > service provider. The five training-gym pages (programs, membership, schedule,
 > trainers, facilities) were retired — recoverable from commit `9df92ee`.

@@ -105,40 +105,41 @@
     });
   });
 
-  /* ---------- TEMPORARY palette picker ---------- */
-  /* Remove this whole block once a palette is chosen. */
-  var picker = document.querySelector('[data-theme-picker]');
-  if (picker) {
-    var panel = picker.querySelector('[data-theme-panel]');
-    var pToggle = picker.querySelector('[data-theme-toggle]');
-    var setters = [].slice.call(picker.querySelectorAll('[data-theme-set]'));
+  /* ---------- TEMPORARY type picker ---------- */
+  /* Remove this whole block once a pairing is chosen. */
+  var tPicker = document.querySelector('[data-type-picker]');
+  if (tPicker) {
+    var tPanel = tPicker.querySelector('[data-type-panel]');
+    var tToggle = tPicker.querySelector('[data-type-toggle]');
+    var tSetters = [].slice.call(tPicker.querySelectorAll('[data-type-set]'));
 
-    var markActive = function (key) {
-      setters.forEach(function (b) {
-        var on = b.getAttribute('data-theme-set') === key;
+    var markFont = function (key) {
+      tSetters.forEach(function (b) {
+        var on = b.getAttribute('data-type-set') === key;
         b.setAttribute('aria-pressed', String(on));
         b.classList.toggle('border-volt', on);
       });
     };
 
-    var applyTheme = function (key) {
-      document.documentElement.setAttribute('data-theme', key);
-      try { localStorage.setItem('arjfit-theme', key); } catch (e) {}
-      markActive(key);
+    var applyFont = function (key) {
+      document.documentElement.setAttribute('data-font', key);
+      try { localStorage.setItem('arjfit-font', key); } catch (e) {}
+      markFont(key);
+      if (window.ScrollTrigger) ScrollTrigger.refresh();
     };
 
-    pToggle.addEventListener('click', function () {
-      var open = panel.classList.contains('w-0');
-      panel.classList.toggle('w-0', !open);
-      panel.classList.toggle('w-[248px]', open);
-      pToggle.setAttribute('aria-expanded', String(open));
+    tToggle.addEventListener('click', function () {
+      var open = tPanel.classList.contains('w-0');
+      tPanel.classList.toggle('w-0', !open);
+      tPanel.classList.toggle('w-[264px]', open);
+      tToggle.setAttribute('aria-expanded', String(open));
     });
 
-    setters.forEach(function (b) {
-      b.addEventListener('click', function () { applyTheme(b.getAttribute('data-theme-set')); });
+    tSetters.forEach(function (b) {
+      b.addEventListener('click', function () { applyFont(b.getAttribute('data-type-set')); });
     });
 
-    markActive(document.documentElement.getAttribute('data-theme') || 'volt-noir');
+    markFont(document.documentElement.getAttribute('data-font') || 'anton');
   }
 
   /* ---------- gallery filter ---------- */

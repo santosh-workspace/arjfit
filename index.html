@@ -21,10 +21,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com">
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- TEMPORARY: all five candidate pairings load while the type picker is live.
+     Baking one in drops this back to a single family pair. -->
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=Barlow:wght@400;500;600;700&family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&family=Teko:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
 <!-- TEMPORARY: applies the previewed palette before paint. Remove with the picker. -->
-<script>try{var t=localStorage.getItem('arjfit-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<script>try{var f=localStorage.getItem('arjfit-font');if(f)document.documentElement.setAttribute('data-font',f);}catch(e){}</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","@id":"https://arjfit.example/#org","name":"ARJFIT","alternateName":"ARJFIT Fitness Equipment","url":"https://arjfit.example/","logo":"https://images.unsplash.com/photo-1534258936925-c58bed479fcb?auto=format&fit=crop&w=1200&q=75","image":"https://images.unsplash.com/photo-1534258936925-c58bed479fcb?auto=format&fit=crop&w=1200&q=75","description":"ARJFIT manufactures, supplies and services commercial gym equipment across India — cardio, strength, multi stations, free weights, layout design and AMC.","telephone":"+91 00000 00000","email":"hello@arjfit.example","foundingDate":"[YEAR]","address":{"@type":"PostalAddress","streetAddress":"[Street address to be confirmed]","addressLocality":"Baner, Pune","addressRegion":"Maharashtra","postalCode":"411045","addressCountry":"IN"},"contactPoint":[{"@type":"ContactPoint","telephone":"+91 00000 00000","contactType":"sales","areaServed":"IN","availableLanguage":["en","hi","mr"]}],"makesOffer":{"@type":"Offer","itemOffered":{"@type":"Product","category":"Commercial Gym Equipment"}},"knowsAbout":["Commercial gym equipment","Gym setup and installation","Fitness equipment maintenance"]}
 </script>
@@ -34,7 +36,11 @@
 
 <header data-header class="fixed inset-x-0 top-0 z-50 border-b border-transparent transition-colors duration-300">
   <div class="shell flex h-[72px] items-center justify-between gap-6">
-    <a href="index.html" class="font-display text-2xl uppercase tracking-tight text-bone">ARJ<span class="text-volt">FIT</span></a>
+    <a href="index.html" class="text-bone" aria-label="ARJFIT home"><svg viewBox="0 0 240 66" class="h-9 w-auto" role="img" aria-label="ARJFIT — Fitness Equipments" fill="none">
+    <path fill="rgb(var(--c-volt))" d="M 14 44 C 14 20 66 5 124 5 C 176 5 216 16 232 32 C 212 20 172 12 126 12 C 72 12 24 26 24 46 C 24 53 28 59 36 64 C 22 58 14 51 14 44 Z"/>
+    <text x="26" y="60" font-family="var(--f-display)" font-size="40" letter-spacing="1" fill="currentColor">ARJFIT</text>
+    
+  </svg></a>
 
     <nav aria-label="Primary" class="hidden lg:block">
       <ul class="flex items-center gap-5 xl:gap-7">
@@ -103,7 +109,7 @@
       <img src="https://images.unsplash.com/photo-1646656130630-07af3a262a9b?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1646656130630-07af3a262a9b?auto=format&amp;fit=crop&amp;w=768&amp;q=72 768w, https://images.unsplash.com/photo-1646656130630-07af3a262a9b?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w, https://images.unsplash.com/photo-1646656130630-07af3a262a9b?auto=format&amp;fit=crop&amp;w=1920&amp;q=72 1920w, https://images.unsplash.com/photo-1646656130630-07af3a262a9b?auto=format&amp;fit=crop&amp;w=2560&amp;q=72 2560w" sizes="100vw" alt="Athlete mid-set on the training floor" width="1280" height="853" loading="eager" fetchpriority="high" decoding="async" data-placeholder="image" class="scale-110 opacity-55">
     </div>
     <div class="hero-slide" data-slide role="group" aria-roledescription="slide" aria-label="2 of 3">
-      <img src="https://images.unsplash.com/photo-1571055107559-3e67626fa8be?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1571055107559-3e67626fa8be?auto=format&amp;fit=crop&amp;w=768&amp;q=72 768w, https://images.unsplash.com/photo-1571055107559-3e67626fa8be?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w, https://images.unsplash.com/photo-1571055107559-3e67626fa8be?auto=format&amp;fit=crop&amp;w=1920&amp;q=72 1920w, https://images.unsplash.com/photo-1571055107559-3e67626fa8be?auto=format&amp;fit=crop&amp;w=2560&amp;q=72 2560w" sizes="100vw" alt="Racks and platforms on the strength floor" width="1280" height="853" loading="lazy" decoding="async" data-placeholder="image" class="scale-110 opacity-55">
+      <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&amp;fit=crop&amp;w=768&amp;q=72 768w, https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w, https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&amp;fit=crop&amp;w=1920&amp;q=72 1920w, https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&amp;fit=crop&amp;w=2560&amp;q=72 2560w" sizes="100vw" alt="Power rack, bench and loaded barbell on a commercial floor" width="1280" height="853" loading="lazy" decoding="async" data-placeholder="image" class="scale-110 opacity-55">
     </div>
     <div class="hero-slide" data-slide role="group" aria-roledescription="slide" aria-label="3 of 3">
       <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&amp;fit=crop&amp;w=768&amp;q=72 768w, https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w, https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&amp;fit=crop&amp;w=1920&amp;q=72 1920w, https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&amp;fit=crop&amp;w=2560&amp;q=72 2560w" sizes="100vw" alt="Conditioning and turf training zone" width="1280" height="853" loading="lazy" decoding="async" data-placeholder="image" class="scale-110 opacity-55">
@@ -131,7 +137,7 @@
     <div class="flex items-center justify-between gap-6">
       <div class="flex gap-2" role="tablist" aria-label="Choose hero image">
         <button type="button" data-dot role="tab" class="hero-dot is-active" aria-selected="true" aria-label="Show image 1: Athlete mid-set on the training floor"></button>
-        <button type="button" data-dot role="tab" class="hero-dot" aria-selected="false" aria-label="Show image 2: Racks and platforms on the strength floor"></button>
+        <button type="button" data-dot role="tab" class="hero-dot" aria-selected="false" aria-label="Show image 2: Power rack, bench and loaded barbell on a commercial floor"></button>
         <button type="button" data-dot role="tab" class="hero-dot" aria-selected="false" aria-label="Show image 3: Conditioning and turf training zone"></button>
       </div>
       <div class="hidden items-center gap-3 text-[0.65rem] uppercase tracking-eyebrow text-muted lg:flex">
@@ -255,7 +261,7 @@
 
     <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
       <div class="media aspect-[4/5] reveal">
-        <img src="https://images.unsplash.com/photo-1571055107559-3e67626fa8be?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1571055107559-3e67626fa8be?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1571055107559-3e67626fa8be?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1571055107559-3e67626fa8be?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w, https://images.unsplash.com/photo-1571055107559-3e67626fa8be?auto=format&amp;fit=crop&amp;w=1920&amp;q=72 1920w" sizes="(min-width: 1024px) 45vw, 100vw" alt="Equipment on the ARJFIT manufacturing floor" width="1000" height="1250" loading="lazy" decoding="async" data-placeholder="image">
+        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w, https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&amp;fit=crop&amp;w=1920&amp;q=72 1920w" sizes="(min-width: 1024px) 45vw, 100vw" alt="Welding a machine frame at the ARJFIT manufacturing unit" width="1000" height="1250" loading="lazy" decoding="async" data-placeholder="image">
       </div>
       <div>
     <p class="marker reveal">03 &nbsp;/&nbsp; What We Do</p>
@@ -347,7 +353,7 @@
 
       <article class="reveal group">
         <div class="media aspect-[4/3]">
-          <img src="https://images.unsplash.com/photo-1571055107559-3e67626fa8be?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1571055107559-3e67626fa8be?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1571055107559-3e67626fa8be?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1571055107559-3e67626fa8be?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w, https://images.unsplash.com/photo-1571055107559-3e67626fa8be?auto=format&amp;fit=crop&amp;w=1920&amp;q=72 1920w" sizes="(min-width: 768px) 32vw, 100vw" alt="In-house fabrication at the ARJFIT manufacturing unit" width="800" height="600" loading="lazy" decoding="async" data-placeholder="image" class="transition-transform duration-700 ease-cine group-hover:scale-105">
+          <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w, https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&amp;fit=crop&amp;w=1920&amp;q=72 1920w" sizes="(min-width: 768px) 32vw, 100vw" alt="In-house fabrication at the ARJFIT manufacturing unit" width="800" height="600" loading="lazy" decoding="async" data-placeholder="image" class="transition-transform duration-700 ease-cine group-hover:scale-105">
         </div>
         <h3 class="h-card mt-6">In-house fabrication</h3>
         <p class="mt-3 text-sm leading-relaxed text-muted">Frames cut, welded and finished on our own shop floor, so tolerances and lead times stay under our control.</p>
@@ -380,7 +386,7 @@
     <p class="lede reveal mt-5">Six zones, calibrated plates, and enough platform space that you are not waiting on a rack at 7pm.</p>
     <div class="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
       <div class="media aspect-square reveal lg:col-span-2 lg:aspect-[2/1]">
-        <img src="https://images.unsplash.com/photo-1571055107559-3e67626fa8be?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1571055107559-3e67626fa8be?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1571055107559-3e67626fa8be?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1571055107559-3e67626fa8be?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w, https://images.unsplash.com/photo-1571055107559-3e67626fa8be?auto=format&amp;fit=crop&amp;w=1920&amp;q=72 1920w" sizes="(min-width: 1024px) 50vw, 100vw" alt="Main strength floor with racks and platforms" width="1200" height="600" loading="lazy" decoding="async" data-placeholder="image">
+        <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w, https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&amp;fit=crop&amp;w=1920&amp;q=72 1920w" sizes="(min-width: 1024px) 50vw, 100vw" alt="Main strength floor with racks and platforms" width="1200" height="600" loading="lazy" decoding="async" data-placeholder="image">
       </div>
       <div class="media aspect-square reveal"><img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w, https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&amp;fit=crop&amp;w=1920&amp;q=72 1920w" sizes="(min-width: 1024px) 25vw, 50vw" alt="Dumbbell and accessory area" width="600" height="600" loading="lazy" decoding="async" data-placeholder="image"></div>
       <div class="media aspect-square reveal"><img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w, https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&amp;fit=crop&amp;w=1920&amp;q=72 1920w" sizes="(min-width: 1024px) 25vw, 50vw" alt="Conditioning and turf zone" width="600" height="600" loading="lazy" decoding="async" data-placeholder="image"></div>
@@ -548,7 +554,11 @@
   <div class="shell py-16 sm:py-20">
     <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
       <div class="lg:col-span-2">
-        <a href="index.html" class="font-display text-3xl uppercase text-bone">ARJ<span class="text-volt">FIT</span></a>
+        <a href="index.html" class="inline-block text-bone" aria-label="ARJFIT home"><svg viewBox="0 0 240 78" class="h-14 w-auto" role="img" aria-label="ARJFIT — Fitness Equipments" fill="none">
+    <path fill="rgb(var(--c-volt))" d="M 14 44 C 14 20 66 5 124 5 C 176 5 216 16 232 32 C 212 20 172 12 126 12 C 72 12 24 26 24 46 C 24 53 28 59 36 64 C 22 58 14 51 14 44 Z"/>
+    <text x="26" y="60" font-family="var(--f-display)" font-size="40" letter-spacing="1" fill="currentColor">ARJFIT</text>
+    <text x="28" y="73" font-family="var(--f-body)" font-size="8.2" letter-spacing="4.6" font-weight="600" fill="currentColor">FITNESS EQUIPMENTS</text>
+  </svg></a>
         <p class="lede mt-5 max-w-sm text-sm">A strength and conditioning gym built around coaching, not crowds. Train with intent.</p>
         <div class="mt-7 flex gap-3">
           <a href="#" aria-label="ARJFIT on Instagram" data-placeholder="link" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line text-muted transition-colors hover:border-volt hover:text-volt">
@@ -608,80 +618,55 @@
     </div>
   </div>
 </footer>
-<div data-theme-picker class="fixed right-0 top-1/2 z-[60] -translate-y-1/2 print:hidden">
+<div data-type-picker class="fixed right-0 top-1/2 z-[60] -translate-y-1/2 print:hidden">
   <div class="flex items-stretch">
-    <button data-theme-toggle aria-expanded="false" aria-controls="theme-panel"
+    <button data-type-toggle aria-expanded="false" aria-controls="type-panel"
             class="flex w-9 items-center justify-center rounded-l-xl border border-r-0 border-line bg-surface py-5 text-[0.6rem] font-semibold uppercase tracking-[0.2em] text-muted transition-colors hover:text-volt"
-            style="writing-mode:vertical-rl">Theme</button>
-    <div id="theme-panel" data-theme-panel
+            style="writing-mode:vertical-rl">Type</button>
+    <div id="type-panel" data-type-panel
          class="w-0 overflow-hidden border-y border-line bg-surface transition-[width] duration-400 ease-cine">
-      <div class="w-[248px] p-4">
-        <p class="eyebrow">Palette options</p>
+      <div class="w-[264px] p-4">
+        <p class="eyebrow">Type options</p>
         <p class="mt-1.5 text-[0.68rem] leading-relaxed text-muted">Pick one, then I will bake it in and remove this panel.</p>
         <ul class="mt-4 space-y-2">
           <li>
-            <button type="button" data-theme-set="volt-noir" aria-pressed="false"
-                    class="flex w-full items-center gap-3 rounded-xl border border-line p-2.5 text-left transition-colors hover:border-volt">
-              <span class="flex shrink-0 overflow-hidden rounded-lg border border-line">
-                <span class="block h-9 w-5" style="background:#0A0A0B"></span>
-                <span class="block h-9 w-4" style="background:#CCFF33"></span>
-              </span>
-              <span class="min-w-0">
-                <span class="block text-[0.72rem] font-semibold text-bone">Volt Noir</span>
-                <span class="block truncate text-[0.62rem] text-muted">Near-black + volt green</span>
-              </span>
+            <button type="button" data-type-set="anton" aria-pressed="false"
+                    class="w-full rounded-xl border border-line p-3 text-left transition-colors hover:border-volt">
+              <span class="block text-[1.35rem] leading-none text-bone" style="font-family:'Anton', Impact, sans-serif">ARJFIT</span>
+              <span class="mt-1.5 block text-[0.68rem] font-semibold text-volt">Anton <span class="text-muted">+ Inter</span></span>
+              <span class="mt-0.5 block text-[0.62rem] text-muted">Heavy condensed. Current.</span>
             </button>
           </li>
           <li>
-            <button type="button" data-theme-set="forge" aria-pressed="false"
-                    class="flex w-full items-center gap-3 rounded-xl border border-line p-2.5 text-left transition-colors hover:border-volt">
-              <span class="flex shrink-0 overflow-hidden rounded-lg border border-line">
-                <span class="block h-9 w-5" style="background:#0D0F12"></span>
-                <span class="block h-9 w-4" style="background:#FFA51F"></span>
-              </span>
-              <span class="min-w-0">
-                <span class="block text-[0.72rem] font-semibold text-bone">Forge</span>
-                <span class="block truncate text-[0.62rem] text-muted">Steel + amber, industrial</span>
-              </span>
+            <button type="button" data-type-set="oswald" aria-pressed="false"
+                    class="w-full rounded-xl border border-line p-3 text-left transition-colors hover:border-volt">
+              <span class="block text-[1.35rem] leading-none text-bone" style="font-family:'Oswald', Impact, sans-serif">ARJFIT</span>
+              <span class="mt-1.5 block text-[0.68rem] font-semibold text-volt">Oswald <span class="text-muted">+ Inter</span></span>
+              <span class="mt-0.5 block text-[0.62rem] text-muted">Narrow, industrial.</span>
             </button>
           </li>
           <li>
-            <button type="button" data-theme-set="crimson" aria-pressed="false"
-                    class="flex w-full items-center gap-3 rounded-xl border border-line p-2.5 text-left transition-colors hover:border-volt">
-              <span class="flex shrink-0 overflow-hidden rounded-lg border border-line">
-                <span class="block h-9 w-5" style="background:#0B0B0D"></span>
-                <span class="block h-9 w-4" style="background:#E63946"></span>
-              </span>
-              <span class="min-w-0">
-                <span class="block text-[0.72rem] font-semibold text-bone">Iron & Crimson</span>
-                <span class="block truncate text-[0.62rem] text-muted">Graphite + crimson</span>
-              </span>
+            <button type="button" data-type-set="archivo" aria-pressed="false"
+                    class="w-full rounded-xl border border-line p-3 text-left transition-colors hover:border-volt">
+              <span class="block text-[1.35rem] leading-none text-bone" style="font-family:'Archivo Black', Impact, sans-serif">ARJFIT</span>
+              <span class="mt-1.5 block text-[0.68rem] font-semibold text-volt">Archivo Black <span class="text-muted">+ Archivo</span></span>
+              <span class="mt-0.5 block text-[0.62rem] text-muted">Wide grotesk, corporate.</span>
             </button>
           </li>
           <li>
-            <button type="button" data-theme-set="midnight" aria-pressed="false"
-                    class="flex w-full items-center gap-3 rounded-xl border border-line p-2.5 text-left transition-colors hover:border-volt">
-              <span class="flex shrink-0 overflow-hidden rounded-lg border border-line">
-                <span class="block h-9 w-5" style="background:#080D14"></span>
-                <span class="block h-9 w-4" style="background:#22D3EE"></span>
-              </span>
-              <span class="min-w-0">
-                <span class="block text-[0.72rem] font-semibold text-bone">Midnight Steel</span>
-                <span class="block truncate text-[0.62rem] text-muted">Navy + cyan, technical</span>
-              </span>
+            <button type="button" data-type-set="bebas" aria-pressed="false"
+                    class="w-full rounded-xl border border-line p-3 text-left transition-colors hover:border-volt">
+              <span class="block text-[1.35rem] leading-none text-bone" style="font-family:'Bebas Neue', Impact, sans-serif">ARJFIT</span>
+              <span class="mt-1.5 block text-[0.68rem] font-semibold text-volt">Bebas Neue <span class="text-muted">+ Barlow</span></span>
+              <span class="mt-0.5 block text-[0.62rem] text-muted">Tall, classic gym.</span>
             </button>
           </li>
           <li>
-            <button type="button" data-theme-set="works-white" aria-pressed="false"
-                    class="flex w-full items-center gap-3 rounded-xl border border-line p-2.5 text-left transition-colors hover:border-volt">
-              <span class="flex shrink-0 overflow-hidden rounded-lg border border-line">
-                <span class="block h-9 w-5" style="background:#F5F4F1"></span>
-                <span class="block h-9 w-4" style="background:#E8590C"></span>
-              </span>
-              <span class="min-w-0">
-                <span class="block text-[0.72rem] font-semibold text-bone">Works White</span>
-                <span class="block truncate text-[0.62rem] text-muted">Light, corporate B2B</span>
-              </span>
+            <button type="button" data-type-set="teko" aria-pressed="false"
+                    class="w-full rounded-xl border border-line p-3 text-left transition-colors hover:border-volt">
+              <span class="block text-[1.35rem] leading-none text-bone" style="font-family:'Teko', Impact, sans-serif">ARJFIT</span>
+              <span class="mt-1.5 block text-[0.68rem] font-semibold text-volt">Teko <span class="text-muted">+ Rajdhani</span></span>
+              <span class="mt-0.5 block text-[0.62rem] text-muted">Technical. Devanagari too.</span>
             </button>
           </li>
         </ul>
