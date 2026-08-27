@@ -23,7 +23,22 @@ rebuild before launch.
 > trainers, facilities) were retired — recoverable from commit `9df92ee`.
 > See `RECOMMENDATIONS.md` for the improvement roadmap.
 
-## 0. New placeholders — certifications & credentials
+## 0. REMOVED — unproven claims
+
+The following were taken off the site because they asserted things that cannot
+yet be evidenced. **Do not re-add any of them without the paperwork to back it up.**
+
+| Removed | Was on | Why |
+|---|---|---|
+| ISO 9001 / 14001 / 45001 and CE / RoHS badges | home, about | Displaying a certification you do not hold is a legal exposure |
+| GSTIN / CIN / founding year | home, about | Unverified registration numbers |
+| Four counters (`0+` years, gyms, cities, exports) | home | A row of zeros that read as broken and claimed nothing true |
+| `0.0` star rating + review-profile links | home | A fabricated aggregate rating |
+
+When the real certificates exist, re-add them **with certificate numbers** and a
+link to verification. The layout for that section is in git history.
+
+## OLD — certifications & credentials (removed, kept for reference)
 
 `data-placeholder="cert"` marks ISO 9001 / 14001 / 45001, CE / RoHS, "Make in
 India", GSTIN, CIN and founding year on both the home page and `about.html`.
