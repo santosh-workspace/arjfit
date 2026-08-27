@@ -309,10 +309,10 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
 
 
 <section class="border-y border-line bg-surface">
-  <div class="grid lg:grid-cols-2">
-    <div class="shell py-16 sm:py-20 lg:py-24">
+  <div>
+    <div class="shell py-16 sm:py-20">
       <p class="eyebrow reveal">Find us</p>
-      <h2 class="h-section reveal mt-5">Mumbai,<br>Maharashtra.</h2>
+      <h2 class="h-section reveal mt-5">Mumbai, Maharashtra.</h2>
       <p class="lede reveal mt-6">
         Manufacturing and sales operate out of Mumbai, with delivery, installation
         and service across Maharashtra and the rest of India.
@@ -326,11 +326,11 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
       </div>
       <p class="ph-badge reveal mt-6" data-placeholder="map">Map centred on Mumbai — re-centre once the street address is confirmed</p>
     </div>
-    <div class="relative min-h-[320px] border-t border-line lg:min-h-full lg:border-l lg:border-t-0">
+    <div class="border-t border-line">
       <iframe
         title="Map of Mumbai, Maharashtra"
         src="https://www.google.com/maps?q=Mumbai,Maharashtra,India&z=11&output=embed"
-        class="absolute inset-0 h-full w-full"
+        class="block h-[340px] w-full sm:h-[420px]"
         style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
         allowfullscreen></iframe>
     </div>

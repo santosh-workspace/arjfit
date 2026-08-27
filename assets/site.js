@@ -84,13 +84,20 @@
   /* ---------- header background on scroll ---------- */
   var header = document.querySelector('[data-header]');
   if (header) {
-    var onScroll = function () {
-      header.classList.toggle('bg-ink/90', window.scrollY > 24);
-      header.classList.toggle('backdrop-blur-md', window.scrollY > 24);
-      header.classList.toggle('border-line', window.scrollY > 24);
+    var stuck = null, ticking = false;
+    var applyHeader = function () {
+      ticking = false;
+      var next = window.scrollY > 24;
+      if (next === stuck) return;          // no DOM work unless it changed
+      stuck = next;
+      header.classList.toggle('bg-ink/90', next);
+      header.classList.toggle('backdrop-blur-md', next);
+      header.classList.toggle('border-line', next);
     };
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
+    applyHeader();
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(applyHeader); }
+    }, { passive: true });
   }
 
   /* ---------- accordion (FAQ) ---------- */
@@ -295,9 +302,9 @@
     if (!words.length) return;
     gsap.to(words, {
       y: '0%',
-      duration: 1.05,
-      ease: 'power4.out',
-      stagger: 0.055,
+      duration: 1.15,
+      ease: 'power3.out',
+      stagger: 0.045,
       scrollTrigger: { trigger: h, start: 'top 88%', once: true }
     });
   });
@@ -309,8 +316,8 @@
     var tl = gsap.timeline({
       scrollTrigger: { trigger: m, start: 'top 90%', once: true }
     });
-    tl.to(m, { clipPath: 'inset(0 0 0% 0)', duration: 1.15, ease: 'power3.inOut' });
-    if (pic) tl.to(pic, { scale: 1, duration: 1.4, ease: 'power3.out' }, 0);
+    tl.to(m, { clipPath: 'inset(0 0 0% 0)', duration: 1.25, ease: 'power2.inOut' });
+    if (pic) tl.to(pic, { scale: 1, duration: 1.8, ease: 'power2.out' }, 0);
   });
 
   /* --- grouped children stagger --- */
@@ -320,7 +327,7 @@
     });
     if (kids.length < 2) return;
     gsap.to(kids, {
-      opacity: 1, y: 0, duration: 0.85, ease: 'power3.out', stagger: 0.09,
+      opacity: 1, y: 0, duration: 1, ease: 'power2.out', stagger: 0.08,
       scrollTrigger: { trigger: grid, start: 'top 86%', once: true }
     });
     kids.forEach(function (k) { k.dataset.staggered = '1'; });
@@ -336,8 +343,8 @@
     document.body.appendChild(ring);
 
     gsap.set(ring, { xPercent: -50, yPercent: -50 });
-    var rx = gsap.quickTo(ring, 'x', { duration: 0.45, ease: 'power3' });
-    var ry = gsap.quickTo(ring, 'y', { duration: 0.45, ease: 'power3' });
+    var rx = gsap.quickTo(ring, 'x', { duration: 0.55, ease: 'power2' });
+    var ry = gsap.quickTo(ring, 'y', { duration: 0.55, ease: 'power2' });
     var shown = false;
 
     window.addEventListener('mousemove', function (e) {
@@ -386,9 +393,10 @@
     gsap.to(node, {
       opacity: 1,
       y: 0,
-      duration: 0.9,
-      ease: 'power3.out',
-      scrollTrigger: { trigger: node, start: 'top 88%', once: true }
+      duration: 1,
+      ease: 'power2.out',
+      scrollTrigger: { trigger: node, start: 'top 88%', once: true },
+      onComplete: function () { node.style.willChange = 'auto'; }
     });
   });
 
@@ -398,7 +406,7 @@
     gsap.to(heroImg, {
       yPercent: 14,
       ease: 'none',
-      scrollTrigger: { trigger: heroImg, start: 'top top', end: 'bottom top', scrub: true }
+      scrollTrigger: { trigger: heroImg, start: 'top top', end: 'bottom top', scrub: 0.8 }
     });
   }
 

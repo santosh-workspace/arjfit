@@ -49,10 +49,31 @@
    ARJFIT — base
    ============================================================ */
 @layer base {
-  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    /* Anchor targets clear the fixed header instead of hiding beneath it. */
+    scroll-padding-top: 84px;
+  }
+  /* Stops the rubber-band flash at the ends of the page. */
+  body { overscroll-behavior-y: none; }
   body {
     @apply bg-ink text-bone font-sans antialiased;
     overflow-x: hidden;
+    /* Smoother glyph rendering during transforms. */
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Gentle fade-in on first paint so the page arrives rather than snaps. */
+  @keyframes page-in { from { opacity: 0 } to { opacity: 1 } }
+  body { animation: page-in .5s ease-out both; }
+
+  /* Colour/theme changes ease instead of flipping. */
+  body, header, footer, section, .card, .dd-menu, .theme-toggle {
+    transition: background-color .45s cubic-bezier(.22,1,.36,1),
+                border-color .45s cubic-bezier(.22,1,.36,1),
+                color .45s cubic-bezier(.22,1,.36,1);
   }
   ::selection { background: rgb(var(--c-volt)); color: rgb(var(--c-on-accent)); }
   :focus-visible { outline: 2px solid rgb(var(--c-volt)); outline-offset: 3px; border-radius: 2px; }
@@ -175,7 +196,7 @@
 
   /* --- media ----------------------------------------------- */
   .media { @apply relative overflow-hidden rounded-2xl bg-surface2; }
-  .media img { @apply h-full w-full object-cover; }
+  .media img { @apply h-full w-full object-cover; backface-visibility: hidden; }
   /* Cinematic darkening so white type stays legible over photography. */
   .media-scrim::after {
     content: '';
@@ -218,7 +239,7 @@
   button[aria-expanded="true"] .faq-icon { transform: rotate(45deg); }
 
   /* --- scroll reveal --------------------------------------- */
-  .reveal { opacity: 0; transform: translateY(28px); }
+  .reveal { opacity: 0; transform: translateY(24px); will-change: opacity, transform; }
 
   /* --- split-text reveal ------------------------------------ */
   /* Each word sits in a clipping box so its inner span can slide up
