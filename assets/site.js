@@ -133,43 +133,6 @@
     syncLabel();
   }
 
-  /* ---------- TEMPORARY type picker ---------- */
-  /* Remove this whole block once a pairing is chosen. */
-  var tPicker = document.querySelector('[data-type-picker]');
-  if (tPicker) {
-    var tPanel = tPicker.querySelector('[data-type-panel]');
-    var tToggle = tPicker.querySelector('[data-type-toggle]');
-    var tSetters = [].slice.call(tPicker.querySelectorAll('[data-type-set]'));
-
-    var markFont = function (key) {
-      tSetters.forEach(function (b) {
-        var on = b.getAttribute('data-type-set') === key;
-        b.setAttribute('aria-pressed', String(on));
-        b.classList.toggle('border-volt', on);
-      });
-    };
-
-    var applyFont = function (key) {
-      document.documentElement.setAttribute('data-font', key);
-      try { localStorage.setItem('arjfit-font', key); } catch (e) {}
-      markFont(key);
-      if (window.ScrollTrigger) ScrollTrigger.refresh();
-    };
-
-    tToggle.addEventListener('click', function () {
-      var open = tPanel.classList.contains('w-0');
-      tPanel.classList.toggle('w-0', !open);
-      tPanel.classList.toggle('w-[264px]', open);
-      tToggle.setAttribute('aria-expanded', String(open));
-    });
-
-    tSetters.forEach(function (b) {
-      b.addEventListener('click', function () { applyFont(b.getAttribute('data-type-set')); });
-    });
-
-    markFont(document.documentElement.getAttribute('data-font') || 'anton');
-  }
-
   /* ---------- gallery filter ---------- */
   var gallery = document.querySelector('[data-gallery]');
   if (gallery) {

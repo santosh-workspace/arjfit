@@ -30,16 +30,12 @@
 }
 
 /* ============================================================
-   TYPE OPTIONS — TEMPORARY
-   Five candidate pairings. Once one is chosen, copy its block into
-   :root, delete the rest and the picker. See TYPE.md.
+   TYPE — Archivo Black / Archivo (locked in)
    ============================================================ */
-:root,
-[data-font="anton"]   { --f-display: 'Anton', Impact, sans-serif;        --f-body: 'Inter', system-ui, sans-serif; }
-[data-font="oswald"]  { --f-display: 'Oswald', Impact, sans-serif;       --f-body: 'Inter', system-ui, sans-serif; }
-[data-font="archivo"] { --f-display: 'Archivo Black', Impact, sans-serif;--f-body: 'Archivo', system-ui, sans-serif; }
-[data-font="bebas"]   { --f-display: 'Bebas Neue', Impact, sans-serif;   --f-body: 'Barlow', system-ui, sans-serif; }
-[data-font="teko"]    { --f-display: 'Teko', Impact, sans-serif;         --f-body: 'Rajdhani', system-ui, sans-serif; }
+:root {
+  --f-display: 'Archivo Black', Impact, sans-serif;
+  --f-body: 'Archivo', system-ui, sans-serif;
+}
 
 @tailwind base;
 @tailwind components;
