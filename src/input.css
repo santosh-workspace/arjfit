@@ -9,7 +9,7 @@
   --c-surface2: 29 29 34;
   --c-line: 44 44 51;
   --c-bone: 245 243 241;
-  --c-muted: 156 156 166;
+  --c-muted: 176 176 186;
   --c-volt: 231 65 77;
   --c-ember: 255 140 66;
   --c-on-accent: 11 11 13;
@@ -74,6 +74,14 @@
   .h-section { @apply font-display uppercase text-[clamp(2rem,5vw,4rem)]; }
   .h-card    { @apply font-display uppercase text-[clamp(1.25rem,2vw,1.75rem)]; }
   .lede      { @apply text-base sm:text-lg leading-relaxed text-muted max-w-2xl; }
+  /* Copy over a photograph cannot rely on a mid-tone grey — a bright highlight
+     in the image destroys the contrast. Near-white plus a soft shadow holds up
+     over any frame of the hero carousel. */
+  .lede-hero {
+    @apply text-base sm:text-lg leading-relaxed max-w-2xl;
+    color: rgb(var(--c-bone) / 0.92);
+    text-shadow: 0 1px 20px rgb(var(--c-ink) / 0.6);
+  }
 
   /* --- buttons --------------------------------------------- */
   .btn {
@@ -100,6 +108,7 @@
 
   /* Numbered section marker, e.g. 01 / PROGRAMS */
   .marker { @apply flex items-center gap-3 text-[0.68rem] uppercase tracking-eyebrow text-muted; }
+  .marker-hero { @apply marker; color: rgb(var(--c-bone) / 0.9); text-shadow: 0 1px 16px rgb(var(--c-ink) / 0.6); }
   .marker::before { content: ''; @apply block h-px w-10 bg-volt; }
 
   /* --- header ---------------------------------------------- */
@@ -142,7 +151,7 @@
   .media-scrim::after {
     content: '';
     @apply pointer-events-none absolute inset-0;
-    background: linear-gradient(180deg, rgb(var(--c-ink) / 0) 35%, rgb(var(--c-ink) / 0.85) 100%);
+    background: linear-gradient(180deg, rgb(var(--c-ink) / 0) 28%, rgb(var(--c-ink) / 0.72) 68%, rgb(var(--c-ink) / 0.94) 100%);
   }
 
   /* --- placeholder marking --------------------------------- */
