@@ -41,9 +41,9 @@
   --c-line: 44 44 51;
   --c-bone: 245 243 241;
   --c-muted: 156 156 166;
-  --c-volt: 230 57 70;
+  --c-volt: 231 65 77;
   --c-ember: 255 140 66;
-  --c-on-accent: 255 255 255;
+  --c-on-accent: 11 11 13;
 }
 
 /* 4 — MIDNIGHT STEEL  (navy + cyan, technical) */
@@ -67,7 +67,7 @@
   --c-line: 217 213 204;
   --c-bone: 20 21 26;
   --c-muted: 92 97 107;
-  --c-volt: 232 89 12;
+  --c-volt: 190 73 10;
   --c-ember: 29 78 216;
   --c-on-accent: 255 255 255;
 }
@@ -179,7 +179,6 @@
            transition-colors duration-200 hover:bg-surface2 hover:text-bone;
   }
   .dd-item.is-active { @apply text-volt; }
-  .dd-num { @apply text-[0.6rem] text-volt/70; }
 
   /* --- media ----------------------------------------------- */
   .media { @apply relative overflow-hidden rounded-2xl bg-surface2; }
