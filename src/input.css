@@ -157,6 +157,30 @@
     content: ''; @apply absolute -bottom-1.5 left-0 h-px w-full bg-volt;
   }
 
+  /* --- nav dropdown ---------------------------------------- */
+  .dd-caret { transition: transform .3s cubic-bezier(.22,1,.36,1); }
+  [aria-expanded="true"] .dd-caret { transform: rotate(180deg); }
+
+  .dd-menu {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity .25s ease, transform .25s cubic-bezier(.22,1,.36,1), visibility .25s;
+  }
+  .dd-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .dd-item {
+    @apply flex items-center gap-2.5 rounded-xl px-3 py-2.5 text-[0.78rem]
+           font-medium uppercase tracking-[0.08em] text-muted
+           transition-colors duration-200 hover:bg-surface2 hover:text-bone;
+  }
+  .dd-item.is-active { @apply text-volt; }
+  .dd-num { @apply text-[0.6rem] text-volt/70; }
+
   /* --- media ----------------------------------------------- */
   .media { @apply relative overflow-hidden rounded-2xl bg-surface2; }
   .media img { @apply h-full w-full object-cover; }

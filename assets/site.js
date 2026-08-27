@@ -29,6 +29,58 @@
     });
   }
 
+  /* ---------- nav dropdown ---------- */
+  /* Opens on hover for pointer users and on click/keyboard for everyone.
+     Closes on Escape, outside click, or focus leaving the group. */
+  [].slice.call(document.querySelectorAll('[data-dropdown]')).forEach(function (dd) {
+    var btn = dd.querySelector('[data-dropdown-toggle]');
+    var menu = dd.querySelector('[data-dropdown-menu]');
+    if (!btn || !menu) return;
+    var closeTimer = null;
+
+    function open() {
+      clearTimeout(closeTimer);
+      menu.classList.add('is-open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+    function close() {
+      menu.classList.remove('is-open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+    function lazyClose() {
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(close, 180);
+    }
+
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      menu.classList.contains('is-open') ? close() : open();
+    });
+
+    // Hover only where a real pointer exists.
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      dd.addEventListener('mouseenter', open);
+      dd.addEventListener('mouseleave', lazyClose);
+    }
+
+    dd.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { close(); btn.focus(); }
+      if (e.key === 'ArrowDown' && menu.classList.contains('is-open')) {
+        e.preventDefault();
+        var first = menu.querySelector('a');
+        if (first) first.focus();
+      }
+    });
+
+    // Close when focus or a click leaves the group entirely.
+    document.addEventListener('click', function (e) {
+      if (!dd.contains(e.target)) close();
+    });
+    dd.addEventListener('focusout', function (e) {
+      if (!dd.contains(e.relatedTarget)) close();
+    });
+  });
+
   /* ---------- header background on scroll ---------- */
   var header = document.querySelector('[data-header]');
   if (header) {
