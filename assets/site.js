@@ -296,60 +296,6 @@
     kids.forEach(function (k) { k.dataset.staggered = '1'; });
   });
 
-  /* --- custom cursor --- */
-  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-    var ring = document.createElement('div');
-    ring.className = 'cur-ring';
-    var label = document.createElement('span');
-    label.className = 'cur-label';
-    ring.appendChild(label);
-    document.body.appendChild(ring);
-
-    gsap.set(ring, { xPercent: -50, yPercent: -50 });
-    var rx = gsap.quickTo(ring, 'x', { duration: 0.55, ease: 'power2' });
-    var ry = gsap.quickTo(ring, 'y', { duration: 0.55, ease: 'power2' });
-    var shown = false;
-
-    window.addEventListener('mousemove', function (e) {
-      if (!shown) { gsap.to(ring, { opacity: 1, duration: 0.3 }); shown = true; }
-      rx(e.clientX); ry(e.clientY);
-    }, { passive: true });
-
-    document.addEventListener('mouseleave', function () {
-      gsap.to(ring, { opacity: 0, duration: 0.25 }); shown = false;
-    });
-
-    // Interactive targets grow the ring; media and cards can name a label.
-    var hoverSel = 'a, button, input, select, textarea, summary, [data-cursor]';
-    document.addEventListener('mouseover', function (e) {
-      var t = e.target.closest(hoverSel);
-      if (!t) return;
-      var text = t.getAttribute('data-cursor');
-      if (!text && t.closest('.media')) text = 'View';
-      if (text) { label.textContent = text; ring.classList.add('is-label'); }
-      else ring.classList.add('is-hover');
-    });
-    document.addEventListener('mouseout', function (e) {
-      if (!e.target.closest(hoverSel)) return;
-      ring.classList.remove('is-hover', 'is-label');
-    });
-
-    // Magnetic pull on primary buttons.
-    [].slice.call(document.querySelectorAll('.btn-volt, .btn-ghost')).forEach(function (b) {
-      b.addEventListener('mousemove', function (e) {
-        var r = b.getBoundingClientRect();
-        gsap.to(b, {
-          x: (e.clientX - (r.left + r.width / 2)) * 0.22,
-          y: (e.clientY - (r.top + r.height / 2)) * 0.32,
-          duration: 0.4, ease: 'power3.out'
-        });
-      });
-      b.addEventListener('mouseleave', function () {
-        gsap.to(b, { x: 0, y: 0, duration: 0.6, ease: 'elastic.out(1, 0.4)' });
-      });
-    });
-  }
-
   /* --- ungrouped reveals (anything the grid stagger did not claim) --- */
   nodes.forEach(function (node) {
     if (node.dataset.staggered) return;
