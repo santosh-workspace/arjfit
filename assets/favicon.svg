@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#0B0B0D"/>
+  <path fill="#E7414D" d="
+    M 7 33
+    C 7 20 20 12 34 12
+    C 46 12 55 16 60 23
+    C 54 18 45 15 35 15
+    C 22 15 12 22 12 34
+    C 12 38 14 42 18 45
+    C 11 41 7 37 7 33 Z"/>
+  <text x="32" y="53" text-anchor="middle" font-family="Archivo Black, Impact, sans-serif"
+        font-size="34" font-weight="900" fill="#F5F3F1">A</text>
+</svg>
