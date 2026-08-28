@@ -236,50 +236,20 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
 </section>
 
 
-<section class="border-y border-line bg-surface">
-  <div class="shell py-16 sm:py-20">
-    <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-
-      <!-- address details -->
-      <div>
-        <p class="eyebrow reveal">Find us</p>
-        <h2 class="h-section reveal mt-5">Mumbai,<br>Maharashtra.</h2>
-        <p class="lede reveal mt-6">
-          Manufacturing and sales operate out of Mumbai, with delivery, installation
-          and service across Maharashtra and the rest of India.
-        </p>
-
-        <dl class="reveal mt-8 space-y-5 text-sm" data-placeholder="contact">
-          <div>
-            <dt class="eyebrow-muted mb-1.5">Address</dt>
-            <dd class="text-muted">[Street address to be confirmed]<br>Mumbai, Maharashtra 400001</dd>
-          </div>
-          <div>
-            <dt class="eyebrow-muted mb-1.5">Phone</dt>
-            <dd><a href="tel:+910000000000" class="text-bone transition-colors hover:text-volt">+91 00000 00000</a></dd>
-          </div>
-          <div>
-            <dt class="eyebrow-muted mb-1.5">Email</dt>
-            <dd><a href="mailto:hello@arjfit.example" class="text-bone transition-colors hover:text-volt">hello@arjfit.example</a></dd>
-          </div>
-        </dl>
-
-        <div class="reveal mt-8 flex flex-wrap gap-3">
-          <a href="contact.html" data-cursor="Quote" class="btn-volt">Request a Quote</a>
-          <a href="product.html" class="btn-ghost">Browse Equipment</a>
-        </div>
-        <p class="ph-badge reveal mt-6" data-placeholder="map">Map centred on Mumbai — re-centre once the street address is confirmed</p>
-      </div>
-
-      <!-- map -->
-      <div class="reveal overflow-hidden rounded-2xl border border-line">
-        <iframe
-          title="Map of Mumbai, Maharashtra"
-          src="https://www.google.com/maps?q=Mumbai,Maharashtra,India&z=11&output=embed"
-          class="block h-[360px] w-full lg:h-[520px]"
-          style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          allowfullscreen></iframe>
-      </div>
+<section class="relative overflow-hidden border-y border-line">
+  <div class="media absolute inset-0 rounded-none">
+    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w, https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&amp;fit=crop&amp;w=1920&amp;q=72 1920w" sizes="100vw" alt="Commercial gym equipment on a training floor" width="1280" height="853" loading="lazy" decoding="async" data-placeholder="image" class="opacity-20">
+  </div>
+  <div class="shell relative z-10 py-20 text-center sm:py-24">
+    <p class="eyebrow reveal">No-obligation quote</p>
+    <h2 class="h-section reveal mx-auto mt-5 max-w-3xl">Send us your floor plan.<br>We will send back a layout.</h2>
+    <p class="lede-hero reveal mx-auto mt-6 text-center">
+      Share your dimensions and budget and we will come back with an equipment
+      layout and a costed quote. No obligation.
+    </p>
+    <div class="reveal mt-9 flex flex-wrap items-center justify-center gap-3">
+      <a href="contact.html" data-cursor="Quote" class="btn-volt">Request a Quote</a>
+      <a href="product.html" class="btn-ghost">Browse Equipment</a>
     </div>
   </div>
 </section>
