@@ -57,6 +57,7 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
           </button>
           <ul id="menu-equipment" data-dropdown-menu
               class="dd-menu absolute left-0 top-full z-50 mt-3 w-44 rounded-2xl border border-line bg-surface p-2 shadow-2xl shadow-black/40">
+            <li><a href="categories.html" class="dd-item">Categories</a></li>
             <li><a href="cardio.html" class="dd-item">Cardio</a></li>
             <li><a href="strength.html" class="dd-item">Strength</a></li>
           </ul>
@@ -95,6 +96,7 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
       <a href="about.html" class="border-b border-line py-4 font-display text-2xl uppercase text-bone">About Us</a>
       <a href="product.html" class="border-b border-line py-4 font-display text-2xl uppercase text-volt">Our Series</a>
       <span class="block border-b border-line py-4 font-display text-2xl uppercase text-muted">Gym Equipment</span>
+      <a href="categories.html" class="border-b border-line py-3 pl-4 text-sm uppercase tracking-[0.1em] text-muted">Categories</a>
       <a href="cardio.html" class="border-b border-line py-3 pl-4 text-sm uppercase tracking-[0.1em] text-muted">Cardio</a>
       <a href="strength.html" class="border-b border-line py-3 pl-4 text-sm uppercase tracking-[0.1em] text-muted">Strength</a>
       <a href="testimonials.html" class="border-b border-line py-4 font-display text-2xl uppercase text-bone">Testimonials</a>
@@ -126,37 +128,9 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
     <p class="lede reveal mt-5">Most buyers start from one of these packages and adjust it. Every plan is a starting point, not a fixed bundle — swap anything for the equivalent from the full range.</p>
     <p class="ph-badge reveal mt-6" data-placeholder="price">Placeholder package contents and lead times — confirm before launch</p>
 
-    <div class="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+    <div class="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
 
-      <article class="reveal relative flex flex-col rounded-2xl border border-line bg-surface p-8">
-        
-        <p class="eyebrow">Home gyms</p>
-        <h3 class="h-card mt-3">Home Setup</h3>
-        <p class="mt-4 text-sm leading-relaxed text-muted">Two home gym packages — professional equipment for your home. Pick your setup.</p>
 
-        <div class="mt-6 flex-1 space-y-5 border-y border-line py-5">
-          <div class="flex items-center justify-between gap-4">
-            <div>
-              <p class="font-display text-base uppercase text-bone">Pro 200</p>
-              <p class="mt-1 text-xs text-muted">7 pieces &middot; &#8377;2.50 Lacs</p>
-            </div>
-            <a href="#plan-pro200" class="shrink-0 text-xs font-bold uppercase tracking-[0.14em] text-volt">View &rarr;</a>
-          </div>
-          <div class="flex items-center justify-between gap-4">
-            <div>
-              <p class="font-display text-base uppercase text-bone">Pro 300</p>
-              <p class="mt-1 text-xs text-muted">9 pieces &middot; &#8377;3.50 Lacs</p>
-            </div>
-            <a href="#plan-pro300" class="shrink-0 text-xs font-bold uppercase tracking-[0.14em] text-volt">View &rarr;</a>
-          </div>
-        </div>
-
-        <div class="mt-8 grid grid-cols-2 gap-3">
-          <a href="contact.html?enquiry=Pro%20200" class="btn-volt w-full !px-2">Pro 200</a>
-          <a href="contact.html?enquiry=Pro%20300" class="btn-volt w-full !px-2">Pro 300</a>
-        </div>
-        <a href="#plan-home" class="mt-3 inline-flex w-full items-center justify-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-muted transition-colors hover:text-volt">Compare sub-plans <span aria-hidden="true">&darr;</span></a>
-      </article>
       
       
       <article class="reveal relative flex flex-col rounded-2xl border border-volt bg-surface p-8">
@@ -306,6 +280,32 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
         <div class="mt-8 grid grid-cols-2 gap-3">
           <a href="#plan-prestige" class="btn-ghost w-full !px-2">Breakdown</a>
           <a href="contact.html?enquiry=Prestige%20Series" class="btn-volt w-full !px-2">Enquire</a>
+        </div>
+      </article>
+      <article class="reveal relative flex flex-col gap-8 overflow-hidden rounded-2xl border border-line bg-surface p-8 sm:col-span-2 sm:p-10 lg:flex-row lg:items-center xl:col-span-3">
+        <div class="flex-1">
+          <p class="eyebrow">Home gyms</p>
+          <h3 class="h-card mt-3">Home Setup</h3>
+          <p class="mt-4 max-w-md text-sm leading-relaxed text-muted">Two home gym packages — professional equipment for your home. Pick your setup.</p>
+          <a href="#plan-home" class="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-volt">Compare sub-plans <span aria-hidden="true">&darr;</span></a>
+        </div>
+        <div class="grid flex-1 gap-4 sm:grid-cols-2">
+          <div class="flex flex-col rounded-2xl border border-line bg-ink p-6">
+            <p class="font-display text-base uppercase text-bone">Pro 200</p>
+            <p class="mt-1 text-xs text-muted">7 pieces &middot; &#8377;2.50 Lacs</p>
+            <div class="mt-5 grid grid-cols-2 gap-3">
+              <a href="#plan-pro200" class="btn-ghost w-full !px-2">View</a>
+              <a href="contact.html?enquiry=Pro%20200" class="btn-volt w-full !px-2">Enquire</a>
+            </div>
+          </div>
+          <div class="flex flex-col rounded-2xl border border-volt/60 bg-ink p-6">
+            <p class="font-display text-base uppercase text-bone">Pro 300 <span class="ml-2 rounded-full bg-volt px-2.5 py-0.5 align-middle text-[0.6rem] font-bold uppercase tracking-[0.14em] text-onAccent">Larger</span></p>
+            <p class="mt-1 text-xs text-muted">9 pieces &middot; &#8377;3.50 Lacs</p>
+            <div class="mt-5 grid grid-cols-2 gap-3">
+              <a href="#plan-pro300" class="btn-ghost w-full !px-2">View</a>
+              <a href="contact.html?enquiry=Pro%20300" class="btn-volt w-full !px-2">Enquire</a>
+            </div>
+          </div>
         </div>
       </article>
     </div>
@@ -1319,600 +1319,9 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
 </section>
 
 
-<section class="py-20 sm:py-28">
-  <div class="shell">
-    <p class="marker reveal">04 &nbsp;/&nbsp; Categories</p>
-    <h2 class="h-section reveal mt-5 max-w-3xl">Browse the range.</h2>
-    
-    <p class="ph-badge reveal mt-6" data-placeholder="product">Placeholder catalogue — replace with the real product range, specs and images</p>
-    <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-
-      <a href="#cardio" class="reveal group relative overflow-hidden rounded-2xl border border-line" data-cursor="Explore">
-        <div class="media aspect-[4/3] rounded-none">
-          <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w, https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&amp;fit=crop&amp;w=1920&amp;q=72 1920w" sizes="(min-width: 1024px) 23vw, 50vw" alt="Cardio Series — ARJFIT equipment range" width="600" height="450" loading="lazy" decoding="async" data-placeholder="image" class="opacity-55 transition-all duration-700 ease-cine group-hover:scale-105 group-hover:opacity-75">
-        </div>
-        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink to-transparent p-4 pt-10">
-          <span class="block font-display text-base uppercase text-bone">Cardio Series</span>
-          <span class="mt-1 block text-[0.65rem] uppercase tracking-eyebrow text-volt">6 products</span>
-        </span>
-      </a>
-      <a href="#strength" class="reveal group relative overflow-hidden rounded-2xl border border-line" data-cursor="Explore">
-        <div class="media aspect-[4/3] rounded-none">
-          <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w, https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&amp;fit=crop&amp;w=1920&amp;q=72 1920w" sizes="(min-width: 1024px) 23vw, 50vw" alt="Commercial Strength Series — ARJFIT equipment range" width="600" height="450" loading="lazy" decoding="async" data-placeholder="image" class="opacity-55 transition-all duration-700 ease-cine group-hover:scale-105 group-hover:opacity-75">
-        </div>
-        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink to-transparent p-4 pt-10">
-          <span class="block font-display text-base uppercase text-bone">Commercial Strength Series</span>
-          <span class="mt-1 block text-[0.65rem] uppercase tracking-eyebrow text-volt">6 products</span>
-        </span>
-      </a>
-      <a href="#multi" class="reveal group relative overflow-hidden rounded-2xl border border-line" data-cursor="Explore">
-        <div class="media aspect-[4/3] rounded-none">
-          <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w, https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&amp;fit=crop&amp;w=1920&amp;q=72 1920w" sizes="(min-width: 1024px) 23vw, 50vw" alt="Multi Stations — ARJFIT equipment range" width="600" height="450" loading="lazy" decoding="async" data-placeholder="image" class="opacity-55 transition-all duration-700 ease-cine group-hover:scale-105 group-hover:opacity-75">
-        </div>
-        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink to-transparent p-4 pt-10">
-          <span class="block font-display text-base uppercase text-bone">Multi Stations</span>
-          <span class="mt-1 block text-[0.65rem] uppercase tracking-eyebrow text-volt">6 products</span>
-        </span>
-      </a>
-      <a href="#dumbbells" class="reveal group relative overflow-hidden rounded-2xl border border-line" data-cursor="Explore">
-        <div class="media aspect-[4/3] rounded-none">
-          <img src="https://images.unsplash.com/photo-1591258370814-01609b341790?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1591258370814-01609b341790?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1591258370814-01609b341790?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1591258370814-01609b341790?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w, https://images.unsplash.com/photo-1591258370814-01609b341790?auto=format&amp;fit=crop&amp;w=1920&amp;q=72 1920w" sizes="(min-width: 1024px) 23vw, 50vw" alt="Dumbbells & Plates — ARJFIT equipment range" width="600" height="450" loading="lazy" decoding="async" data-placeholder="image" class="opacity-55 transition-all duration-700 ease-cine group-hover:scale-105 group-hover:opacity-75">
-        </div>
-        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink to-transparent p-4 pt-10">
-          <span class="block font-display text-base uppercase text-bone">Dumbbells & Plates</span>
-          <span class="mt-1 block text-[0.65rem] uppercase tracking-eyebrow text-volt">6 products</span>
-        </span>
-      </a>
-      <a href="#racks" class="reveal group relative overflow-hidden rounded-2xl border border-line" data-cursor="Explore">
-        <div class="media aspect-[4/3] rounded-none">
-          <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w, https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&amp;fit=crop&amp;w=1920&amp;q=72 1920w" sizes="(min-width: 1024px) 23vw, 50vw" alt="Racks & Benches — ARJFIT equipment range" width="600" height="450" loading="lazy" decoding="async" data-placeholder="image" class="opacity-55 transition-all duration-700 ease-cine group-hover:scale-105 group-hover:opacity-75">
-        </div>
-        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink to-transparent p-4 pt-10">
-          <span class="block font-display text-base uppercase text-bone">Racks & Benches</span>
-          <span class="mt-1 block text-[0.65rem] uppercase tracking-eyebrow text-volt">6 products</span>
-        </span>
-      </a>
-      <a href="#bars" class="reveal group relative overflow-hidden rounded-2xl border border-line" data-cursor="Explore">
-        <div class="media aspect-[4/3] rounded-none">
-          <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w, https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&amp;fit=crop&amp;w=1920&amp;q=72 1920w" sizes="(min-width: 1024px) 23vw, 50vw" alt="Bars — ARJFIT equipment range" width="600" height="450" loading="lazy" decoding="async" data-placeholder="image" class="opacity-55 transition-all duration-700 ease-cine group-hover:scale-105 group-hover:opacity-75">
-        </div>
-        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink to-transparent p-4 pt-10">
-          <span class="block font-display text-base uppercase text-bone">Bars</span>
-          <span class="mt-1 block text-[0.65rem] uppercase tracking-eyebrow text-volt">6 products</span>
-        </span>
-      </a>
-      <a href="#accessories" class="reveal group relative overflow-hidden rounded-2xl border border-line" data-cursor="Explore">
-        <div class="media aspect-[4/3] rounded-none">
-          <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w, https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&amp;fit=crop&amp;w=1920&amp;q=72 1920w" sizes="(min-width: 1024px) 23vw, 50vw" alt="Gym Accessories — ARJFIT equipment range" width="600" height="450" loading="lazy" decoding="async" data-placeholder="image" class="opacity-55 transition-all duration-700 ease-cine group-hover:scale-105 group-hover:opacity-75">
-        </div>
-        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink to-transparent p-4 pt-10">
-          <span class="block font-display text-base uppercase text-bone">Gym Accessories</span>
-          <span class="mt-1 block text-[0.65rem] uppercase tracking-eyebrow text-volt">6 products</span>
-        </span>
-      </a>
-      <a href="#muscle" class="reveal group relative overflow-hidden rounded-2xl border border-line" data-cursor="Explore">
-        <div class="media aspect-[4/3] rounded-none">
-          <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w, https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&amp;fit=crop&amp;w=1920&amp;q=72 1920w" sizes="(min-width: 1024px) 23vw, 50vw" alt="Muscle Group Machines — ARJFIT equipment range" width="600" height="450" loading="lazy" decoding="async" data-placeholder="image" class="opacity-55 transition-all duration-700 ease-cine group-hover:scale-105 group-hover:opacity-75">
-        </div>
-        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink to-transparent p-4 pt-10">
-          <span class="block font-display text-base uppercase text-bone">Muscle Group Machines</span>
-          <span class="mt-1 block text-[0.65rem] uppercase tracking-eyebrow text-volt">6 products</span>
-        </span>
-      </a>
-    </div>
-  </div>
-</section>
-
-
-<section id="cardio" class="scroll-mt-20 border-t border-line  py-16 sm:py-20">
-  <div class="shell">
-    <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-      <div class="">
-        <div class="media aspect-[4/3] reveal">
-          <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w, https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&amp;fit=crop&amp;w=1920&amp;q=72 1920w" sizes="(min-width: 1024px) 40vw, 100vw" alt="Cardio Series range" width="900" height="675" loading="lazy" decoding="async" data-placeholder="image">
-        </div>
-      </div>
-      <div>
-        <p class="marker reveal">01 &nbsp;/&nbsp; Category</p>
-        <h2 class="h-section reveal mt-5">Cardio Series</h2>
-        <p class="lede reveal mt-5">Motorised treadmills, upright and recumbent bikes, ellipticals and rowers for commercial floors.</p>
-
-        <ul class="reveal mt-8 divide-y divide-line border-y border-line" data-placeholder="product">
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Motorised treadmill — LED console</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Motorised%20treadmill%20%E2%80%94%20LED%20console" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Commercial upright bike</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Commercial%20upright%20bike" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Cross trainer / elliptical</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Cross%20trainer%20%2F%20elliptical" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Air rower</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Air%20rower" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Recumbent bike</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Recumbent%20bike" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Spin bike</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Spin%20bike" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-        </ul>
-
-        <a href="contact.html" class="btn-volt reveal mt-8">Request a Quote</a>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="strength" class="scroll-mt-20 border-t border-line bg-surface py-16 sm:py-20">
-  <div class="shell">
-    <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-      <div class="lg:order-2">
-        <div class="media aspect-[4/3] reveal">
-          <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w, https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&amp;fit=crop&amp;w=1920&amp;q=72 1920w" sizes="(min-width: 1024px) 40vw, 100vw" alt="Commercial Strength Series range" width="900" height="675" loading="lazy" decoding="async" data-placeholder="image">
-        </div>
-      </div>
-      <div>
-        <p class="marker reveal">02 &nbsp;/&nbsp; Category</p>
-        <h2 class="h-section reveal mt-5">Commercial Strength Series</h2>
-        <p class="lede reveal mt-5">Plate-loaded and selectorised stations built for continuous commercial use.</p>
-
-        <ul class="reveal mt-8 divide-y divide-line border-y border-line" data-placeholder="product">
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Plate-loaded chest press</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Plate-loaded%20chest%20press" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Lat pulldown station</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Lat%20pulldown%20station" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Seated row</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Seated%20row" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Leg press</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Leg%20press" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Pec deck</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Pec%20deck" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Assisted pull-up</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Assisted%20pull-up" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-        </ul>
-
-        <a href="contact.html" class="btn-volt reveal mt-8">Request a Quote</a>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="multi" class="scroll-mt-20 border-t border-line  py-16 sm:py-20">
-  <div class="shell">
-    <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-      <div class="">
-        <div class="media aspect-[4/3] reveal">
-          <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w, https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&amp;fit=crop&amp;w=1920&amp;q=72 1920w" sizes="(min-width: 1024px) 40vw, 100vw" alt="Multi Stations range" width="900" height="675" loading="lazy" decoding="async" data-placeholder="image">
-        </div>
-      </div>
-      <div>
-        <p class="marker reveal">03 &nbsp;/&nbsp; Category</p>
-        <h2 class="h-section reveal mt-5">Multi Stations</h2>
-        <p class="lede reveal mt-5">Multi-function towers for smaller floors and home gym setups where space is the constraint.</p>
-
-        <ul class="reveal mt-8 divide-y divide-line border-y border-line" data-placeholder="product">
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">2-station multi gym</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=2-station%20multi%20gym" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">4-station multi gym</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=4-station%20multi%20gym" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Functional trainer</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Functional%20trainer" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Cable crossover</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Cable%20crossover" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Smith machine with rack</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Smith%20machine%20with%20rack" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Home gym tower</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Home%20gym%20tower" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-        </ul>
-
-        <a href="contact.html" class="btn-volt reveal mt-8">Request a Quote</a>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="dumbbells" class="scroll-mt-20 border-t border-line bg-surface py-16 sm:py-20">
-  <div class="shell">
-    <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-      <div class="lg:order-2">
-        <div class="media aspect-[4/3] reveal">
-          <img src="https://images.unsplash.com/photo-1591258370814-01609b341790?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1591258370814-01609b341790?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1591258370814-01609b341790?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1591258370814-01609b341790?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w, https://images.unsplash.com/photo-1591258370814-01609b341790?auto=format&amp;fit=crop&amp;w=1920&amp;q=72 1920w" sizes="(min-width: 1024px) 40vw, 100vw" alt="Dumbbells & Plates range" width="900" height="675" loading="lazy" decoding="async" data-placeholder="image">
-        </div>
-      </div>
-      <div>
-        <p class="marker reveal">04 &nbsp;/&nbsp; Category</p>
-        <h2 class="h-section reveal mt-5">Dumbbells & Plates</h2>
-        <p class="lede reveal mt-5">Rubber-coated, hex and calibrated sets, with bumper and cast-iron plate options.</p>
-
-        <ul class="reveal mt-8 divide-y divide-line border-y border-line" data-placeholder="product">
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Rubber hex dumbbell set</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Rubber%20hex%20dumbbell%20set" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Calibrated steel plates</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Calibrated%20steel%20plates" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Bumper plates</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Bumper%20plates" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Adjustable dumbbells</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Adjustable%20dumbbells" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Dual dumbbell stand</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Dual%20dumbbell%20stand" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Plate tree</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Plate%20tree" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-        </ul>
-
-        <a href="contact.html" class="btn-volt reveal mt-8">Request a Quote</a>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="racks" class="scroll-mt-20 border-t border-line  py-16 sm:py-20">
-  <div class="shell">
-    <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-      <div class="">
-        <div class="media aspect-[4/3] reveal">
-          <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w, https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&amp;fit=crop&amp;w=1920&amp;q=72 1920w" sizes="(min-width: 1024px) 40vw, 100vw" alt="Racks & Benches range" width="900" height="675" loading="lazy" decoding="async" data-placeholder="image">
-        </div>
-      </div>
-      <div>
-        <p class="marker reveal">05 &nbsp;/&nbsp; Category</p>
-        <h2 class="h-section reveal mt-5">Racks & Benches</h2>
-        <p class="lede reveal mt-5">Power racks, half racks, squat stands and the full bench range.</p>
-
-        <ul class="reveal mt-8 divide-y divide-line border-y border-line" data-placeholder="product">
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Power rack</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Power%20rack" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Half rack</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Half%20rack" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Squat stand</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Squat%20stand" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Flat and incline bench</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Flat%20and%20incline%20bench" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Adjustable FID bench</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Adjustable%20FID%20bench" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Olympic bench press</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Olympic%20bench%20press" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-        </ul>
-
-        <a href="contact.html" class="btn-volt reveal mt-8">Request a Quote</a>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="bars" class="scroll-mt-20 border-t border-line bg-surface py-16 sm:py-20">
-  <div class="shell">
-    <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-      <div class="lg:order-2">
-        <div class="media aspect-[4/3] reveal">
-          <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w, https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&amp;fit=crop&amp;w=1920&amp;q=72 1920w" sizes="(min-width: 1024px) 40vw, 100vw" alt="Bars range" width="900" height="675" loading="lazy" decoding="async" data-placeholder="image">
-        </div>
-      </div>
-      <div>
-        <p class="marker reveal">06 &nbsp;/&nbsp; Category</p>
-        <h2 class="h-section reveal mt-5">Bars</h2>
-        <p class="lede reveal mt-5">Olympic, powerlifting and specialty bars with matched collars.</p>
-
-        <ul class="reveal mt-8 divide-y divide-line border-y border-line" data-placeholder="product">
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Olympic barbell 20 kg</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Olympic%20barbell%2020%20kg" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Womens bar 15 kg</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Womens%20bar%2015%20kg" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Trap / hex bar</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Trap%20%2F%20hex%20bar" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">EZ curl bar</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=EZ%20curl%20bar" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Safety squat bar</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Safety%20squat%20bar" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Spring and lock collars</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Spring%20and%20lock%20collars" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-        </ul>
-
-        <a href="contact.html" class="btn-volt reveal mt-8">Request a Quote</a>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="accessories" class="scroll-mt-20 border-t border-line  py-16 sm:py-20">
-  <div class="shell">
-    <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-      <div class="">
-        <div class="media aspect-[4/3] reveal">
-          <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w, https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&amp;fit=crop&amp;w=1920&amp;q=72 1920w" sizes="(min-width: 1024px) 40vw, 100vw" alt="Gym Accessories range" width="900" height="675" loading="lazy" decoding="async" data-placeholder="image">
-        </div>
-      </div>
-      <div>
-        <p class="marker reveal">07 &nbsp;/&nbsp; Category</p>
-        <h2 class="h-section reveal mt-5">Gym Accessories</h2>
-        <p class="lede reveal mt-5">The consumables and small kit that keep a floor running.</p>
-
-        <ul class="reveal mt-8 divide-y divide-line border-y border-line" data-placeholder="product">
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Kettlebell set</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Kettlebell%20set" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Medicine and slam balls</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Medicine%20and%20slam%20balls" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Resistance bands</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Resistance%20bands" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Battle rope</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Battle%20rope" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Plyo boxes</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Plyo%20boxes" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Gym flooring / rubber mats</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Gym%20flooring%20%2F%20rubber%20mats" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-        </ul>
-
-        <a href="contact.html" class="btn-volt reveal mt-8">Request a Quote</a>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="muscle" class="scroll-mt-20 border-t border-line bg-surface py-16 sm:py-20">
-  <div class="shell">
-    <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-      <div class="lg:order-2">
-        <div class="media aspect-[4/3] reveal">
-          <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w, https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&amp;fit=crop&amp;w=1920&amp;q=72 1920w" sizes="(min-width: 1024px) 40vw, 100vw" alt="Muscle Group Machines range" width="900" height="675" loading="lazy" decoding="async" data-placeholder="image">
-        </div>
-      </div>
-      <div>
-        <p class="marker reveal">08 &nbsp;/&nbsp; Category</p>
-        <h2 class="h-section reveal mt-5">Muscle Group Machines</h2>
-        <p class="lede reveal mt-5">Isolation stations grouped by body part for structured commercial layouts.</p>
-
-        <ul class="reveal mt-8 divide-y divide-line border-y border-line" data-placeholder="product">
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Chest — press and fly</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Chest%20%E2%80%94%20press%20and%20fly" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Back — row and pulldown</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Back%20%E2%80%94%20row%20and%20pulldown" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Shoulder — press and raise</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Shoulder%20%E2%80%94%20press%20and%20raise" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Legs — extension and curl</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Legs%20%E2%80%94%20extension%20and%20curl" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Arms — preacher and dip</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Arms%20%E2%80%94%20preacher%20and%20dip" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-          <li class="flex flex-wrap items-center justify-between gap-4 py-4">
-            <span class="text-sm text-bone">Abs — crunch and rotary</span>
-            <span class="flex items-center gap-4">
-              <span class="text-xs uppercase tracking-eyebrow text-muted">Price on request</span>
-              <a href="contact.html?enquiry=Abs%20%E2%80%94%20crunch%20and%20rotary" class="text-xs font-semibold uppercase tracking-[0.14em] text-volt transition-colors hover:text-bone">Enquire &rarr;</a>
-            </span>
-          </li>
-        </ul>
-
-        <a href="contact.html" class="btn-volt reveal mt-8">Request a Quote</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
 <section class="border-t border-line bg-surface py-20 sm:py-28">
   <div class="shell">
-    <p class="marker reveal">05 &nbsp;/&nbsp; Support</p>
+    <p class="marker reveal">04 &nbsp;/&nbsp; Support</p>
     <h2 class="h-section reveal mt-5 max-w-3xl">After the sale.</h2>
     
     <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -1952,7 +1361,7 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
     </p>
     <div class="reveal mt-9 flex flex-wrap items-center justify-center gap-3">
       <a href="contact.html" data-cursor="Quote" class="btn-volt">Request a Quote</a>
-      <a href="product.html" class="btn-ghost">Browse Equipment</a>
+      <a href="categories.html" class="btn-ghost">Browse Equipment</a>
     </div>
   </div>
 </section>
@@ -2010,7 +1419,7 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
         <ul class="space-y-3">
           <li><a href="services.html" class="text-sm text-muted transition-colors hover:text-volt">Services</a></li>
           <li><a href="gallery.html" class="text-sm text-muted transition-colors hover:text-volt">Gallery</a></li>
-          <li><a href="product.html" class="text-sm text-muted transition-colors hover:text-volt">All Equipment</a></li>
+          <li><a href="categories.html" class="text-sm text-muted transition-colors hover:text-volt">All Equipment</a></li>
         </ul>
       </div>
       <div>
