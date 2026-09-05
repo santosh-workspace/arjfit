@@ -55,12 +55,12 @@ All defined in one place: `BIZ` at the top of the page generator, and mirrored i
 every page's footer, JSON-LD and contact block. These values are deliberately fake so
 nothing can be mistaken for real:
 
-| Field | Current placeholder | Needed |
+| Field | Status | Live value |
 |---|---|---|
-| Phone | `+91 00000 00000` | Real number (also updates `tel:` and WhatsApp links) |
-| Email | `hello@arjfit.example` | Real address |
-| Street | `[Street address to be confirmed]` | Full street address |
-| Area / City | `Baner, Pune` | **Assumed** — confirm the real location |
+| Phone | ✅ Done 2026-09-05 | `+91 77560 13456` (`tel:+917756013456`, WhatsApp `wa.me/917756013456`) |
+| Email | ✅ Done 2026-09-05 | `arjfitfitness@gmail.com` |
+| Street | ✅ Done 2026-09-05 | Ground Floor, Shop A-1, Sudha Enclave CHSL, Narangi Bypass Road, MMN Duggad Gujarati School |
+| Area / City | ✅ Done 2026-09-05 | Virar West, Vasai Virar, Palghar, Maharashtra – 401303 (was assumed `Baner, Pune`) |
 | Domain | `https://arjfit.example` | Real domain (canonical, OG, sitemap, robots) |
 | Opening hours | 05:30–22:00 weekdays | Confirm; appears on 3 pages **and in JSON-LD** |
 
@@ -159,7 +159,7 @@ policy that must be confirmed.
 
 ## Pre-launch checklist
 
-- [ ] Real address, phone, email, hours — everywhere including JSON-LD
+- [x] Real address, phone, email — everywhere including JSON-LD (2026-09-05; hours still to confirm)
 - [ ] Real domain in canonical, OG tags, `robots.txt`, `sitemap.xml`
 - [ ] Real photography replacing all 46 stock images
 - [ ] Real coaches, or delete the role slots
