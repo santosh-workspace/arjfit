@@ -131,37 +131,37 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
     
         <p class="lede reveal mt-5">The more you tell us here, the more useful the first reply is. No obligation.</p>
 
-                <form class="reveal mt-8 grid gap-5 sm:grid-cols-2" action="https://formsubmit.co/mailid.tom@gmail.com" method="post" novalidate>
+                <form class="reveal mt-8 grid gap-5 sm:grid-cols-2" action="https://formsubmit.co/mailid.tom@gmail.com" method="post">
         <input type="hidden" name="_subject" value="New Quote Request — ARJFIT Website">
         <input type="hidden" name="_template" value="table">
-        <input type="text" name="_honey" style="display:none">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
           <div class="sm:col-span-1">
             <label for="name" class="eyebrow-muted mb-2 block">Name</label>
-            <input id="name" name="name" type="text" required autocomplete="name"
+            <input id="name" name="name" maxlength="60" type="text" required autocomplete="name"
                    class="w-full rounded-xl border border-line bg-surface px-4 py-3.5 text-sm text-bone placeholder:text-muted/60 transition-colors focus:border-volt focus:outline-none"
                    placeholder="Your name">
           </div>
           <div class="sm:col-span-1">
             <label for="phone" class="eyebrow-muted mb-2 block">Phone</label>
-            <input id="phone" name="phone" type="tel" required autocomplete="tel"
+            <input id="phone" name="phone" maxlength="15" type="tel" required autocomplete="tel"
                    class="w-full rounded-xl border border-line bg-surface px-4 py-3.5 text-sm text-bone placeholder:text-muted/60 transition-colors focus:border-volt focus:outline-none"
                    placeholder="+91">
           </div>
           <div class="sm:col-span-2">
             <label for="email" class="eyebrow-muted mb-2 block">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email"
+            <input id="email" name="email" maxlength="100" type="email" autocomplete="email"
                    class="w-full rounded-xl border border-line bg-surface px-4 py-3.5 text-sm text-bone placeholder:text-muted/60 transition-colors focus:border-volt focus:outline-none"
                    placeholder="you@example.com">
           </div>
           <div class="sm:col-span-1">
             <label for="company" class="eyebrow-muted mb-2 block">Company / gym name</label>
-            <input id="company" name="company" type="text" autocomplete="organization"
+            <input id="company" name="company" maxlength="80" type="text" autocomplete="organization"
                    class="w-full rounded-xl border border-line bg-surface px-4 py-3.5 text-sm text-bone placeholder:text-muted/60 transition-colors focus:border-volt focus:outline-none"
                    placeholder="Optional">
           </div>
           <div class="sm:col-span-1">
             <label for="city" class="eyebrow-muted mb-2 block">City</label>
-            <input id="city" name="city" type="text" autocomplete="address-level2"
+            <input id="city" name="city" maxlength="80" type="text" autocomplete="address-level2"
                    class="w-full rounded-xl border border-line bg-surface px-4 py-3.5 text-sm text-bone placeholder:text-muted/60 transition-colors focus:border-volt focus:outline-none"
                    placeholder="Where is the site?">
           </div>
@@ -197,7 +197,7 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
           </div>
           <div class="sm:col-span-1">
             <label for="area" class="eyebrow-muted mb-2 block">Floor area (sq ft)</label>
-            <input id="area" name="area" type="text" inputmode="numeric"
+            <input id="area" name="area" maxlength="20" type="text" inputmode="numeric"
                    class="w-full rounded-xl border border-line bg-surface px-4 py-3.5 text-sm text-bone placeholder:text-muted/60 transition-colors focus:border-volt focus:outline-none"
                    placeholder="Approximate is fine">
           </div>
@@ -223,7 +223,7 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
           </div>
           <div class="sm:col-span-2">
             <label for="message" class="eyebrow-muted mb-2 block">Anything we should know?</label>
-            <textarea id="message" name="message" rows="4"
+            <textarea id="message" name="message" maxlength="2000" rows="4"
                       class="w-full rounded-xl border border-line bg-surface px-4 py-3.5 text-sm text-bone placeholder:text-muted/60 transition-colors focus:border-volt focus:outline-none"
                       placeholder="Equipment list, floor plan notes, ceiling height, power supply — anything useful."></textarea>
           </div>

@@ -736,10 +736,10 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
       <button type="button" data-enquire-close aria-label="Close enquiry form"
               class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-line text-xl leading-none text-bone transition-colors hover:border-volt hover:text-volt">&times;</button>
     </div>
-    <form class="mt-6 grid gap-4" action="https://formsubmit.co/mailid.tom@gmail.com" method="post" novalidate>
+    <form class="mt-6 grid gap-4" action="https://formsubmit.co/mailid.tom@gmail.com" method="post">
       <input type="hidden" name="_subject" value="New Enquiry — ARJFIT Website">
       <input type="hidden" name="_template" value="table">
-      <input type="text" name="_honey" style="display:none">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
       <div>
         <label for="eq-about" class="eyebrow-muted mb-2 block">Enquiring about</label>
         <input id="eq-about" name="about" type="text" readonly tabindex="-1" data-enquire-about
@@ -748,23 +748,23 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
       <div class="grid gap-4 sm:grid-cols-2">
         <div>
           <label for="eq-name" class="eyebrow-muted mb-2 block">Name</label>
-          <input id="eq-name" name="name" type="text" required autocomplete="name" placeholder="Your name"
+          <input id="eq-name" name="name" maxlength="60" type="text" required autocomplete="name" placeholder="Your name"
                  class="w-full rounded-xl border border-line bg-ink px-4 py-3.5 text-sm text-bone placeholder:text-muted/60 transition-colors focus:border-volt focus:outline-none">
         </div>
         <div>
           <label for="eq-phone" class="eyebrow-muted mb-2 block">Phone</label>
-          <input id="eq-phone" name="phone" type="tel" required autocomplete="tel" placeholder="+91"
+          <input id="eq-phone" name="phone" maxlength="15" type="tel" required autocomplete="tel" placeholder="+91"
                  class="w-full rounded-xl border border-line bg-ink px-4 py-3.5 text-sm text-bone placeholder:text-muted/60 transition-colors focus:border-volt focus:outline-none">
         </div>
       </div>
       <div>
         <label for="eq-email" class="eyebrow-muted mb-2 block">Email</label>
-        <input id="eq-email" name="email" type="email" autocomplete="email" placeholder="you@example.com"
+        <input id="eq-email" name="email" maxlength="100" type="email" autocomplete="email" placeholder="you@example.com"
                class="w-full rounded-xl border border-line bg-ink px-4 py-3.5 text-sm text-bone placeholder:text-muted/60 transition-colors focus:border-volt focus:outline-none">
       </div>
       <div>
         <label for="eq-message" class="eyebrow-muted mb-2 block">Message</label>
-        <textarea id="eq-message" name="message" rows="3" placeholder="Quantity, city, timeline — anything useful."
+        <textarea id="eq-message" name="message" maxlength="2000" rows="3" placeholder="Quantity, city, timeline — anything useful."
                   class="w-full rounded-xl border border-line bg-ink px-4 py-3.5 text-sm text-bone placeholder:text-muted/60 transition-colors focus:border-volt focus:outline-none"></textarea>
       </div>
       <div>

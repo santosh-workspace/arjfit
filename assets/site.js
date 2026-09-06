@@ -331,6 +331,101 @@
     });
   }
 
+  /* ---------- form validation + spam guards ---------- */
+  /* Native validation is enabled in markup; this adds stricter checks
+     (Indian mobile format, real-looking names, email shape) plus bot
+     traps (honeypot + minimum fill time). Applies to every FormSubmit
+     form: the contact quote form and the enquiry popups. */
+  var fvLoadedAt = Date.now();
+
+  function fvFail(input, msg) {
+    input.classList.add('field-invalid');
+    input.setAttribute('aria-invalid', 'true');
+    var p = document.createElement('p');
+    p.className = 'field-error';
+    p.textContent = msg;
+    input.insertAdjacentElement('afterend', p);
+    return false;
+  }
+
+  function fvName(v) {
+    v = v.trim();
+    if (v.length < 2) return 'Please enter your full name.';
+    if (v.length > 60) return 'Please keep your name under 60 characters.';
+    if (/[0-9@#$%^*_=+<>?/\\|~`]/.test(v)) return 'Name should contain letters only.';
+    return '';
+  }
+
+  function fvPhone(v) {
+    var d = v.replace(/[\s\-()]/g, '');
+    if (d.charAt(0) === '+') d = d.slice(1);
+    if (d.length === 12 && d.indexOf('91') === 0) d = d.slice(2);
+    else if (d.length === 11 && d.charAt(0) === '0') d = d.slice(1);
+    if (!/^[6-9]\d{9}$/.test(d)) return 'Enter a valid 10-digit Indian mobile number.';
+    if (/^(\d)\1{9}$/.test(d)) return 'That number looks invalid — please check it.';
+    return '';
+  }
+
+  function fvEmail(v, required) {
+    v = v.trim();
+    if (!v) return required ? 'Please enter your email address.' : '';
+    if (v.length > 100) return 'Please keep your email under 100 characters.';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) return 'Enter a valid email address.';
+    return '';
+  }
+
+  [].slice.call(document.querySelectorAll('form[action*="formsubmit.co"]')).forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      form.querySelectorAll('.field-error').forEach(function (n) { n.remove(); });
+      form.querySelectorAll('.field-invalid').forEach(function (n) {
+        n.classList.remove('field-invalid');
+        n.removeAttribute('aria-invalid');
+      });
+
+      // Bot traps: filled honeypot or inhumanly fast submit. Block silently.
+      var honey = form.querySelector('[name="_honey"]');
+      if ((honey && honey.value) || (Date.now() - fvLoadedAt < 2500)) {
+        e.preventDefault();
+        return;
+      }
+
+      var ok = true, firstBad = null;
+      var check = function (name, msg) {
+        var input = form.querySelector('[name="' + name + '"]');
+        if (!input || !msg) return;
+        if (ok) firstBad = firstBad || input;
+        ok = fvFail(input, msg) && ok;
+      };
+
+      var nameEl = form.querySelector('[name="name"]');
+      if (nameEl) check('name', fvName(nameEl.value));
+      var phoneEl = form.querySelector('[name="phone"]');
+      if (phoneEl) check('phone', fvPhone(phoneEl.value));
+      var emailEl = form.querySelector('[name="email"]');
+      if (emailEl) check('email', fvEmail(emailEl.value, emailEl.hasAttribute('required')));
+      var cityEl = form.querySelector('[name="city"]');
+      if (cityEl && cityEl.value.trim().length > 80)
+        check('city', 'Please keep the city under 80 characters.');
+      var msgEl = form.querySelector('[name="message"]');
+      if (msgEl && msgEl.value.length > 2000)
+        check('message', 'Please keep your message under 2000 characters.');
+
+      if (!ok) {
+        e.preventDefault();
+        if (firstBad) firstBad.focus();
+        return;
+      }
+
+      // Passed: prevent accidental double submits.
+      var btn = form.querySelector('[type="submit"]');
+      if (btn) {
+        btn.disabled = true;
+        btn.style.opacity = '0.6';
+        setTimeout(function () { btn.disabled = false; btn.style.opacity = ''; }, 8000);
+      }
+    });
+  });
+
   /* --- ungrouped reveals (anything the grid stagger did not claim) --- */
   nodes.forEach(function (node) {
     if (node.dataset.staggered) return;
