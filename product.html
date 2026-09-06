@@ -108,13 +108,45 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
 
 
 <section class="relative flex min-h-[62vh] items-end overflow-hidden pt-[72px]">
-  <div class="media media-scrim absolute inset-0 rounded-none">
-    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w, https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&amp;fit=crop&amp;w=1920&amp;q=72 1920w" sizes="100vw" alt="Commercial gym equipment on a training floor" width="1280" height="853" loading="eager" fetchpriority="high" decoding="async" data-placeholder="image" class="scale-105 opacity-45">
+  <div class="media media-scrim absolute inset-0 rounded-none" data-carousel data-interval="5000"
+       role="region" aria-roledescription="carousel" aria-label="ARJFIT equipment series">
+    <div class="hero-slide is-active" data-slide role="group" aria-roledescription="slide" aria-label="1 of 5">
+      <img src="assets/images/Ascent.jpg" alt="Ascent Series equipment" width="1254" height="1254" loading="eager" fetchpriority="high" decoding="async" class="scale-110 opacity-55">
+    </div>
+    <div class="hero-slide" data-slide role="group" aria-roledescription="slide" aria-label="2 of 5">
+      <img src="assets/images/Evolve.jpg" alt="Evolve Series equipment" width="1254" height="1254" loading="lazy" decoding="async" class="scale-110 opacity-55">
+    </div>
+    <div class="hero-slide" data-slide role="group" aria-roledescription="slide" aria-label="3 of 5">
+      <img src="assets/images/Home%20Pro%20200.jpg" alt="Home Pro 200 home gym setup" width="1254" height="1254" loading="lazy" decoding="async" class="scale-110 opacity-55">
+    </div>
+    <div class="hero-slide" data-slide role="group" aria-roledescription="slide" aria-label="4 of 5">
+      <img src="assets/images/Home%20Pro%20300.jpg" alt="Home Pro 300 home gym setup" width="1254" height="1254" loading="lazy" decoding="async" class="scale-110 opacity-55">
+    </div>
+    <div class="hero-slide" data-slide role="group" aria-roledescription="slide" aria-label="5 of 5">
+      <img src="assets/images/Prestige.jpg" alt="Prestige Series equipment" width="1254" height="1254" loading="lazy" decoding="async" class="scale-110 opacity-55">
+    </div>
   </div>
   <div class="shell relative z-10 pb-14 pt-20 sm:pb-20">
     <p class="marker-hero reveal">01 &nbsp;/&nbsp; Our Series</p>
     <h1 class="h-display reveal mt-6 max-w-4xl">Equipment built<br>for commercial floors.</h1>
     <p class="lede-hero reveal mt-6">Cardio, strength, multi stations and free weights. Browse the range and request a quote — pricing depends on specification and volume.</p>
+  </div>
+
+  <!-- Slide controls -->
+  <div class="shell absolute inset-x-0 bottom-8 z-10">
+    <div class="flex items-center justify-between gap-6">
+      <div class="flex gap-2" role="tablist" aria-label="Choose hero image">
+        <button type="button" data-dot role="tab" class="hero-dot is-active" aria-selected="true" aria-label="Show image 1: Ascent Series equipment"></button>
+        <button type="button" data-dot role="tab" class="hero-dot" aria-selected="false" aria-label="Show image 2: Evolve Series equipment"></button>
+        <button type="button" data-dot role="tab" class="hero-dot" aria-selected="false" aria-label="Show image 3: Home Pro 200 home gym setup"></button>
+        <button type="button" data-dot role="tab" class="hero-dot" aria-selected="false" aria-label="Show image 4: Home Pro 300 home gym setup"></button>
+        <button type="button" data-dot role="tab" class="hero-dot" aria-selected="false" aria-label="Show image 5: Prestige Series equipment"></button>
+      </div>
+      <div class="hidden items-center gap-3 text-[0.65rem] uppercase tracking-eyebrow text-muted lg:flex">
+        <span>Scroll</span>
+        <span class="block h-10 w-px bg-gradient-to-b from-volt to-transparent"></span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -183,7 +215,7 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
 
         <div class="mt-8 grid grid-cols-2 gap-3">
           <a href="#plan-ascent" class="btn-ghost w-full !px-2">Breakdown</a>
-          <a href="contact.html?enquiry=Ascent%20Series" class="btn-volt w-full !px-2">Enquire</a>
+          <a href="contact.html?enquiry=Ascent%20Series" data-enquire="Ascent Series" class="btn-volt w-full !px-2">Enquire</a>
         </div>
       </article>
       <article class="reveal relative flex flex-col rounded-2xl border border-line bg-surface p-8">
@@ -204,7 +236,7 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
 
         <p class="mt-6 flex items-baseline gap-1.5">
           <span class="text-lg text-muted">&#8377;</span>
-          <span class="font-display text-4xl leading-none text-bone">9,00,000*</span>
+          <span class="font-display text-4xl leading-none text-bone">9,00,000</span>
         </p>
         <p class="mt-2 text-xs uppercase tracking-eyebrow text-muted">Including GST &middot; Transport extra</p>
 
@@ -230,7 +262,7 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
 
         <div class="mt-8 grid grid-cols-2 gap-3">
           <a href="#plan-evolve" class="btn-ghost w-full !px-2">Breakdown</a>
-          <a href="contact.html?enquiry=Evolve%20Series" class="btn-volt w-full !px-2">Enquire</a>
+          <a href="contact.html?enquiry=Evolve%20Series" data-enquire="Evolve Series" class="btn-volt w-full !px-2">Enquire</a>
         </div>
       </article>
       
@@ -272,15 +304,11 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
             <svg class="mt-1 shrink-0 text-volt" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M4 12l6 6L20 6"/></svg>
             <span>Marketing support, interior layout design &amp; free gym software for 1 year</span>
           </li>
-          <li class="flex gap-3 text-sm text-muted">
-            <svg class="mt-1 shrink-0 text-volt" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M4 12l6 6L20 6"/></svg>
-            <span>After sales support &middot; order on <a href="tel:+917756013456" class="text-bone underline decoration-volt/60 underline-offset-4">7756013456</a></span>
-          </li>
         </ul>
 
         <div class="mt-8 grid grid-cols-2 gap-3">
           <a href="#plan-prestige" class="btn-ghost w-full !px-2">Breakdown</a>
-          <a href="contact.html?enquiry=Prestige%20Series" class="btn-volt w-full !px-2">Enquire</a>
+          <a href="contact.html?enquiry=Prestige%20Series" data-enquire="Prestige Series" class="btn-volt w-full !px-2">Enquire</a>
         </div>
       </article>
 <article class="reveal relative flex flex-col gap-8 overflow-hidden rounded-2xl border border-line bg-surface p-8 sm:col-span-2 sm:p-10 lg:flex-row lg:items-center xl:col-span-3">
@@ -295,7 +323,7 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
             <p class="mt-1 text-xs text-muted">7 pieces &middot; &#8377;2,50,000</p>
             <div class="mt-5 grid grid-cols-2 gap-3">
               <a href="#plan-pro200" class="btn-ghost w-full !px-2">View</a>
-              <a href="contact.html?enquiry=Pro%20200" class="btn-volt w-full !px-2">Enquire</a>
+              <a href="contact.html?enquiry=Pro%20200" data-enquire="Pro 200" class="btn-volt w-full !px-2">Enquire</a>
             </div>
           </div>
           <div class="flex flex-col rounded-2xl border border-volt/60 bg-ink p-6">
@@ -303,7 +331,7 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
             <p class="mt-1 text-xs text-muted">9 pieces &middot; &#8377;3,50,000</p>
             <div class="mt-5 grid grid-cols-2 gap-3">
               <a href="#plan-pro300" class="btn-ghost w-full !px-2">View</a>
-              <a href="contact.html?enquiry=Pro%20300" class="btn-volt w-full !px-2">Enquire</a>
+              <a href="contact.html?enquiry=Pro%20300" data-enquire="Pro 300" class="btn-volt w-full !px-2">Enquire</a>
             </div>
           </div>
         </div>
@@ -553,7 +581,7 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
           </div>
         </dl>
 
-        <a href="contact.html?enquiry=Ascent%20Series" class="btn-volt reveal w-full">Enquire About Ascent Series</a>
+        <a href="contact.html?enquiry=Ascent%20Series" data-enquire="Ascent Series" class="btn-volt reveal w-full">Enquire About Ascent Series</a>
       </div>
     </div>
   </div>
@@ -568,7 +596,7 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
       </div>
       <p class="reveal flex items-baseline gap-1.5">
         <span class="text-base text-muted">&#8377;</span>
-        <span class="font-display text-3xl leading-none text-volt">9,00,000*</span>
+        <span class="font-display text-3xl leading-none text-volt">9,00,000</span>
         <span class="text-xs uppercase tracking-eyebrow text-muted">incl. GST</span>
       </p>
     </div>
@@ -775,7 +803,7 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
           </div>
         </dl>
 
-        <a href="contact.html?enquiry=Evolve%20Series" class="btn-volt reveal w-full">Enquire About Evolve Series</a>
+        <a href="contact.html?enquiry=Evolve%20Series" data-enquire="Evolve Series" class="btn-volt reveal w-full">Enquire About Evolve Series</a>
       </div>
     </div>
   </div>
@@ -872,7 +900,7 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
           </div>
         </dl>
 
-        <a href="contact.html?enquiry=Pro%20200" class="btn-volt reveal w-full">Enquire About Pro 200</a>
+        <a href="contact.html?enquiry=Pro%20200" data-enquire="Pro 200" class="btn-volt reveal w-full">Enquire About Pro 200</a>
       </div>
     </div>
   </div>
@@ -979,7 +1007,7 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
           </div>
         </dl>
 
-        <a href="contact.html?enquiry=Pro%20300" class="btn-volt reveal w-full">Enquire About Pro 300</a>
+        <a href="contact.html?enquiry=Pro%20300" data-enquire="Pro 300" class="btn-volt reveal w-full">Enquire About Pro 300</a>
       </div>
     </div>
   </div>
@@ -1243,7 +1271,7 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
           </div>
         </dl>
 
-        <a href="contact.html?enquiry=Prestige%20Series" class="btn-volt reveal w-full">Enquire About Prestige Series</a>
+        <a href="contact.html?enquiry=Prestige%20Series" data-enquire="Prestige Series" class="btn-volt reveal w-full">Enquire About Prestige Series</a>
       </div>
     </div>
   </div>
@@ -1296,6 +1324,54 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
     </div>
   </div>
 </section>
+
+<!-- Enquiry popup. Opens from any [data-enquire] link; falls back to contact.html without JS. -->
+<div data-enquire-modal class="fixed inset-0 z-[70] hidden items-end justify-center p-4 sm:items-center" role="dialog" aria-modal="true" aria-labelledby="enquire-title">
+  <div class="absolute inset-0 bg-ink/80 backdrop-blur-sm" data-enquire-close aria-hidden="true"></div>
+  <div class="relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl border border-line bg-surface p-6 sm:p-8">
+    <div class="flex items-start justify-between gap-4">
+      <div>
+        <p class="eyebrow">Request a quote</p>
+        <h3 id="enquire-title" class="h-card mt-2">Enquire now.</h3>
+      </div>
+      <button type="button" data-enquire-close aria-label="Close enquiry form"
+              class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-line text-xl leading-none text-bone transition-colors hover:border-volt hover:text-volt">&times;</button>
+    </div>
+    <form class="mt-6 grid gap-4" action="#" method="post" novalidate>
+      <div>
+        <label for="eq-about" class="eyebrow-muted mb-2 block">Enquiring about</label>
+        <input id="eq-about" name="about" type="text" readonly tabindex="-1" data-enquire-about
+               class="w-full rounded-xl border border-line bg-surface2 px-4 py-3.5 text-sm text-bone focus:outline-none">
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div>
+          <label for="eq-name" class="eyebrow-muted mb-2 block">Name</label>
+          <input id="eq-name" name="name" type="text" required autocomplete="name" placeholder="Your name"
+                 class="w-full rounded-xl border border-line bg-ink px-4 py-3.5 text-sm text-bone placeholder:text-muted/60 transition-colors focus:border-volt focus:outline-none">
+        </div>
+        <div>
+          <label for="eq-phone" class="eyebrow-muted mb-2 block">Phone</label>
+          <input id="eq-phone" name="phone" type="tel" required autocomplete="tel" placeholder="+91"
+                 class="w-full rounded-xl border border-line bg-ink px-4 py-3.5 text-sm text-bone placeholder:text-muted/60 transition-colors focus:border-volt focus:outline-none">
+        </div>
+      </div>
+      <div>
+        <label for="eq-email" class="eyebrow-muted mb-2 block">Email</label>
+        <input id="eq-email" name="email" type="email" autocomplete="email" placeholder="you@example.com"
+               class="w-full rounded-xl border border-line bg-ink px-4 py-3.5 text-sm text-bone placeholder:text-muted/60 transition-colors focus:border-volt focus:outline-none">
+      </div>
+      <div>
+        <label for="eq-message" class="eyebrow-muted mb-2 block">Message</label>
+        <textarea id="eq-message" name="message" rows="3" placeholder="Quantity, city, timeline — anything useful."
+                  class="w-full rounded-xl border border-line bg-ink px-4 py-3.5 text-sm text-bone placeholder:text-muted/60 transition-colors focus:border-volt focus:outline-none"></textarea>
+      </div>
+      <div>
+        <button type="submit" class="btn-volt w-full">Send Enquiry</button>
+        <p class="mt-4 text-xs text-muted">We reply within one working day. Your details are never shared. Prefer to talk? Call <a href="tel:+917756013456" class="text-bone underline decoration-volt/60 underline-offset-4">7756013456</a>.</p>
+      </div>
+    </form>
+  </div>
+</div>
 
 </main>
 <!-- Persistent call / WhatsApp rail. Sits above the footer on every page. -->

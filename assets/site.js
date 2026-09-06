@@ -173,6 +173,7 @@
     var dots = [].slice.call(document.querySelectorAll('[data-dot]'));
     var index = 0;
     var timer = null;
+    var interval = parseInt(carousel.getAttribute('data-interval'), 10) || 6000;
 
     var go = function (i) {
       index = (i + slides.length) % slides.length;
@@ -186,7 +187,7 @@
     var start = function () {
       if (reduced || slides.length < 2) return;
       stop();
-      timer = setInterval(function () { go(index + 1); }, 6000);
+      timer = setInterval(function () { go(index + 1); }, interval);
     };
     function stop() { if (timer) { clearInterval(timer); timer = null; } }
 
@@ -295,6 +296,40 @@
     });
     kids.forEach(function (k) { k.dataset.staggered = '1'; });
   });
+
+  /* ---------- enquiry popup ---------- */
+  /* Any [data-enquire] link opens the modal instead of navigating. The href
+     stays as a no-JS fallback to the contact page. */
+  var eqModal = document.querySelector('[data-enquire-modal]');
+  if (eqModal) {
+    var eqAbout = eqModal.querySelector('[data-enquire-about]');
+    var eqLastFocus = null;
+    var eqOpen = function (name) {
+      eqLastFocus = document.activeElement;
+      if (eqAbout) eqAbout.value = name || '';
+      eqModal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      var first = eqModal.querySelector('input[name="name"]');
+      if (first) first.focus();
+    };
+    var eqClose = function () {
+      eqModal.classList.add('hidden');
+      document.body.style.overflow = '';
+      if (eqLastFocus && eqLastFocus.focus) eqLastFocus.focus();
+    };
+    document.addEventListener('click', function (e) {
+      var t = e.target.closest('[data-enquire]');
+      if (t) {
+        e.preventDefault();
+        eqOpen(t.getAttribute('data-enquire'));
+        return;
+      }
+      if (e.target.closest('[data-enquire-close]') || e.target === eqModal) eqClose();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !eqModal.classList.contains('hidden')) eqClose();
+    });
+  }
 
   /* --- ungrouped reveals (anything the grid stagger did not claim) --- */
   nodes.forEach(function (node) {
