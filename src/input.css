@@ -30,18 +30,10 @@
 }
 
 /* ============================================================
-   TYPE — Ethnocentric (display) / Archivo (body)
-   Ethnocentric is self-hosted in assets/fonts (free font, cdnfonts).
+   TYPE — Archivo Black / Archivo (locked in)
    ============================================================ */
-@font-face {
-  font-family: 'Ethnocentric Rg';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('fonts/ethnocentric-rg.woff') format('woff');
-}
 :root {
-  --f-display: 'Ethnocentric Rg', 'Archivo Black', Impact, sans-serif;
+  --f-display: 'Archivo Black', Impact, sans-serif;
   --f-body: 'Archivo', system-ui, sans-serif;
 }
 
