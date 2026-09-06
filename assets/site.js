@@ -10,11 +10,23 @@
   var toggle = document.querySelector('[data-nav-toggle]');
   var drawer = document.querySelector('[data-nav-drawer]');
 
+  var lastY = 0;
+
   function setNav(open) {
     if (!drawer || !toggle) return;
     drawer.classList.toggle('translate-x-full', !open);
     toggle.setAttribute('aria-expanded', String(open));
+    /* Lock both scrollers so the page behind can't shift on mobile
+       (body-only locking leaks on iOS, showing a vertical jump/gap). */
+    document.documentElement.style.overflow = open ? 'hidden' : '';
     document.body.style.overflow = open ? 'hidden' : '';
+    if (open) {
+      lastY = window.scrollY || 0;
+      drawer.style.overscrollBehavior = 'contain';
+      drawer.scrollTop = 0;
+    } else if (Math.abs((window.scrollY || 0) - lastY) > 2) {
+      window.scrollTo(0, lastY);
+    }
   }
 
   if (toggle && drawer) {
@@ -308,12 +320,14 @@
       eqLastFocus = document.activeElement;
       if (eqAbout) eqAbout.value = name || '';
       eqModal.classList.remove('hidden');
+      document.documentElement.style.overflow = 'hidden';
       document.body.style.overflow = 'hidden';
       var first = eqModal.querySelector('input[name="name"]');
       if (first) first.focus();
     };
     var eqClose = function () {
       eqModal.classList.add('hidden');
+      document.documentElement.style.overflow = '';
       document.body.style.overflow = '';
       if (eqLastFocus && eqLastFocus.focus) eqLastFocus.focus();
     };
