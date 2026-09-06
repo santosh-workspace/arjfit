@@ -106,6 +106,7 @@
   .h-display { @apply font-display uppercase text-[clamp(2.75rem,8vw,7.5rem)]; }
   .h-section { @apply font-display uppercase text-[clamp(2rem,5vw,4rem)]; }
   .h-card    { @apply font-display uppercase text-[clamp(1.25rem,2vw,1.75rem)]; }
+  .h-section-md { @apply font-display uppercase text-[clamp(1.75rem,3.5vw,2.75rem)]; }
   .lede      { @apply text-base sm:text-lg leading-relaxed text-muted max-w-2xl; }
   /* Copy over a photograph cannot rely on a mid-tone grey — a bright highlight
      in the image destroys the contrast. Near-white plus a soft shadow holds up
