@@ -58,7 +58,7 @@ nothing can be mistaken for real:
 | Field | Status | Live value |
 |---|---|---|
 | Phone | ✅ Done 2026-09-05 | `+91 77560 13456` (`tel:+917756013456`, WhatsApp `wa.me/917756013456`) |
-| Email | ✅ Done 2026-09-05 | `arjfitfitness@gmail.com` |
+| Email | ✅ Done 2026-09-05 | `mailid.tom@gmail.com` |
 | Street | ✅ Done 2026-09-05 | Ground Floor, Shop A-1, Sudha Enclave CHSL, Narangi Bypass Road, MMN Duggad Gujarati School |
 | Area / City | ✅ Done 2026-09-05 | Virar West, Vasai Virar, Palghar, Maharashtra – 401303 (was assumed `Baner, Pune`) |
 | Domain | `https://arjfit.example` | Real domain (canonical, OG, sitemap, robots) |
@@ -142,7 +142,7 @@ A fabricated star rating is a business claim, not decoration.
 
 | Item | Where | Action |
 |---|---|---|
-| Enquiry form | `contact.html` | `action="#"` → Formspree / Netlify Forms / CRM |
+| Enquiry form | `contact.html` + enquiry popup on 5 pages | ✅ Wired 2026-09-05 via FormSubmit to `mailid.tom@gmail.com` — ACTIVATION REQUIRED (see below) |
 | Map | `contact.html` | Dashed box → Google Maps iframe |
 | Booking | `schedule.html` | No system connected |
 | Social links | footer, all pages | 25 `href="#"` → real Instagram / Facebook / WhatsApp |
