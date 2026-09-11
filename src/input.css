@@ -246,7 +246,7 @@
   .hero-slide.is-active { @apply opacity-100; }
 
   /* Dots: a 28px tap target around a 10px circle, like the reference. */
-  .hero-dot { @apply relative inline-flex h-7 w-7 items-center justify-center; }
+  .hero-dot { @apply relative inline-flex h-11 w-11 items-center justify-center; }
   .hero-dot::before {
     content: '';
     @apply block h-2.5 w-2.5 rounded-full border border-muted transition-colors duration-300;
@@ -256,7 +256,7 @@
 
   /* Prev / next / pause in the control bar under the slides. */
   .slide-ctrl {
-    @apply inline-flex h-10 w-10 items-center justify-center rounded-full text-bone
+    @apply inline-flex h-11 w-11 items-center justify-center rounded-full text-bone
            transition-colors duration-200 hover:bg-surface2 hover:text-volt;
   }
   [data-pause] .icon-play { display: none; }
