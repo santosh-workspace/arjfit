@@ -176,45 +176,84 @@
     });
   }
 
-  /* ---------- hero carousel ---------- */
-  /* Crossfades the hero imagery. Auto-advance is suppressed entirely under
-     reduced-motion; the first slide simply stays put. */
+  /* ---------- hero slideshow ---------- */
+  /* Crossfading banner slideshow with a control bar underneath: prev/next,
+     dots and pause. Inactive slides are inert, so their links can't be
+     tabbed to while invisible. Autoplay stops on hover, on focus and when the
+     tab is hidden; under reduced motion it starts paused until Play is pressed. */
   var carousel = document.querySelector('[data-carousel]');
   if (carousel) {
     var slides = [].slice.call(carousel.querySelectorAll('[data-slide]'));
-    var dots = [].slice.call(document.querySelectorAll('[data-dot]'));
-    var index = 0;
-    var timer = null;
+    var dots = [].slice.call(carousel.querySelectorAll('[data-dot]'));
+    var prevBtn = carousel.querySelector('[data-prev]');
+    var nextBtn = carousel.querySelector('[data-next]');
+    var pauseBtn = carousel.querySelector('[data-pause]');
+    var stage = carousel.querySelector('[data-slides]') || carousel;
     var interval = parseInt(carousel.getAttribute('data-interval'), 10) || 6000;
+    var index = 0, timer = null, hoverIn = false, focusIn = false;
+    var paused = reduced;
 
     var go = function (i) {
       index = (i + slides.length) % slides.length;
-      slides.forEach(function (s, n) { s.classList.toggle('is-active', n === index); });
+      slides.forEach(function (s, n) {
+        var on = n === index;
+        s.classList.toggle('is-active', on);
+        s.setAttribute('aria-hidden', String(!on));
+        if (on) s.removeAttribute('inert'); else s.setAttribute('inert', '');
+      });
       dots.forEach(function (d, n) {
-        d.classList.toggle('is-active', n === index);
-        d.setAttribute('aria-selected', String(n === index));
+        var on = n === index;
+        d.classList.toggle('is-active', on);
+        if (on) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current');
       });
     };
-
+    var stop = function () { if (timer) { clearInterval(timer); timer = null; } };
     var start = function () {
-      if (reduced || slides.length < 2) return;
       stop();
+      if (paused || hoverIn || focusIn || document.hidden || slides.length < 2) return;
       timer = setInterval(function () { go(index + 1); }, interval);
     };
-    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    var setPaused = function (p) {
+      paused = p;
+      if (pauseBtn) {
+        pauseBtn.setAttribute('aria-pressed', String(p));
+        pauseBtn.setAttribute('aria-label', p ? 'Play slideshow' : 'Pause slideshow');
+        pauseBtn.classList.toggle('is-paused', p);
+      }
+      start();
+    };
+    // Manual navigation restarts the countdown so the next slide isn't skipped.
+    var nav = function (i) { go(i); start(); };
 
-    dots.forEach(function (d, n) {
-      d.addEventListener('click', function () { go(n); start(); });
-    });
+    if (prevBtn) prevBtn.addEventListener('click', function () { nav(index - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { nav(index + 1); });
+    if (pauseBtn) pauseBtn.addEventListener('click', function () { setPaused(!paused); });
+    dots.forEach(function (d, n) { d.addEventListener('click', function () { nav(n); }); });
 
-    carousel.addEventListener('mouseenter', stop);
-    carousel.addEventListener('mouseleave', start);
-    document.addEventListener('visibilitychange', function () {
-      document.hidden ? stop() : start();
+    carousel.addEventListener('mouseenter', function () { hoverIn = true; stop(); });
+    carousel.addEventListener('mouseleave', function () { hoverIn = false; start(); });
+    carousel.addEventListener('focusin', function () { focusIn = true; stop(); });
+    carousel.addEventListener('focusout', function (e) {
+      if (!carousel.contains(e.relatedTarget)) { focusIn = false; start(); }
     });
+    carousel.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') { e.preventDefault(); nav(index - 1); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); nav(index + 1); }
+    });
+    document.addEventListener('visibilitychange', start);
+
+    // Swipe on touch screens.
+    var x0 = null;
+    stage.addEventListener('touchstart', function (e) { x0 = e.changedTouches[0].clientX; }, { passive: true });
+    stage.addEventListener('touchend', function (e) {
+      if (x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0;
+      x0 = null;
+      if (Math.abs(dx) > 40) nav(index + (dx < 0 ? 1 : -1));
+    }, { passive: true });
 
     go(0);
-    start();
+    setPaused(paused);
   }
 
   /* ---------- product rail (featured equipment) ---------- */

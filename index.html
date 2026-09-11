@@ -108,32 +108,99 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
 </div>
 <main id="main">
 
-<!-- ============ HERO ============ -->
-<section class="relative flex min-h-[100svh] flex-col overflow-hidden lg:flex-row lg:items-end">
-  <div class="media media-scrim relative w-full rounded-none lg:absolute lg:inset-0">
-    <img src="assets/images/hero-1600.jpg" alt="ARJFIT commercial gym floor" width="1600" height="800" loading="eager" fetchpriority="high" decoding="async" class="opacity-75">
-  </div>
-
-  <div class="shell relative z-10 pb-16 pt-10 sm:pb-24 lg:pt-32" style="margin-top:auto">
-    <h1 class="sr-only">ARJFIT — gym equipment manufacturer, supplier and service provider in Mumbai</h1>
-    <p class="marker-hero reveal" data-placeholder="copy">Manufacturer &nbsp;&middot;&nbsp; Supplier &nbsp;&middot;&nbsp; Service</p>
-    <p class="lede-hero reveal mt-7 text-lg">
-      Commercial gym equipment, manufactured and supplied across India — with layout
-      design, installation and maintenance handled by the same team that builds it.
-    </p>
-    <div class="reveal mt-9 flex flex-wrap gap-3">
-      <a href="contact.html" class="btn-volt" data-cursor="Quote">Request a Quote</a>
-      <a href="product.html" class="btn-ghost">Browse Equipment</a>
-      
+<!-- ============ HERO SLIDESHOW ============ -->
+<section data-carousel data-interval="6000" aria-roledescription="carousel" aria-label="ARJFIT highlights" class="pt-[72px]">
+  <div data-slides class="relative h-[620px] overflow-hidden sm:h-[540px] lg:h-[min(78svh,680px)]">
+    <div data-slide class="hero-slide is-active" role="group" aria-roledescription="slide" aria-label="1 of 5">
+      <img src="assets/images/hero-1600.jpg" alt="ARJFIT commercial gym floor" width="1473" height="779" loading="eager" fetchpriority="high" decoding="async" class="absolute inset-0 h-full w-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/10 lg:bg-gradient-to-r lg:from-black/85 lg:via-black/45 lg:to-transparent" aria-hidden="true"></div>
+      <div class="shell relative flex h-full flex-col justify-end pb-12 lg:justify-center lg:pb-0">
+        <div class="max-w-2xl text-white">
+          <p class="marker-hero" data-placeholder="copy">Manufacturer &nbsp;&middot;&nbsp; Supplier &nbsp;&middot;&nbsp; Service</p>
+          <h1 class="h-section mt-5">We build the floor<br>your gym runs on.</h1>
+          <p class="lede-hero mt-5">Commercial gym equipment, manufactured and supplied across India — with layout design, installation and maintenance handled by the same team that builds it.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+          <a href="contact.html" class="btn-volt" data-cursor="Quote">Request a Quote</a>
+          <a href="product.html" class="btn border border-white/45 text-white hover:border-volt hover:text-volt">Browse Equipment</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div data-slide class="hero-slide bg-white" role="group" aria-roledescription="slide" aria-label="2 of 5">
+      <div class="shell grid h-full content-center gap-8 py-10 lg:grid-cols-[1fr_1.15fr] lg:items-center lg:gap-10 lg:py-0">
+        <div class="max-w-xl">
+          <p class="text-[0.68rem] font-semibold uppercase tracking-eyebrow text-[#DA1C29]">ARJC cardio series</p>
+          <h2 class="h-section mt-4 text-[#14151A]">Commercial cardio,<br>built to run all day.</h2>
+          <p class="mt-4 text-base leading-relaxed text-[#4B4F58] sm:text-lg">Treadmills, air bikes, ellipticals and more — twelve models, each with full specifications.</p>
+          <a href="cardio.html" class="btn-volt mt-7">Explore Cardio</a>
+        </div>
+        <div class="grid grid-cols-3 items-end gap-3 sm:gap-5">
+          <img src="assets/images/Treadmill%20(Model%20No-%20ARJC108).jpeg" alt="ARJFIT Treadmill ARJC108" width="643" height="623" loading="lazy" decoding="async" class="w-full object-contain">
+          <img src="assets/images/Air%20Bike%20Model%20No-%20ARJC106.jpeg" alt="ARJFIT Air Bike ARJC106" width="664" height="687" loading="lazy" decoding="async" class="w-full object-contain">
+          <img src="assets/images/Elliptical%20Cross%20Trainer%20(Model%20No-ARJC102).jpeg" alt="ARJFIT Elliptical Cross Trainer ARJC102" width="650" height="705" loading="lazy" decoding="async" class="w-full object-contain">
+        </div>
+      </div>
+    </div>
+    <div data-slide class="hero-slide bg-[#0B0B0D]" role="group" aria-roledescription="slide" aria-label="3 of 5">
+      <img src="assets/images/platloaded-hero.jpg" alt="ARJFIT plate-loaded strength station" width="960" height="1440" loading="lazy" decoding="async"
+           class="absolute inset-y-0 right-0 h-full w-full object-cover sm:w-3/5 lg:w-1/2">
+      <div class="absolute inset-0 bg-gradient-to-t from-[#0B0B0D] via-[#0B0B0D]/70 to-transparent sm:bg-gradient-to-r sm:from-[#0B0B0D] sm:via-[#0B0B0D]/80 sm:to-transparent" aria-hidden="true"></div>
+      <div class="shell relative flex h-full flex-col justify-end pb-12 sm:justify-center sm:pb-0">
+        <div class="max-w-xl text-white">
+          <p class="eyebrow">Strength series</p>
+          <h2 class="h-section mt-4">Plate-loaded strength,<br>fabricated in-house.</h2>
+          <p class="lede-hero mt-5">Chest press, leg press, hack squat and more — built on commercial-gauge steel.</p>
+          <a href="strength.html" class="btn-volt mt-7">Explore Strength</a>
+        </div>
+      </div>
+    </div>
+    <div data-slide class="hero-slide" role="group" aria-roledescription="slide" aria-label="4 of 5">
+      <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&amp;fit=crop&amp;w=1600&amp;q=72" alt="Power rack, bench and free weights on a commercial floor" width="1600" height="1067" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/10 lg:bg-gradient-to-r lg:from-black/85 lg:via-black/45 lg:to-transparent" aria-hidden="true"></div>
+      <div class="shell relative flex h-full flex-col justify-end pb-12 lg:justify-center lg:pb-0">
+        <div class="max-w-2xl text-white">
+          <p class="eyebrow">Complete gym setups</p>
+          <h2 class="h-section mt-5">From a home gym<br>to a full commercial floor.</h2>
+          <p class="lede-hero mt-5">Five setup plans — Pro 200, Pro 300, Evolve, Ascent and Prestige — each planned around your space.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+          <a href="product.html" class="btn-volt">See Setup Plans</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div data-slide class="hero-slide" role="group" aria-roledescription="slide" aria-label="5 of 5">
+      <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&amp;fit=crop&amp;w=1600&amp;q=72" alt="Technician welding a machine frame" width="1600" height="1067" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/10 lg:bg-gradient-to-r lg:from-black/85 lg:via-black/45 lg:to-transparent" aria-hidden="true"></div>
+      <div class="shell relative flex h-full flex-col justify-end pb-12 lg:justify-center lg:pb-0">
+        <div class="max-w-2xl text-white">
+          <p class="eyebrow">Service &amp; AMC</p>
+          <h2 class="h-section mt-5">Installation, AMC<br>and repairs.</h2>
+          <p class="lede-hero mt-5">Annual maintenance contracts and breakdown repair for commercial machines, handled by our own technicians.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+          <a href="services.html" class="btn-volt">Our Services</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="shell absolute inset-x-0 bottom-8 z-10">
-    <div class="flex items-center justify-end gap-6">
-      <div class="hidden items-center gap-3 text-[0.65rem] uppercase tracking-eyebrow text-muted lg:flex">
-        <span>Scroll</span>
-        <span class="block h-10 w-px bg-gradient-to-b from-volt to-transparent"></span>
+  <!-- control bar under the slides: prev · dots · next | pause -->
+  <div class="border-b border-line bg-surface">
+    <div class="flex h-14 items-center justify-center gap-2 sm:gap-3">
+      <button type="button" data-prev class="slide-ctrl" aria-label="Previous slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="flex items-center">
+        <button type="button" data-dot class="hero-dot is-active" aria-label="Show slide 1: We build the floor your gym runs on" aria-current="true"></button>
+        <button type="button" data-dot class="hero-dot" aria-label="Show slide 2: Commercial cardio"></button>
+        <button type="button" data-dot class="hero-dot" aria-label="Show slide 3: Plate-loaded strength"></button>
+        <button type="button" data-dot class="hero-dot" aria-label="Show slide 4: Complete gym setups"></button>
+        <button type="button" data-dot class="hero-dot" aria-label="Show slide 5: Installation, AMC and repairs"></button>
       </div>
+      <button type="button" data-next class="slide-ctrl" aria-label="Next slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
+      <span class="mx-1 h-6 w-px bg-line" aria-hidden="true"></span>
+      <button type="button" data-pause class="slide-ctrl" aria-label="Pause slideshow" aria-pressed="false">
+        <svg class="icon-pause" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg>
+        <svg class="icon-play" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5l12 7-12 7z"/></svg>
+      </button>
     </div>
   </div>
 </section>

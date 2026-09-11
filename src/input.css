@@ -223,14 +223,27 @@
      reading as a promo banner rotator. */
   .hero-slide {
     @apply absolute inset-0 opacity-0;
-    transition: opacity 1400ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 900ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   .hero-slide.is-active { @apply opacity-100; }
 
-  .hero-dot {
-    @apply h-1 w-8 rounded-full bg-bone/25 transition-colors duration-300;
+  /* Dots: a 28px tap target around a 10px circle, like the reference. */
+  .hero-dot { @apply relative inline-flex h-7 w-7 items-center justify-center; }
+  .hero-dot::before {
+    content: '';
+    @apply block h-2.5 w-2.5 rounded-full border border-muted transition-colors duration-300;
   }
-  .hero-dot.is-active { @apply bg-volt; }
+  .hero-dot:hover::before { @apply border-bone; }
+  .hero-dot.is-active::before { @apply border-bone bg-bone; }
+
+  /* Prev / next / pause in the control bar under the slides. */
+  .slide-ctrl {
+    @apply inline-flex h-10 w-10 items-center justify-center rounded-full text-bone
+           transition-colors duration-200 hover:bg-surface2 hover:text-volt;
+  }
+  [data-pause] .icon-play { display: none; }
+  [data-pause].is-paused .icon-play { display: block; }
+  [data-pause].is-paused .icon-pause { display: none; }
 
   /* --- gallery filter -------------------------------------- */
   .is-filter-active { @apply border-volt bg-volt text-onAccent; }
