@@ -330,8 +330,14 @@
   /* Native validation is enabled in markup; this adds stricter checks
      (Indian mobile format, real-looking names, email shape) plus bot
      traps (honeypot + minimum fill time). Applies to every FormSubmit
-     form: the contact quote form and the enquiry popups. */
+     form: the contact quote form and the enquiry popups.
+     On a valid submit the form POSTs to FormSubmit (email) as before,
+     and the enquiry is ALSO opened as a prefilled WhatsApp chat in a
+     new tab — so every lead lands in the inbox and on WhatsApp. */
   var fvLoadedAt = Date.now();
+  /* Business WhatsApp number (country code + number, no "+" or spaces).
+     Change this in one place if the number ever changes. */
+  var WHATSAPP_TO = '917756013456';
 
   function fvFail(input, msg) {
     input.classList.add('field-invalid');
@@ -410,6 +416,38 @@
         if (firstBad) firstBad.focus();
         return;
       }
+
+      // Valid: share the enquiry to WhatsApp in a new tab. The normal
+      // form POST below still goes through, so email keeps working.
+      // window.open runs inside the submit user gesture, so pop-up
+      // blockers let it through; if it is ever blocked, email is
+      // unaffected and the lead is not lost.
+      try {
+        var val = function (name) {
+          var el = form.querySelector('[name="' + name + '"]');
+          return el && el.value ? el.value.trim() : '';
+        };
+        var lines = ['New enquiry — ARJFIT website'];
+        var pairs = [
+          ['Enquiring about', val('about')],
+          ['Name', val('name')],
+          ['Phone', val('phone')],
+          ['Email', val('email')],
+          ['Company', val('company')],
+          ['City', val('city')],
+          ['I am a', val('buyer')],
+          ['Needs', val('need')],
+          ['Floor area', val('area')],
+          ['Budget', val('budget')],
+          ['Timeline', val('timeline')],
+          ['Message', val('message')]
+        ];
+        pairs.forEach(function (p) { if (p[1]) lines.push(p[0] + ': ' + p[1]); });
+        window.open(
+          'https://wa.me/' + WHATSAPP_TO + '?text=' + encodeURIComponent(lines.join('\n')),
+          '_blank', 'noopener'
+        );
+      } catch (err) { /* WhatsApp share failed — email POST continues. */ }
 
       // Passed: prevent accidental double submits.
       var btn = form.querySelector('[type="submit"]');
