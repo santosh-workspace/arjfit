@@ -105,6 +105,7 @@
       header.classList.toggle('bg-ink/90', next);
       header.classList.toggle('backdrop-blur-md', next);
       header.classList.toggle('border-line', next);
+      header.classList.toggle('is-stuck', next);   // folds the offer strip away
     };
     applyHeader();
     window.addEventListener('scroll', function () {
@@ -175,6 +176,60 @@
       b.addEventListener('click', function () { applyFilter(b.getAttribute('data-filter')); });
     });
   }
+
+  /* ---------- announcement strip ---------- */
+  /* Rotates the offer messages one at a time, sliding up like a departures
+     board. Pauses on hover and focus; under reduced motion the first message
+     simply stays. Hidden messages are inert, so only the visible link can be
+     reached by keyboard. Runs without GSAP. */
+  [].slice.call(document.querySelectorAll('[data-ann]')).forEach(function (bar) {
+    var items = [].slice.call(bar.querySelectorAll('[data-ann-item]'));
+    var every = parseInt(bar.getAttribute('data-ann-interval'), 10) || 4500;
+    var cur = 0, timer = null, hoverIn = false, focusIn = false;
+
+    var sync = function () {
+      items.forEach(function (el, k) {
+        var on = k === cur;
+        el.setAttribute('aria-hidden', String(!on));
+        if (on) el.removeAttribute('inert'); else el.setAttribute('inert', '');
+      });
+    };
+    // Put a finished message back below the strip without animating it there.
+    var park = function (el) {
+      el.style.transition = 'none';
+      el.classList.remove('is-leaving');
+      void el.offsetHeight;
+      el.style.transition = '';
+    };
+    var show = function (n) {
+      var prev = items[cur];
+      cur = (n + items.length) % items.length;
+      if (prev !== items[cur]) {
+        prev.classList.remove('is-active');
+        prev.classList.add('is-leaving');
+        setTimeout(function () { park(prev); }, 650);
+        items[cur].classList.add('is-active');
+      }
+      sync();
+    };
+    var stop = function () { if (timer) { clearInterval(timer); timer = null; } };
+    var start = function () {
+      stop();
+      if (reduced || hoverIn || focusIn || document.hidden || items.length < 2) return;
+      timer = setInterval(function () { show(cur + 1); }, every);
+    };
+
+    bar.addEventListener('mouseenter', function () { hoverIn = true; stop(); });
+    bar.addEventListener('mouseleave', function () { hoverIn = false; start(); });
+    bar.addEventListener('focusin', function () { focusIn = true; stop(); });
+    bar.addEventListener('focusout', function (e) {
+      if (!bar.contains(e.relatedTarget)) { focusIn = false; start(); }
+    });
+    document.addEventListener('visibilitychange', start);
+
+    sync();
+    start();
+  });
 
   /* ---------- hero slideshow ---------- */
   /* Crossfading banner slideshow with a control bar underneath: prev/next,

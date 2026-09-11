@@ -37,6 +37,10 @@
   --f-body: 'Archivo', system-ui, sans-serif;
 }
 
+/* Offer strip above the header. The first section of every page is pushed
+   down by the same amount, so nothing sits underneath it. */
+:root { --strip-h: 40px; }
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -194,6 +198,39 @@
            transition-colors duration-200 hover:bg-surface2 hover:text-bone;
   }
   .dd-item.is-active { @apply text-volt; }
+
+  /* --- offer strip ----------------------------------------- */
+  /* ARJFIT's own announcement strip: sits in the header's surface colour so
+     it follows dark/light mode, with a crimson hairline echoing the section
+     markers and messages that slide up one at a time. */
+  .offer-strip {
+    @apply relative bg-surface2 text-bone;
+    height: var(--strip-h);
+    overflow: hidden;
+    transition: height .35s cubic-bezier(.22,1,.36,1);
+  }
+  .offer-strip::after {
+    content: '';
+    @apply pointer-events-none absolute inset-x-0 bottom-0 h-px;
+    background: linear-gradient(90deg, rgb(var(--c-volt)) 0%, rgb(var(--c-volt) / .35) 40%, transparent 100%);
+  }
+  /* Once the visitor scrolls, the strip folds away and the nav bar sits flush. */
+  [data-header].is-stuck .offer-strip { height: 0; }
+
+  .ann-track { @apply relative h-full min-w-0 flex-1; }
+  .ann-item {
+    @apply absolute inset-0 flex items-center gap-3 text-[0.78rem] font-medium tracking-[0.02em] text-bone;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity .5s ease, transform .6s cubic-bezier(.22,1,.36,1);
+  }
+  .ann-item.is-active  { opacity: 1; transform: translateY(0); }
+  .ann-item.is-leaving { opacity: 0; transform: translateY(-100%); }
+  .ann-tag {
+    @apply shrink-0 rounded-full bg-volt px-2.5 py-0.5 text-[0.6rem] font-bold uppercase tracking-[0.14em] text-onAccent;
+  }
+  .ann-go { @apply shrink-0 text-volt transition-transform duration-300; }
+  .ann-item:hover .ann-go { transform: translateX(3px); }
 
   /* --- media ----------------------------------------------- */
   .media { @apply relative overflow-hidden rounded-2xl bg-surface2; }
