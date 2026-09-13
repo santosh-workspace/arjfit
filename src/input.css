@@ -327,14 +327,8 @@
     color: rgb(var(--c-volt));
   }
 
-  /* --- hero ken burns --------------------------------------- */
-  /* Slow cinematic push on the active slide only. */
-  @keyframes kenburns { from { transform: scale(1.12); } to { transform: scale(1.02); } }
-  .hero-slide img { transform: scale(1.08); will-change: transform; }
-  .hero-slide.is-active img { animation: kenburns 7s cubic-bezier(.22,1,.36,1) both; }
-  @media (prefers-reduced-motion: reduce) {
-    .hero-slide img, .hero-slide.is-active img { animation: none; transform: none; }
-  }
+  /* --- hero crossfade --------------------------------------- */
+  /* Plain crossfade between fully-visible banner images. */
 
   /* --- VIEW RANGE / arrow links ------------------------------ */
   /* Red underline draws in from the left on hover. */
