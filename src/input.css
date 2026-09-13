@@ -1,7 +1,8 @@
 /* ============================================================
-   PALETTE — Iron & Crimson (locked in)
-   Chosen to match the ARJFIT logo. Every pair passes WCAG AA;
-   the behaviour suite fails the build if that regresses.
+   PALETTE — ARJFIT Red / Iron / Bone
+   ARJFIT RED is the primary brand accent (≈15% of the canvas):
+   CTA buttons, active nav, key headings, accent rules, numbers,
+   hovers. Canvas stays black/charcoal (≈35%) + white/grey (≈50%).
    ============================================================ */
 :root {
   --c-ink: 11 11 13;
@@ -10,12 +11,12 @@
   --c-line: 44 44 51;
   --c-bone: 245 243 241;
   --c-muted: 176 176 186;
-  --c-volt: 231 65 77;
-  --c-ember: 255 140 66;
-  --c-on-accent: 11 11 13;
+  --c-volt: 225 6 0;
+  --c-ember: 255 90 31;
+  --c-on-accent: 255 255 255;
 }
 
-/* Light mode. Accent darkened to #DA1C29 so it still passes on white;
+/* Light mode. Accent deepened so it still passes on white;
    the brand hue is preserved. Toggled bottom-left. */
 [data-theme="light"] {
   --c-ink: 246 245 242;
@@ -24,17 +25,19 @@
   --c-line: 216 212 203;
   --c-bone: 23 24 29;
   --c-muted: 85 88 96;
-  --c-volt: 218 28 41;
+  --c-volt: 198 8 0;
   --c-ember: 190 60 10;
   --c-on-accent: 255 255 255;
 }
 
 /* ============================================================
-   TYPE — Archivo Black / Archivo (locked in)
+   TYPE — Oswald / Inter
+   Oswald: bold geometric condensed sans for display headings —
+   strong, technical, athletic. Inter: clean body copy.
    ============================================================ */
 :root {
-  --f-display: 'Archivo Black', Impact, sans-serif;
-  --f-body: 'Archivo', system-ui, sans-serif;
+  --f-display: 'Oswald', 'Archivo Black', Impact, sans-serif;
+  --f-body: 'Inter', 'Archivo', system-ui, sans-serif;
 }
 
 /* Offer strip above the header. The first section of every page is pushed
@@ -80,7 +83,7 @@
   ::selection { background: rgb(var(--c-volt)); color: rgb(var(--c-on-accent)); }
   :focus-visible { outline: 2px solid rgb(var(--c-volt)); outline-offset: 3px; border-radius: 2px; }
 
-  h1, h2, h3 { @apply font-display uppercase; line-height: 0.92; letter-spacing: 0.01em; }
+  h1, h2, h3 { @apply font-display uppercase; line-height: 0.95; letter-spacing: 0.015em; font-weight: 600; }
 
   /* Respect users who don't want motion. */
   @media (prefers-reduced-motion: reduce) {
@@ -139,8 +142,9 @@
   [data-theme="light"] .theme-toggle .icon-moon { display: none; }
 
   /* --- buttons --------------------------------------------- */
+  /* Industrial 2px corners: engineered, not bubbly. */
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5
+    @apply inline-flex items-center justify-center gap-2 rounded-sm px-7 py-3.5
            text-[0.78rem] font-semibold uppercase tracking-[0.14em]
            transition-all duration-300 ease-cine;
   }
@@ -299,5 +303,83 @@
   /* --- image clip reveal ------------------------------------ */
   .img-reveal { clip-path: inset(0 0 100% 0); }
   .img-reveal img { transform: scale(1.18); will-change: transform; }
+
+  /* --- section headers -------------------------------------- */
+  /* Industrial index: red number + rule, e.g. 01 / SERVICES. */
+  .sec-index {
+    @apply flex items-center gap-3 text-[0.72rem] font-semibold uppercase tracking-eyebrow;
+    color: rgb(var(--c-volt));
+  }
+  .sec-index::before { content: ''; @apply block h-[2px] w-10; background: rgb(var(--c-volt)); }
+  .sec-index .sec-name { color: rgb(var(--c-muted)); font-weight: 500; }
+  /* Oversized red numerals: 01 02 03 04. */
+  .num-red {
+    @apply font-display uppercase leading-none;
+    color: rgb(var(--c-volt));
+  }
+
+  /* --- hero ken burns --------------------------------------- */
+  /* Slow cinematic push on the active slide only. */
+  @keyframes kenburns { from { transform: scale(1.12); } to { transform: scale(1.02); } }
+  .hero-slide img { transform: scale(1.08); will-change: transform; }
+  .hero-slide.is-active img { animation: kenburns 7s cubic-bezier(.22,1,.36,1) both; }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-slide img, .hero-slide.is-active img { animation: none; transform: none; }
+  }
+
+  /* --- VIEW RANGE / arrow links ------------------------------ */
+  /* Red underline draws in from the left on hover. */
+  .link-more {
+    @apply relative inline-flex items-center gap-2 text-[0.72rem] font-semibold uppercase tracking-eyebrow;
+    color: rgb(var(--c-volt));
+  }
+  .link-more::after {
+    content: ''; @apply absolute -bottom-1 left-0 h-[2px] w-full origin-left;
+    background: rgb(var(--c-volt)); transform: scaleX(0.35);
+    transition: transform .35s cubic-bezier(.22,1,.36,1);
+  }
+  .link-more:hover::after { transform: scaleX(1); }
+  .link-more .arr { transition: transform .35s cubic-bezier(.22,1,.36,1); }
+  .link-more:hover .arr { transform: translateX(5px); }
+
+  /* --- product cards ----------------------------------------- */
+  /* Light card, sharp corners, red top-rule on hover + lift. */
+  .prod-card {
+    @apply relative flex flex-col overflow-hidden rounded-sm border bg-white;
+    border-color: rgb(228 226 220);
+    transition: transform .4s cubic-bezier(.22,1,.36,1), box-shadow .4s cubic-bezier(.22,1,.36,1), border-color .3s;
+  }
+  .prod-card::before {
+    content: ''; @apply absolute inset-x-0 top-0 h-[3px] origin-left;
+    background: rgb(var(--c-volt)); transform: scaleX(0);
+    transition: transform .4s cubic-bezier(.22,1,.36,1);
+  }
+  .prod-card:hover { transform: translateY(-6px); box-shadow: 0 24px 48px -20px rgb(0 0 0 / 0.28); border-color: rgb(var(--c-volt)); }
+  .prod-card:hover::before { transform: scaleX(1); }
+  .prod-card img { transition: transform .6s cubic-bezier(.22,1,.36,1); }
+  .prod-card:hover img { transform: scale(1.05); }
+
+  /* --- category cards ----------------------------------------- */
+  .cat-card {
+    @apply relative block overflow-hidden rounded-sm bg-ink;
+  }
+  .cat-card img { transition: transform .7s cubic-bezier(.22,1,.36,1), opacity .5s; }
+  .cat-card:hover img { transform: scale(1.06); }
+  .cat-card .cat-bar { transition: background-color .3s; }
+  .cat-card:hover .cat-bar { background: rgb(var(--c-volt)); }
+
+  /* --- editorial masonry -------------------------------------- */
+  /* Sharp industrial grid, no bubbly cards. */
+  .masonry { columns: 1; column-gap: 1rem; }
+  @media (min-width: 640px) { .masonry { columns: 2; } }
+  @media (min-width: 1024px) { .masonry { columns: 3; } }
+  .masonry > * { break-inside: avoid; margin-bottom: 1rem; }
+
+  /* --- spec rows (What we do / Why ARJFIT) -------------------- */
+  .spec-row {
+    @apply flex gap-5 border-t py-6;
+    border-color: rgb(var(--c-line));
+  }
+  .spec-row:last-child { @apply border-b; }
 
 }

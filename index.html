@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com">
 <link rel="preconnect" href="https://images.pexels.com">
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/images/hero-1600.jpg">
 <link rel="stylesheet" href="assets/styles.css">
 <!-- TEMPORARY: applies the previewed palette before paint. Remove with the picker. -->
@@ -41,7 +41,7 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
 <body class="bg-ink text-bone">
 <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-volt focus:px-5 focus:py-2 focus:text-sm focus:font-semibold focus:text-onAccent">Skip to content</a>
 
-<header data-header class="fixed inset-x-0 top-0 z-50 border-b border-transparent transition-colors duration-300">
+<header data-header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/85 backdrop-blur-md transition-colors duration-300">
   <!-- OFFER STRIP: edit the offer here. The same block is on every page. -->
   <div class="offer-strip">
     <a href="accessories.html" class="shell block text-center font-semibold tracking-[0.02em] underline-offset-4 hover:underline">
@@ -50,7 +50,9 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
     </a>
   </div>
   <div class="shell flex h-[72px] items-center justify-between gap-6">
-    <a href="index.html" aria-label="ARJFIT home"><img src="assets/logo.png" alt="ARJFIT — Fitness Equipments" class="h-9 w-auto"></a>
+    <a href="index.html" aria-label="ARJFIT home" class="flex items-center gap-3">
+      <img src="assets/logo.png" alt="ARJFIT — Fitness Equipments" class="h-9 w-auto">
+    </a>
 
     <nav aria-label="Primary" class="hidden lg:block">
       <ul class="flex items-center gap-4 xl:gap-6">
@@ -65,7 +67,7 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
             <svg class="dd-caret" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 8l7 7 7-7"/></svg>
           </button>
           <ul id="menu-equipment" data-dropdown-menu
-              class="dd-menu absolute left-0 top-full z-50 mt-3 w-44 rounded-2xl border border-line bg-surface p-2 shadow-2xl shadow-black/40">
+              class="dd-menu absolute left-0 top-full z-50 mt-3 w-44 rounded-sm border border-line bg-surface p-2 shadow-2xl shadow-black/40">
             <li><a href="cardio.html" class="dd-item">Cardio</a></li>
             <li><a href="strength.html" class="dd-item">Strength</a></li>
             <li><a href="accessories.html" class="dd-item">Accessories</a></li>
@@ -82,9 +84,9 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
         +91 77560 13456
       </a>
-      <a href="contact.html" class="btn-volt hidden sm:inline-flex" data-cursor="Quote">Get a Quote</a>
+      <a href="contact.html" class="btn-volt hidden sm:inline-flex" data-cursor="Quote">Request a Quote</a>
       <button data-nav-toggle aria-expanded="false" aria-label="Open menu"
-              class="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-line text-bone">
+              class="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-sm border border-white/20 text-bone">
         <svg width="18" height="12" viewBox="0 0 18 12" fill="none" aria-hidden="true">
           <path d="M0 1h18M0 6h18M0 11h18" stroke="currentColor" stroke-width="1.5"/>
         </svg>
@@ -98,7 +100,7 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
   <div class="mb-6 flex items-center justify-between">
     <span class="eyebrow-muted">Menu</span>
     <button data-nav-close aria-label="Close menu"
-            class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line text-bone">&times;</button>
+            class="inline-flex h-11 w-11 items-center justify-center rounded-sm border border-line text-bone">&times;</button>
   </div>
   <nav aria-label="Mobile" class="flex flex-col">
       <a href="index.html" class="border-b border-line py-4 font-display text-2xl uppercase text-volt">Home</a>
@@ -115,80 +117,81 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
 </div>
 <main id="main">
 
-<!-- ============ HERO SLIDESHOW ============ -->
-<section data-carousel data-interval="6000" aria-roledescription="carousel" aria-label="ARJFIT highlights" class="pt-[calc(72px+var(--strip-h))]">
+<!-- ============ HERO ============ -->
+<section data-carousel data-interval="6000" aria-roledescription="carousel" aria-label="ARJFIT highlights" class="bg-ink pt-[calc(72px+var(--strip-h))]">
   <div data-slides class="relative h-[560px] overflow-hidden sm:h-[580px] lg:h-[min(78svh,680px)]">
     <div data-slide class="hero-slide is-active" role="group" aria-roledescription="slide" aria-label="1 of 5">
       <img src="assets/images/hero-1600.jpg" alt="ARJFIT commercial gym floor" width="1920" height="1080" sizes="100vw" loading="eager" fetchpriority="high" decoding="async" class="absolute inset-0 h-full w-full object-cover object-center">
-      <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/10 lg:bg-gradient-to-r lg:from-black/85 lg:via-black/45 lg:to-transparent" aria-hidden="true"></div>
-      <div class="shell relative flex h-full flex-col justify-end pb-12 lg:justify-center lg:pb-0">
-        <div class="max-w-2xl text-white">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/55 to-black/20 lg:bg-gradient-to-r lg:from-black/90 lg:via-black/50 lg:to-black/10" aria-hidden="true"></div>
+      <div class="absolute inset-x-0 top-0 h-[3px] bg-volt" aria-hidden="true"></div>
+      <div class="shell relative flex h-full flex-col justify-end pb-14 lg:justify-center lg:pb-0">
+        <div class="max-w-3xl">
           <p class="marker-hero" data-placeholder="copy">Manufacturer &nbsp;&middot;&nbsp; Supplier &nbsp;&middot;&nbsp; Service</p>
-          <h1 class="h-section mt-5">We build the floor<br>your gym runs on.</h1>
-          <p class="lede-hero mt-5">Commercial gym equipment, manufactured and supplied across India — with layout design, installation and maintenance handled by the same team that builds it.</p>
-          <div class="mt-8 flex flex-wrap gap-3">
-          <a href="contact.html" class="btn-volt" data-cursor="Quote">Request a Quote</a>
-          <a href="product.html" class="btn border border-white/45 text-white hover:border-volt hover:text-volt">Browse Equipment</a>
+          <h1 class="mt-5 font-display text-[clamp(3rem,9vw,7rem)] font-semibold uppercase leading-[0.95] text-white">Built for a<br><span class="text-volt">stronger</span><br>tomorrow.</h1>
+          <p class="lede-hero mt-6 max-w-xl">Commercial gym equipment, manufactured and supplied across India &mdash; with layout design, installation and maintenance handled by the same team that builds it.</p>
+          <div class="mt-9 flex flex-wrap gap-3">
+            <a href="contact.html" class="btn-volt" data-cursor="Quote">Request a Quote</a>
+            <a href="product.html" class="btn border border-white/50 text-white hover:border-volt hover:text-volt">Browse Equipment</a>
           </div>
         </div>
       </div>
     </div>
     <div data-slide class="hero-slide" role="group" aria-roledescription="slide" aria-label="2 of 5">
       <img src="assets/images/product1.jpg" alt="ARJFIT plate-loaded seated row machine with tan upholstery" width="1920" height="1080" sizes="100vw" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover object-center">
-      <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/10 lg:bg-gradient-to-r lg:from-black/85 lg:via-black/45 lg:to-transparent" aria-hidden="true"></div>
-      <div class="shell relative flex h-full flex-col justify-end pb-12 lg:justify-center lg:pb-0">
-        <div class="max-w-2xl text-white">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/55 to-black/20 lg:bg-gradient-to-r lg:from-black/90 lg:via-black/50 lg:to-black/10" aria-hidden="true"></div>
+      <div class="shell relative flex h-full flex-col justify-end pb-14 lg:justify-center lg:pb-0">
+        <div class="max-w-3xl">
           <p class="eyebrow">Plate-loaded series</p>
-          <h2 class="h-section mt-5">Plate-loaded strength,<br>fabricated in-house.</h2>
-          <p class="lede-hero mt-5">Rows, presses and more on commercial-gauge steel, with upholstery built for daily use.</p>
-          <div class="mt-8 flex flex-wrap gap-3">
+          <h2 class="mt-5 font-display text-[clamp(2.5rem,7vw,5.5rem)] font-semibold uppercase leading-[0.95] text-white">Plate-loaded strength,<br>fabricated in-house.</h2>
+          <p class="lede-hero mt-6 max-w-xl">Rows, presses and more on commercial-gauge steel, with upholstery built for daily use.</p>
+          <div class="mt-9 flex flex-wrap gap-3">
             <a href="strength.html#plate-loaded" class="btn-volt">Explore Plate-Loaded</a>
-            <a href="contact.html" class="btn border border-white/45 text-white hover:border-volt hover:text-volt" data-cursor="Quote">Request a Quote</a>
+            <a href="contact.html" class="btn border border-white/50 text-white hover:border-volt hover:text-volt" data-cursor="Quote">Request a Quote</a>
           </div>
         </div>
       </div>
     </div>
     <div data-slide class="hero-slide" role="group" aria-roledescription="slide" aria-label="3 of 5">
       <img src="assets/images/product2.jpg" alt="ARJFIT preacher curl station with the ARJFIT badge on its weight-stack frame" width="1920" height="1080" sizes="100vw" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover object-center">
-      <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/10 lg:bg-gradient-to-r lg:from-black/85 lg:via-black/45 lg:to-transparent" aria-hidden="true"></div>
-      <div class="shell relative flex h-full flex-col justify-end pb-12 lg:justify-center lg:pb-0">
-        <div class="max-w-2xl text-white">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/55 to-black/20 lg:bg-gradient-to-r lg:from-black/90 lg:via-black/50 lg:to-black/10" aria-hidden="true"></div>
+      <div class="shell relative flex h-full flex-col justify-end pb-14 lg:justify-center lg:pb-0">
+        <div class="max-w-3xl">
           <p class="eyebrow">Pin-loaded series</p>
-          <h2 class="h-section mt-5">Pin-loaded stations<br>for every muscle group.</h2>
-          <p class="lede-hero mt-5">Selectorised machines with smooth weight stacks: curl, press, row, fly and more.</p>
-          <div class="mt-8 flex flex-wrap gap-3">
+          <h2 class="mt-5 font-display text-[clamp(2.5rem,7vw,5.5rem)] font-semibold uppercase leading-[0.95] text-white">Pin-loaded stations<br>for every muscle group.</h2>
+          <p class="lede-hero mt-6 max-w-xl">Selectorised machines with smooth weight stacks: curl, press, row, fly and more.</p>
+          <div class="mt-9 flex flex-wrap gap-3">
             <a href="strength.html#pin-loaded" class="btn-volt">Explore Pin-Loaded</a>
-            <a href="contact.html" class="btn border border-white/45 text-white hover:border-volt hover:text-volt" data-cursor="Quote">Request a Quote</a>
+            <a href="contact.html" class="btn border border-white/50 text-white hover:border-volt hover:text-volt" data-cursor="Quote">Request a Quote</a>
           </div>
         </div>
       </div>
     </div>
     <div data-slide class="hero-slide" role="group" aria-roledescription="slide" aria-label="4 of 5">
       <img src="assets/images/product3.jpg" alt="ARJFIT pec fly machine in front of a leg press and cardio bikes" width="1920" height="1080" sizes="100vw" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover object-center lg:object-[50%_15%]">
-      <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/10 lg:bg-gradient-to-r lg:from-black/85 lg:via-black/45 lg:to-transparent" aria-hidden="true"></div>
-      <div class="shell relative flex h-full flex-col justify-end pb-12 lg:justify-center lg:pb-0">
-        <div class="max-w-2xl text-white">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/55 to-black/20 lg:bg-gradient-to-r lg:from-black/90 lg:via-black/50 lg:to-black/10" aria-hidden="true"></div>
+      <div class="shell relative flex h-full flex-col justify-end pb-14 lg:justify-center lg:pb-0">
+        <div class="max-w-3xl">
           <p class="eyebrow">Complete gym setups</p>
-          <h2 class="h-section mt-5">From a home gym<br>to a full commercial floor.</h2>
-          <p class="lede-hero mt-5">Five setup plans (Pro 200, Pro 300, Evolve, Ascent and Prestige), each planned around your space.</p>
-          <div class="mt-8 flex flex-wrap gap-3">
+          <h2 class="mt-5 font-display text-[clamp(2.5rem,7vw,5.5rem)] font-semibold uppercase leading-[0.95] text-white">From a home gym<br>to a full commercial floor.</h2>
+          <p class="lede-hero mt-6 max-w-xl">Five setup plans (Pro 200, Pro 300, Evolve, Ascent and Prestige), each planned around your space.</p>
+          <div class="mt-9 flex flex-wrap gap-3">
             <a href="product.html" class="btn-volt">See Setup Plans</a>
-            <a href="contact.html" class="btn border border-white/45 text-white hover:border-volt hover:text-volt" data-cursor="Quote">Request a Quote</a>
+            <a href="contact.html" class="btn border border-white/50 text-white hover:border-volt hover:text-volt" data-cursor="Quote">Request a Quote</a>
           </div>
         </div>
       </div>
     </div>
     <div data-slide class="hero-slide" role="group" aria-roledescription="slide" aria-label="5 of 5">
       <img src="assets/images/product4.jpg" alt="ARJFIT two-tier dumbbell rack loaded with rubber dumbbells" width="1920" height="1080" sizes="100vw" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover object-center">
-      <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/10 lg:bg-gradient-to-r lg:from-black/85 lg:via-black/45 lg:to-transparent" aria-hidden="true"></div>
-      <div class="shell relative flex h-full flex-col justify-end pb-12 lg:justify-center lg:pb-0">
-        <div class="max-w-2xl text-white">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/55 to-black/20 lg:bg-gradient-to-r lg:from-black/90 lg:via-black/50 lg:to-black/10" aria-hidden="true"></div>
+      <div class="shell relative flex h-full flex-col justify-end pb-14 lg:justify-center lg:pb-0">
+        <div class="max-w-3xl">
           <p class="eyebrow">Free weights</p>
-          <h2 class="h-section mt-5">Dumbbells, plates<br>and racks.</h2>
-          <p class="lede-hero mt-5">Rubber dumbbell sets with matching two-tier racks and storage.</p>
-          <div class="mt-8 flex flex-wrap gap-3">
+          <h2 class="mt-5 font-display text-[clamp(2.5rem,7vw,5.5rem)] font-semibold uppercase leading-[0.95] text-white">Dumbbells, plates<br>and racks.</h2>
+          <p class="lede-hero mt-6 max-w-xl">Rubber dumbbell sets with matching two-tier racks and storage.</p>
+          <div class="mt-9 flex flex-wrap gap-3">
             <a href="strength.html#free-weights" class="btn-volt">Explore Free Weights</a>
-            <a href="contact.html" class="btn border border-white/45 text-white hover:border-volt hover:text-volt" data-cursor="Quote">Request a Quote</a>
+            <a href="contact.html" class="btn border border-white/50 text-white hover:border-volt hover:text-volt" data-cursor="Quote">Request a Quote</a>
           </div>
         </div>
       </div>
@@ -196,18 +199,18 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
   </div>
 
   <!-- control bar under the slides: prev · dots · next | pause -->
-  <div class="border-b border-line bg-surface">
+  <div class="border-t border-white/10 bg-ink">
     <div class="flex h-14 items-center justify-center gap-2 sm:gap-3">
       <button type="button" data-prev class="slide-ctrl" aria-label="Previous slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
       <div class="flex items-center">
-        <button type="button" data-dot class="hero-dot is-active" aria-label="Show slide 1: We build the floor your gym runs on" aria-current="true"></button>
+        <button type="button" data-dot class="hero-dot is-active" aria-label="Show slide 1: Built for a stronger tomorrow" aria-current="true"></button>
         <button type="button" data-dot class="hero-dot" aria-label="Show slide 2: Plate-loaded strength"></button>
         <button type="button" data-dot class="hero-dot" aria-label="Show slide 3: Pin-loaded stations"></button>
         <button type="button" data-dot class="hero-dot" aria-label="Show slide 4: Complete gym setups"></button>
         <button type="button" data-dot class="hero-dot" aria-label="Show slide 5: Dumbbells and racks"></button>
       </div>
       <button type="button" data-next class="slide-ctrl" aria-label="Next slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
-      <span class="mx-1 h-6 w-px bg-line" aria-hidden="true"></span>
+      <span class="mx-1 h-6 w-px bg-white/15" aria-hidden="true"></span>
       <button type="button" data-pause class="slide-ctrl" aria-label="Pause slideshow" aria-pressed="false">
         <svg class="icon-pause" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg>
         <svg class="icon-play" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5l12 7-12 7z"/></svg>
@@ -216,506 +219,585 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
   </div>
 </section>
 
-<!-- ============ FEATURED PRODUCTS ============ -->
-<section class="py-12 sm:py-16" data-rail>
-  <div class="shell">
+<!-- ============ TRUST STRIP ============ -->
+<section class="border-b border-neutral-200 bg-white text-neutral-900" aria-label="Why commercial buyers choose ARJFIT">
+  <div class="shell grid grid-cols-1 gap-x-8 gap-y-6 py-10 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="reveal flex items-start gap-4">
+      <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center border-2 border-neutral-900" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 3v6c0 5-3.5 9.3-8 11-4.5-1.7-8-6-8-11V5z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>
+      </span>
+      <div>
+        <h2 class="font-display text-base font-semibold uppercase tracking-wide">Commercial Grade</h2>
+        <p class="mt-1 text-sm text-neutral-600">Engineered for heavy use</p>
+      </div>
+    </div>
+    <div class="reveal flex items-start gap-4">
+      <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center border-2 border-neutral-900" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3.2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg>
+      </span>
+      <div>
+        <h2 class="font-display text-base font-semibold uppercase tracking-wide">Reliable &amp; Durable</h2>
+        <p class="mt-1 text-sm text-neutral-600">Built to perform</p>
+      </div>
+    </div>
+    <div class="reveal flex items-start gap-4">
+      <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center border-2 border-neutral-900" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 17L17 3l4 4L7 21z"/><path d="M8 12l1.5 1.5M11 9l1.5 1.5M14 6l1.5 1.5"/></svg>
+      </span>
+      <div>
+        <h2 class="font-display text-base font-semibold uppercase tracking-wide">Precision Engineering</h2>
+        <p class="mt-1 text-sm text-neutral-600">Quality you can trust</p>
+      </div>
+    </div>
+    <div class="reveal flex items-start gap-4">
+      <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center border-2 border-neutral-900" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+      </span>
+      <div>
+        <h2 class="font-display text-base font-semibold uppercase tracking-wide">Pan-India Support</h2>
+        <p class="mt-1 text-sm text-neutral-600">Service when you need it</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 01 SERVICES ============ -->
+<section class="bg-[#F4F3F0] text-neutral-900">
+  <div class="shell py-16 sm:py-24">
+    <p class="sec-index reveal">01 <span class="sec-name">/&nbsp;&nbsp;Services</span></p>
+    <div class="mt-6 flex flex-wrap items-end justify-between gap-6">
+      <h2 class="h-section reveal max-w-3xl text-neutral-900">Design. Supply.<br>Install. <span class="text-volt">Maintain.</span></h2>
+      <a href="services.html" class="link-more reveal">All services <span class="arr" aria-hidden="true">&rarr;</span></a>
+    </div>
+    <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <article class="reveal group bg-white">
+        <div class="relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1596357395217-80de13130e92?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="Squat rack in a bright commercial gym" width="800" height="500" loading="lazy" decoding="async" data-placeholder="image" class="aspect-[16/10] w-full object-cover transition-transform duration-700 ease-cine group-hover:scale-105">
+          <span class="num-red absolute left-4 top-3 text-5xl" aria-hidden="true">01</span>
+        </div>
+        <div class="border-t-[3px] border-volt p-6">
+          <h3 class="font-display text-xl font-semibold uppercase">Layout &amp; Design</h3>
+          <p class="mt-3 text-sm leading-relaxed text-neutral-600">Site survey and floor planning before anything is quoted, so the equipment fits the space and the service access works.</p>
+        </div>
+      </article>
+      <article class="reveal group bg-white">
+        <div class="relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="Cardio floor with bikes and machines" width="800" height="500" loading="lazy" decoding="async" data-placeholder="image" class="aspect-[16/10] w-full object-cover transition-transform duration-700 ease-cine group-hover:scale-105">
+          <span class="num-red absolute left-4 top-3 text-5xl" aria-hidden="true">02</span>
+        </div>
+        <div class="border-t-[3px] border-volt p-6">
+          <h3 class="font-display text-xl font-semibold uppercase">Installation &amp; Shifting</h3>
+          <p class="mt-3 text-sm leading-relaxed text-neutral-600">Delivery, assembly, levelling and commissioning by our own technicians &mdash; and relocation when you move.</p>
+        </div>
+      </article>
+      <article class="reveal group bg-white">
+        <div class="relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1534258936925-c58bed479fcb?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="Battle-rope training session on turf" width="800" height="500" loading="lazy" decoding="async" data-placeholder="image" class="aspect-[16/10] w-full object-cover transition-transform duration-700 ease-cine group-hover:scale-105">
+          <span class="num-red absolute left-4 top-3 text-5xl" aria-hidden="true">03</span>
+        </div>
+        <div class="border-t-[3px] border-volt p-6">
+          <h3 class="font-display text-xl font-semibold uppercase">Maintenance &amp; Repair</h3>
+          <p class="mt-3 text-sm leading-relaxed text-neutral-600">Annual maintenance contracts and breakdown repair, including machines we did not supply.</p>
+        </div>
+      </article>
+      <article class="reveal group bg-white">
+        <div class="relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1544033527-b192daee1f5b?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="Dumbbell racks on a commercial gym floor" width="800" height="500" loading="lazy" decoding="async" data-placeholder="image" class="aspect-[16/10] w-full object-cover transition-transform duration-700 ease-cine group-hover:scale-105">
+          <span class="num-red absolute left-4 top-3 text-5xl" aria-hidden="true">04</span>
+        </div>
+        <div class="border-t-[3px] border-volt p-6">
+          <h3 class="font-display text-xl font-semibold uppercase">Support &amp; Spares</h3>
+          <p class="mt-3 text-sm leading-relaxed text-neutral-600">Spares held in stock for what we build &mdash; with technicians who know the machines.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 WHAT WE DO ============ -->
+<section class="bg-white text-neutral-900">
+  <div class="shell py-16 sm:py-24">
+    <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+      <div class="reveal relative">
+        <div class="absolute -left-3 -top-3 h-24 w-24 border-l-[3px] border-t-[3px] border-volt" aria-hidden="true"></div>
+        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" alt="Welding a machine frame at the ARJFIT manufacturing unit" width="1000" height="1250" loading="lazy" decoding="async" data-placeholder="image" class="aspect-[4/5] w-full object-cover">
+        <p class="mt-3 text-xs uppercase tracking-[0.2em] text-neutral-500">In-house fabrication &mdash; ARJFIT unit</p>
+      </div>
+      <div>
+        <p class="sec-index reveal">02 <span class="sec-name">/&nbsp;&nbsp;What we do</span></p>
+        <h2 class="h-section reveal mt-6 text-neutral-900">From raw steel<br>to a <span class="text-volt">working floor.</span></h2>
+        <p class="reveal mt-6 max-w-2xl text-base leading-relaxed text-neutral-600 sm:text-lg">
+          We manufacture commercial gym equipment in our own unit, supply it across
+          India, and service it afterwards. Same team, same accountability, from the
+          first layout drawing to the annual maintenance visit.
+        </p>
+        <p class="reveal mt-4 max-w-2xl text-base leading-relaxed text-neutral-600 sm:text-lg">
+          That matters most when something goes wrong. There is no distributor to chase
+          and no importer waiting on a container &mdash; the people who built the machine are
+          the ones who come and fix it.
+        </p>
+        <div class="reveal mt-8">
+          <div class="spec-row !border-neutral-200">
+            <span class="num-red text-3xl" aria-hidden="true">01</span>
+            <div><h3 class="font-display text-lg font-semibold uppercase">Manufacture</h3><p class="mt-1 text-sm text-neutral-600">Fabricated, finished and load-tested in-house.</p></div>
+          </div>
+          <div class="spec-row !border-neutral-200">
+            <span class="num-red text-3xl" aria-hidden="true">02</span>
+            <div><h3 class="font-display text-lg font-semibold uppercase">Supply</h3><p class="mt-1 text-sm text-neutral-600">Delivered and installed by our own technicians.</p></div>
+          </div>
+          <div class="spec-row !border-neutral-200">
+            <span class="num-red text-3xl" aria-hidden="true">03</span>
+            <div><h3 class="font-display text-lg font-semibold uppercase">Service</h3><p class="mt-1 text-sm text-neutral-600">AMC and breakdown repair, any brand.</p></div>
+          </div>
+          <div class="spec-row !border-neutral-200">
+            <span class="num-red text-3xl" aria-hidden="true">04</span>
+            <div><h3 class="font-display text-lg font-semibold uppercase">Support</h3><p class="mt-1 text-sm text-neutral-600">Spares held in stock for what we build.</p></div>
+          </div>
+        </div>
+        <a href="about.html" class="btn mt-9 border border-neutral-900 text-neutral-900 hover:border-volt hover:text-volt reveal">About ARJFIT</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 OUR SERIES ============ -->
+<section class="bg-[#F4F3F0] text-neutral-900">
+  <div class="shell py-16 sm:py-24">
+    <p class="sec-index reveal">03 <span class="sec-name">/&nbsp;&nbsp;Our Series</span></p>
+    <h2 class="h-section reveal mt-6 max-w-3xl text-neutral-900">Commercial gym equipment.</h2>
+    <p class="reveal mt-5 max-w-2xl text-base leading-relaxed text-neutral-600 sm:text-lg">Cardio, strength, multi stations and free weights &mdash; supplied, installed and serviced. Pricing on request.</p>
+    <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <a href="cardio.html" class="cat-card reveal" data-cursor="Explore">
+        <img src="assets/images/Treadmill%20(Model%20No-%20ARJC103).jpeg" alt="ARJFIT commercial treadmill — Cardio Series" width="585" height="486" loading="lazy" decoding="async" class="aspect-[4/5] w-full object-cover">
+        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent p-5 pt-14">
+          <span class="block text-xs font-semibold uppercase tracking-[0.2em] text-volt">01</span>
+          <span class="mt-1 block font-display text-2xl font-semibold uppercase text-white">Cardio</span>
+          <span class="mt-1 block text-sm text-white/70">Treadmills, bikes, ellipticals, rowers.</span>
+          <span class="link-more mt-3">View range <span class="arr" aria-hidden="true">&rarr;</span></span>
+        </span>
+        <span class="cat-bar absolute inset-x-0 bottom-0 h-[3px] bg-transparent" aria-hidden="true"></span>
+      </a>
+      <a href="strength.html" class="cat-card reveal" data-cursor="Explore">
+        <img src="assets/images/platloaded-hero.jpg" alt="ARJFIT plate-loaded strength station — Strength Series" width="960" height="1440" loading="lazy" decoding="async" class="aspect-[4/5] w-full object-cover">
+        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent p-5 pt-14">
+          <span class="block text-xs font-semibold uppercase tracking-[0.2em] text-volt">02</span>
+          <span class="mt-1 block font-display text-2xl font-semibold uppercase text-white">Strength</span>
+          <span class="mt-1 block text-sm text-white/70">Plate-loaded and pin-loaded stations.</span>
+          <span class="link-more mt-3">View range <span class="arr" aria-hidden="true">&rarr;</span></span>
+        </span>
+        <span class="cat-bar absolute inset-x-0 bottom-0 h-[3px] bg-transparent" aria-hidden="true"></span>
+      </a>
+      <a href="strength.html#multi-station" class="cat-card reveal" data-cursor="Explore">
+        <img src="https://images.pexels.com/photos/5327505/pexels-photo-5327505.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Multi-station gym machine" width="600" height="750" loading="lazy" decoding="async" data-placeholder="image" class="aspect-[4/5] w-full object-cover">
+        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent p-5 pt-14">
+          <span class="block text-xs font-semibold uppercase tracking-[0.2em] text-volt">03</span>
+          <span class="mt-1 block font-display text-2xl font-semibold uppercase text-white">Multi Stations</span>
+          <span class="mt-1 block text-sm text-white/70">Multi-gyms, Smith machines, cables.</span>
+          <span class="link-more mt-3">View range <span class="arr" aria-hidden="true">&rarr;</span></span>
+        </span>
+        <span class="cat-bar absolute inset-x-0 bottom-0 h-[3px] bg-transparent" aria-hidden="true"></span>
+      </a>
+      <a href="strength.html#free-weights" class="cat-card reveal" data-cursor="Explore">
+        <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="Hands lifting dumbbells from a rack" width="600" height="750" loading="lazy" decoding="async" data-placeholder="image" class="aspect-[4/5] w-full object-cover">
+        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent p-5 pt-14">
+          <span class="block text-xs font-semibold uppercase tracking-[0.2em] text-volt">04</span>
+          <span class="mt-1 block font-display text-2xl font-semibold uppercase text-white">Dumbbells &amp; Plates</span>
+          <span class="mt-1 block text-sm text-white/70">Dumbbells, plates, bars and racks.</span>
+          <span class="link-more mt-3">View range <span class="arr" aria-hidden="true">&rarr;</span></span>
+        </span>
+        <span class="cat-bar absolute inset-x-0 bottom-0 h-[3px] bg-transparent" aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="reveal mt-10 flex flex-wrap gap-3">
+      <a href="product.html" class="btn-volt">Browse Our Series</a>
+      <a href="contact.html" class="btn border border-neutral-900 text-neutral-900 hover:border-volt hover:text-volt">Request a Quote</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCT SERIES SHOWCASE ============ -->
+<section class="border-y border-neutral-200 bg-white text-neutral-900" data-rail>
+  <div class="shell py-16 sm:py-24">
     <div class="flex flex-wrap items-end justify-between gap-6">
       <div>
-        <p class="marker reveal">01 &nbsp;/&nbsp; Featured</p>
-        <h2 class="h-section reveal mt-5">Featured equipment.</h2>
-        <p class="lede reveal mt-5">A selection from the commercial cardio range. Open any model for full specifications.</p>
+        <p class="sec-index reveal">04 <span class="sec-name">/&nbsp;&nbsp;Product series</span></p>
+        <h2 class="h-section reveal mt-6 text-neutral-900">The cardio range.</h2>
+        <p class="reveal mt-5 max-w-2xl text-base leading-relaxed text-neutral-600 sm:text-lg">Real ARJFIT machines with model numbers. Open any model for full specifications.</p>
       </div>
       <div class="flex gap-2">
-        <button type="button" data-rail-prev aria-controls="featured-track" aria-label="Previous products"
-                class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-line text-bone transition-colors hover:border-volt hover:text-volt disabled:cursor-default disabled:opacity-35 disabled:hover:border-line disabled:hover:text-bone">
+        <button type="button" data-rail-prev aria-controls="product-track" aria-label="Previous products"
+                class="inline-flex h-12 w-12 items-center justify-center border border-neutral-300 text-neutral-900 transition-colors hover:border-volt hover:text-volt disabled:cursor-default disabled:opacity-35">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
         </button>
-        <button type="button" data-rail-next aria-controls="featured-track" aria-label="Next products"
-                class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-line text-bone transition-colors hover:border-volt hover:text-volt disabled:cursor-default disabled:opacity-35 disabled:hover:border-line disabled:hover:text-bone">
+        <button type="button" data-rail-next aria-controls="product-track" aria-label="Next products"
+                class="inline-flex h-12 w-12 items-center justify-center border border-neutral-300 text-neutral-900 transition-colors hover:border-volt hover:text-volt disabled:cursor-default disabled:opacity-35">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
         </button>
       </div>
     </div>
 
-    <div id="featured-track" data-rail-track tabindex="0" role="region" aria-label="Featured equipment"
+    <div id="product-track" data-rail-track tabindex="0" role="region" aria-label="ARJFIT cardio range"
          class="reveal mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-4 focus-visible:outline-offset-4">
-        <article class="flex w-[78%] shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-line bg-surface transition-colors duration-300 hover:border-volt/50 sm:w-[46%] lg:w-[calc(25%-15px)]">
-          <a href="cardio.html#product-treadmill-arjc103" class="block bg-white p-5" aria-label="Treadmill — view details">
-            <img src="assets/images/Treadmill%20(Model%20No-%20ARJC103).jpeg" alt="ARJFIT Treadmill" width="585" height="486" loading="lazy" decoding="async" class="aspect-square w-full object-contain">
+        <article class="prod-card w-[78%] shrink-0 snap-start sm:w-[46%] lg:w-[calc(25%-15px)]">
+          <a href="cardio.html#product-treadmill-arjc103" class="block bg-white p-5" aria-label="ARJC103 Treadmill — view details">
+            <img src="assets/images/Treadmill%20(Model%20No-%20ARJC103).jpeg" alt="ARJFIT Treadmill ARJC103" width="585" height="486" loading="lazy" decoding="async" class="aspect-square w-full object-contain">
           </a>
-          <div class="flex flex-1 flex-col p-5">
-            <p class="eyebrow">ARJFIT</p>
-            <h3 class="h-card mt-2">Treadmill</h3>
+          <div class="flex flex-1 flex-col border-t border-neutral-200 p-5">
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-volt">ARJC103</p>
+            <h3 class="mt-2 font-display text-xl font-semibold uppercase text-neutral-900">Treadmill</h3>
+            <p class="mt-1 text-xs uppercase tracking-[0.14em] text-neutral-500">Cardio</p>
             <div class="mt-auto flex flex-wrap gap-2 pt-5">
-              <a href="cardio.html#product-treadmill-arjc103" class="btn-ghost !px-4 !py-2.5">Details</a>
-              <a href="contact.html" data-enquire="Treadmill" data-cursor="Quote" class="btn-volt !px-4 !py-2.5">Enquire</a>
+              <a href="cardio.html#product-treadmill-arjc103" class="btn !px-4 !py-2.5 border border-neutral-300 text-neutral-900 hover:border-volt hover:text-volt">Details</a>
+              <a href="contact.html" data-enquire="Treadmill (ARJC103)" data-cursor="Quote" class="btn-volt !px-4 !py-2.5">Enquire</a>
             </div>
           </div>
         </article>
-        <article class="flex w-[78%] shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-line bg-surface transition-colors duration-300 hover:border-volt/50 sm:w-[46%] lg:w-[calc(25%-15px)]">
-          <a href="cardio.html#product-curved-treadmill-arjc110" class="block bg-white p-5" aria-label="Curved Treadmill — view details">
-            <img src="assets/images/Curved%20Treadmill%20(Model%20No-%20ARJC110).jpeg" alt="ARJFIT Curved Treadmill" width="689" height="629" loading="lazy" decoding="async" class="aspect-square w-full object-contain">
+        <article class="prod-card w-[78%] shrink-0 snap-start sm:w-[46%] lg:w-[calc(25%-15px)]">
+          <a href="cardio.html#product-treadmill-arjc104" class="block bg-white p-5" aria-label="ARJC104 Treadmill — view details">
+            <img src="assets/images/Treadmill%20(Model%20No-%20ARJC104).jpeg" alt="ARJFIT Treadmill ARJC104" width="582" height="574" loading="lazy" decoding="async" class="aspect-square w-full object-contain">
           </a>
-          <div class="flex flex-1 flex-col p-5">
-            <p class="eyebrow">ARJFIT</p>
-            <h3 class="h-card mt-2">Curved Treadmill</h3>
+          <div class="flex flex-1 flex-col border-t border-neutral-200 p-5">
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-volt">ARJC104</p>
+            <h3 class="mt-2 font-display text-xl font-semibold uppercase text-neutral-900">Treadmill</h3>
+            <p class="mt-1 text-xs uppercase tracking-[0.14em] text-neutral-500">Cardio</p>
             <div class="mt-auto flex flex-wrap gap-2 pt-5">
-              <a href="cardio.html#product-curved-treadmill-arjc110" class="btn-ghost !px-4 !py-2.5">Details</a>
-              <a href="contact.html" data-enquire="Curved Treadmill" data-cursor="Quote" class="btn-volt !px-4 !py-2.5">Enquire</a>
+              <a href="cardio.html#product-treadmill-arjc104" class="btn !px-4 !py-2.5 border border-neutral-300 text-neutral-900 hover:border-volt hover:text-volt">Details</a>
+              <a href="contact.html" data-enquire="Treadmill (ARJC104)" data-cursor="Quote" class="btn-volt !px-4 !py-2.5">Enquire</a>
             </div>
           </div>
         </article>
-        <article class="flex w-[78%] shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-line bg-surface transition-colors duration-300 hover:border-volt/50 sm:w-[46%] lg:w-[calc(25%-15px)]">
-          <a href="cardio.html#product-air-bike-arjc106" class="block bg-white p-5" aria-label="Air Bike — view details">
-            <img src="assets/images/Air%20Bike%20Model%20No-%20ARJC106.jpeg" alt="ARJFIT Air Bike" width="664" height="687" loading="lazy" decoding="async" class="aspect-square w-full object-contain">
+        <article class="prod-card w-[78%] shrink-0 snap-start sm:w-[46%] lg:w-[calc(25%-15px)]">
+          <a href="cardio.html#product-treadmill-arjc108" class="block bg-white p-5" aria-label="ARJC108 Treadmill — view details">
+            <img src="assets/images/Treadmill%20(Model%20No-%20ARJC108).jpeg" alt="ARJFIT Treadmill ARJC108" width="643" height="623" loading="lazy" decoding="async" class="aspect-square w-full object-contain">
           </a>
-          <div class="flex flex-1 flex-col p-5">
-            <p class="eyebrow">ARJFIT</p>
-            <h3 class="h-card mt-2">Air Bike</h3>
+          <div class="flex flex-1 flex-col border-t border-neutral-200 p-5">
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-volt">ARJC108</p>
+            <h3 class="mt-2 font-display text-xl font-semibold uppercase text-neutral-900">Treadmill</h3>
+            <p class="mt-1 text-xs uppercase tracking-[0.14em] text-neutral-500">Cardio</p>
             <div class="mt-auto flex flex-wrap gap-2 pt-5">
-              <a href="cardio.html#product-air-bike-arjc106" class="btn-ghost !px-4 !py-2.5">Details</a>
-              <a href="contact.html" data-enquire="Air Bike" data-cursor="Quote" class="btn-volt !px-4 !py-2.5">Enquire</a>
+              <a href="cardio.html#product-treadmill-arjc108" class="btn !px-4 !py-2.5 border border-neutral-300 text-neutral-900 hover:border-volt hover:text-volt">Details</a>
+              <a href="contact.html" data-enquire="Treadmill (ARJC108)" data-cursor="Quote" class="btn-volt !px-4 !py-2.5">Enquire</a>
             </div>
           </div>
         </article>
-        <article class="flex w-[78%] shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-line bg-surface transition-colors duration-300 hover:border-volt/50 sm:w-[46%] lg:w-[calc(25%-15px)]">
-          <a href="cardio.html#product-elliptical-arjc102" class="block bg-white p-5" aria-label="Elliptical Cross Trainer — view details">
-            <img src="assets/images/Elliptical%20Cross%20Trainer%20(Model%20No-ARJC102).jpeg" alt="ARJFIT Elliptical Cross Trainer" width="650" height="705" loading="lazy" decoding="async" class="aspect-square w-full object-contain">
+        <article class="prod-card w-[78%] shrink-0 snap-start sm:w-[46%] lg:w-[calc(25%-15px)]">
+          <a href="cardio.html#product-treadmill-arjc109" class="block bg-white p-5" aria-label="ARJC109 Treadmill — view details">
+            <img src="assets/images/Treadmill%20(Model%20No-%20ARJC109).jpeg" alt="ARJFIT Treadmill ARJC109" width="610" height="556" loading="lazy" decoding="async" class="aspect-square w-full object-contain">
           </a>
-          <div class="flex flex-1 flex-col p-5">
-            <p class="eyebrow">ARJFIT</p>
-            <h3 class="h-card mt-2">Elliptical Cross Trainer</h3>
+          <div class="flex flex-1 flex-col border-t border-neutral-200 p-5">
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-volt">ARJC109</p>
+            <h3 class="mt-2 font-display text-xl font-semibold uppercase text-neutral-900">Treadmill</h3>
+            <p class="mt-1 text-xs uppercase tracking-[0.14em] text-neutral-500">Cardio</p>
             <div class="mt-auto flex flex-wrap gap-2 pt-5">
-              <a href="cardio.html#product-elliptical-arjc102" class="btn-ghost !px-4 !py-2.5">Details</a>
-              <a href="contact.html" data-enquire="Elliptical Cross Trainer" data-cursor="Quote" class="btn-volt !px-4 !py-2.5">Enquire</a>
+              <a href="cardio.html#product-treadmill-arjc109" class="btn !px-4 !py-2.5 border border-neutral-300 text-neutral-900 hover:border-volt hover:text-volt">Details</a>
+              <a href="contact.html" data-enquire="Treadmill (ARJC109)" data-cursor="Quote" class="btn-volt !px-4 !py-2.5">Enquire</a>
             </div>
           </div>
         </article>
-        <article class="flex w-[78%] shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-line bg-surface transition-colors duration-300 hover:border-volt/50 sm:w-[46%] lg:w-[calc(25%-15px)]">
-          <a href="cardio.html#product-recumbent-bike-arjc101" class="block bg-white p-5" aria-label="Recumbent Bike — view details">
-            <img src="assets/images/Recumbent%20Bike%20(Model%20No-%20ARJC101).jpg" alt="ARJFIT Recumbent Bike" width="656" height="585" loading="lazy" decoding="async" class="aspect-square w-full object-contain">
+        <article class="prod-card w-[78%] shrink-0 snap-start sm:w-[46%] lg:w-[calc(25%-15px)]">
+          <a href="cardio.html#product-curved-treadmill-arjc110" class="block bg-white p-5" aria-label="ARJC110 Curved Treadmill — view details">
+            <img src="assets/images/Curved%20Treadmill%20(Model%20No-%20ARJC110).jpeg" alt="ARJFIT Curved Treadmill ARJC110" width="689" height="629" loading="lazy" decoding="async" class="aspect-square w-full object-contain">
           </a>
-          <div class="flex flex-1 flex-col p-5">
-            <p class="eyebrow">ARJFIT</p>
-            <h3 class="h-card mt-2">Recumbent Bike</h3>
+          <div class="flex flex-1 flex-col border-t border-neutral-200 p-5">
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-volt">ARJC110</p>
+            <h3 class="mt-2 font-display text-xl font-semibold uppercase text-neutral-900">Curved Treadmill</h3>
+            <p class="mt-1 text-xs uppercase tracking-[0.14em] text-neutral-500">Cardio</p>
             <div class="mt-auto flex flex-wrap gap-2 pt-5">
-              <a href="cardio.html#product-recumbent-bike-arjc101" class="btn-ghost !px-4 !py-2.5">Details</a>
-              <a href="contact.html" data-enquire="Recumbent Bike" data-cursor="Quote" class="btn-volt !px-4 !py-2.5">Enquire</a>
+              <a href="cardio.html#product-curved-treadmill-arjc110" class="btn !px-4 !py-2.5 border border-neutral-300 text-neutral-900 hover:border-volt hover:text-volt">Details</a>
+              <a href="contact.html" data-enquire="Curved Treadmill (ARJC110)" data-cursor="Quote" class="btn-volt !px-4 !py-2.5">Enquire</a>
             </div>
           </div>
         </article>
-        <article class="flex w-[78%] shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-line bg-surface transition-colors duration-300 hover:border-volt/50 sm:w-[46%] lg:w-[calc(25%-15px)]">
-          <a href="cardio.html#product-spinning-bike-arjc111" class="block bg-white p-5" aria-label="Spinning Bike — view details">
-            <img src="assets/images/Spinning%20Bike%20(Model%20No-%20ARJC111).jpeg" alt="ARJFIT Spinning Bike" width="665" height="643" loading="lazy" decoding="async" class="aspect-square w-full object-contain">
+        <article class="prod-card w-[78%] shrink-0 snap-start sm:w-[46%] lg:w-[calc(25%-15px)]">
+          <a href="cardio.html#product-recumbent-bike-arjc101" class="block bg-white p-5" aria-label="ARJC101 Recumbent Bike — view details">
+            <img src="assets/images/Recumbent%20Bike%20(Model%20No-%20ARJC101).jpg" alt="ARJFIT Recumbent Bike ARJC101" width="656" height="585" loading="lazy" decoding="async" class="aspect-square w-full object-contain">
           </a>
-          <div class="flex flex-1 flex-col p-5">
-            <p class="eyebrow">ARJFIT</p>
-            <h3 class="h-card mt-2">Spinning Bike</h3>
+          <div class="flex flex-1 flex-col border-t border-neutral-200 p-5">
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-volt">ARJC101</p>
+            <h3 class="mt-2 font-display text-xl font-semibold uppercase text-neutral-900">Recumbent Bike</h3>
+            <p class="mt-1 text-xs uppercase tracking-[0.14em] text-neutral-500">Cardio</p>
             <div class="mt-auto flex flex-wrap gap-2 pt-5">
-              <a href="cardio.html#product-spinning-bike-arjc111" class="btn-ghost !px-4 !py-2.5">Details</a>
-              <a href="contact.html" data-enquire="Spinning Bike" data-cursor="Quote" class="btn-volt !px-4 !py-2.5">Enquire</a>
+              <a href="cardio.html#product-recumbent-bike-arjc101" class="btn !px-4 !py-2.5 border border-neutral-300 text-neutral-900 hover:border-volt hover:text-volt">Details</a>
+              <a href="contact.html" data-enquire="Recumbent Bike (ARJC101)" data-cursor="Quote" class="btn-volt !px-4 !py-2.5">Enquire</a>
             </div>
           </div>
         </article>
-        <article class="flex w-[78%] shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-line bg-surface transition-colors duration-300 hover:border-volt/50 sm:w-[46%] lg:w-[calc(25%-15px)]">
-          <a href="cardio.html#product-stair-master-arjc107" class="block bg-white p-5" aria-label="Stair Master — view details">
-            <img src="assets/images/Stair%20Master%20(Model%20No-%20ARJC107).jpeg" alt="ARJFIT Stair Master" width="649" height="692" loading="lazy" decoding="async" class="aspect-square w-full object-contain">
+        <article class="prod-card w-[78%] shrink-0 snap-start sm:w-[46%] lg:w-[calc(25%-15px)]">
+          <a href="cardio.html#product-air-bike-arjc105" class="block bg-white p-5" aria-label="ARJC105 Air Bike — view details">
+            <img src="assets/images/Air%20Bike%20Model%20No-%20ARJC105.jpeg" alt="ARJFIT Air Bike ARJC105" width="609" height="669" loading="lazy" decoding="async" class="aspect-square w-full object-contain">
           </a>
-          <div class="flex flex-1 flex-col p-5">
-            <p class="eyebrow">ARJFIT</p>
-            <h3 class="h-card mt-2">Stair Master</h3>
+          <div class="flex flex-1 flex-col border-t border-neutral-200 p-5">
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-volt">ARJC105</p>
+            <h3 class="mt-2 font-display text-xl font-semibold uppercase text-neutral-900">Air Bike</h3>
+            <p class="mt-1 text-xs uppercase tracking-[0.14em] text-neutral-500">Cardio</p>
             <div class="mt-auto flex flex-wrap gap-2 pt-5">
-              <a href="cardio.html#product-stair-master-arjc107" class="btn-ghost !px-4 !py-2.5">Details</a>
-              <a href="contact.html" data-enquire="Stair Master" data-cursor="Quote" class="btn-volt !px-4 !py-2.5">Enquire</a>
+              <a href="cardio.html#product-air-bike-arjc105" class="btn !px-4 !py-2.5 border border-neutral-300 text-neutral-900 hover:border-volt hover:text-volt">Details</a>
+              <a href="contact.html" data-enquire="Air Bike (ARJC105)" data-cursor="Quote" class="btn-volt !px-4 !py-2.5">Enquire</a>
             </div>
           </div>
         </article>
-        <article class="flex w-[78%] shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-line bg-surface transition-colors duration-300 hover:border-volt/50 sm:w-[46%] lg:w-[calc(25%-15px)]">
-          <a href="cardio.html#product-treadmill-arjc108" class="block bg-white p-5" aria-label="Treadmill — view details">
-            <img src="assets/images/Treadmill%20(Model%20No-%20ARJC108).jpeg" alt="ARJFIT Treadmill" width="643" height="623" loading="lazy" decoding="async" class="aspect-square w-full object-contain">
+        <article class="prod-card w-[78%] shrink-0 snap-start sm:w-[46%] lg:w-[calc(25%-15px)]">
+          <a href="cardio.html#product-air-bike-arjc106" class="block bg-white p-5" aria-label="ARJC106 Air Bike — view details">
+            <img src="assets/images/Air%20Bike%20Model%20No-%20ARJC106.jpeg" alt="ARJFIT Air Bike ARJC106" width="664" height="687" loading="lazy" decoding="async" class="aspect-square w-full object-contain">
           </a>
-          <div class="flex flex-1 flex-col p-5">
-            <p class="eyebrow">ARJFIT</p>
-            <h3 class="h-card mt-2">Treadmill</h3>
+          <div class="flex flex-1 flex-col border-t border-neutral-200 p-5">
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-volt">ARJC106</p>
+            <h3 class="mt-2 font-display text-xl font-semibold uppercase text-neutral-900">Air Bike</h3>
+            <p class="mt-1 text-xs uppercase tracking-[0.14em] text-neutral-500">Cardio</p>
             <div class="mt-auto flex flex-wrap gap-2 pt-5">
-              <a href="cardio.html#product-treadmill-arjc108" class="btn-ghost !px-4 !py-2.5">Details</a>
-              <a href="contact.html" data-enquire="Treadmill" data-cursor="Quote" class="btn-volt !px-4 !py-2.5">Enquire</a>
+              <a href="cardio.html#product-air-bike-arjc106" class="btn !px-4 !py-2.5 border border-neutral-300 text-neutral-900 hover:border-volt hover:text-volt">Details</a>
+              <a href="contact.html" data-enquire="Air Bike (ARJC106)" data-cursor="Quote" class="btn-volt !px-4 !py-2.5">Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="prod-card w-[78%] shrink-0 snap-start sm:w-[46%] lg:w-[calc(25%-15px)]">
+          <a href="cardio.html#product-spinning-bike-arjc111" class="block bg-white p-5" aria-label="ARJC111 Spinning Bike — view details">
+            <img src="assets/images/Spinning%20Bike%20(Model%20No-%20ARJC111).jpeg" alt="ARJFIT Spinning Bike ARJC111" width="665" height="643" loading="lazy" decoding="async" class="aspect-square w-full object-contain">
+          </a>
+          <div class="flex flex-1 flex-col border-t border-neutral-200 p-5">
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-volt">ARJC111</p>
+            <h3 class="mt-2 font-display text-xl font-semibold uppercase text-neutral-900">Spinning Bike</h3>
+            <p class="mt-1 text-xs uppercase tracking-[0.14em] text-neutral-500">Cardio</p>
+            <div class="mt-auto flex flex-wrap gap-2 pt-5">
+              <a href="cardio.html#product-spinning-bike-arjc111" class="btn !px-4 !py-2.5 border border-neutral-300 text-neutral-900 hover:border-volt hover:text-volt">Details</a>
+              <a href="contact.html" data-enquire="Spinning Bike (ARJC111)" data-cursor="Quote" class="btn-volt !px-4 !py-2.5">Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="prod-card w-[78%] shrink-0 snap-start sm:w-[46%] lg:w-[calc(25%-15px)]">
+          <a href="cardio.html#product-elliptical-arjc102" class="block bg-white p-5" aria-label="ARJC102 Elliptical Cross Trainer — view details">
+            <img src="assets/images/Elliptical%20Cross%20Trainer%20(Model%20No-ARJC102).jpeg" alt="ARJFIT Elliptical Cross Trainer ARJC102" width="650" height="705" loading="lazy" decoding="async" class="aspect-square w-full object-contain">
+          </a>
+          <div class="flex flex-1 flex-col border-t border-neutral-200 p-5">
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-volt">ARJC102</p>
+            <h3 class="mt-2 font-display text-xl font-semibold uppercase text-neutral-900">Elliptical Cross Trainer</h3>
+            <p class="mt-1 text-xs uppercase tracking-[0.14em] text-neutral-500">Cardio</p>
+            <div class="mt-auto flex flex-wrap gap-2 pt-5">
+              <a href="cardio.html#product-elliptical-arjc102" class="btn !px-4 !py-2.5 border border-neutral-300 text-neutral-900 hover:border-volt hover:text-volt">Details</a>
+              <a href="contact.html" data-enquire="Elliptical Cross Trainer (ARJC102)" data-cursor="Quote" class="btn-volt !px-4 !py-2.5">Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="prod-card w-[78%] shrink-0 snap-start sm:w-[46%] lg:w-[calc(25%-15px)]">
+          <a href="cardio.html#product-stair-master-arjc107" class="block bg-white p-5" aria-label="ARJC107 Stair Master — view details">
+            <img src="assets/images/Stair%20Master%20(Model%20No-%20ARJC107).jpeg" alt="ARJFIT Stair Master ARJC107" width="649" height="692" loading="lazy" decoding="async" class="aspect-square w-full object-contain">
+          </a>
+          <div class="flex flex-1 flex-col border-t border-neutral-200 p-5">
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-volt">ARJC107</p>
+            <h3 class="mt-2 font-display text-xl font-semibold uppercase text-neutral-900">Stair Master</h3>
+            <p class="mt-1 text-xs uppercase tracking-[0.14em] text-neutral-500">Cardio</p>
+            <div class="mt-auto flex flex-wrap gap-2 pt-5">
+              <a href="cardio.html#product-stair-master-arjc107" class="btn !px-4 !py-2.5 border border-neutral-300 text-neutral-900 hover:border-volt hover:text-volt">Details</a>
+              <a href="contact.html" data-enquire="Stair Master (ARJC107)" data-cursor="Quote" class="btn-volt !px-4 !py-2.5">Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="prod-card w-[78%] shrink-0 snap-start sm:w-[46%] lg:w-[calc(25%-15px)]">
+          <a href="cardio.html#product-air-rower-arjc112" class="block bg-white p-5" aria-label="ARJC112 Air Rower — view details">
+            <img src="assets/images/AIR%20ROWER%20(Model%20No-%20ARJC112).png" alt="ARJFIT Air Rower ARJC112" width="664" height="583" loading="lazy" decoding="async" class="aspect-square w-full object-contain">
+          </a>
+          <div class="flex flex-1 flex-col border-t border-neutral-200 p-5">
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-volt">ARJC112</p>
+            <h3 class="mt-2 font-display text-xl font-semibold uppercase text-neutral-900">Air Rower</h3>
+            <p class="mt-1 text-xs uppercase tracking-[0.14em] text-neutral-500">Cardio</p>
+            <div class="mt-auto flex flex-wrap gap-2 pt-5">
+              <a href="cardio.html#product-air-rower-arjc112" class="btn !px-4 !py-2.5 border border-neutral-300 text-neutral-900 hover:border-volt hover:text-volt">Details</a>
+              <a href="contact.html" data-enquire="Air Rower (ARJC112)" data-cursor="Quote" class="btn-volt !px-4 !py-2.5">Enquire</a>
             </div>
           </div>
         </article>
     </div>
 
-    <a href="cardio.html" class="btn-ghost reveal mt-8">View the full cardio range</a>
+    <a href="cardio.html" class="link-more reveal mt-8">View the full cardio range <span class="arr" aria-hidden="true">&rarr;</span></a>
   </div>
 </section>
 
+<!-- ============ 05 MANUFACTURING ============ -->
+<section class="bg-ink text-bone">
+  <div class="shell py-16 sm:py-24">
+    <p class="sec-index reveal">05 <span class="sec-name">/&nbsp;&nbsp;Manufacturing</span></p>
+    <h2 class="h-section reveal mt-6 max-w-3xl">Made in our own unit.</h2>
+    <div class="mt-12 grid gap-5 md:grid-cols-3">
+      <article class="reveal group border border-white/10 bg-surface">
+        <div class="overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&amp;fit=crop&amp;w=900&amp;q=70" alt="Hands on a barbell at floor level in the ARJFIT unit" width="800" height="600" loading="lazy" decoding="async" data-placeholder="image" class="aspect-[4/3] w-full object-cover transition-transform duration-700 ease-cine group-hover:scale-105">
+        </div>
+        <div class="border-t-[3px] border-volt p-6">
+          <p class="num-red text-4xl" aria-hidden="true">01</p>
+          <h3 class="mt-3 font-display text-xl font-semibold uppercase">In-house fabrication</h3>
+          <p class="mt-3 text-sm leading-relaxed text-muted">Frames cut, welded and finished on our own shop floor, so tolerances and lead times stay under our control.</p>
+        </div>
+      </article>
+      <article class="reveal group border border-white/10 bg-surface">
+        <div class="overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1547919307-1ecb10702e6f?auto=format&amp;fit=crop&amp;w=900&amp;q=70" alt="Weight plates stacked in the ARJFIT unit" width="800" height="600" loading="lazy" decoding="async" data-placeholder="image" class="aspect-[4/3] w-full object-cover transition-transform duration-700 ease-cine group-hover:scale-105">
+        </div>
+        <div class="border-t-[3px] border-volt p-6">
+          <p class="num-red text-4xl" aria-hidden="true">02</p>
+          <h3 class="mt-3 font-display text-xl font-semibold uppercase">Materials &amp; finish</h3>
+          <p class="mt-3 text-sm leading-relaxed text-muted">Commercial-gauge steel, powder-coated finish and commercial-grade upholstery rated for continuous daily use.</p>
+        </div>
+      </article>
+      <article class="reveal group border border-white/10 bg-surface">
+        <div class="overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&amp;fit=crop&amp;w=900&amp;q=70" alt="Load testing at the ARJFIT manufacturing unit" width="800" height="600" loading="lazy" decoding="async" data-placeholder="image" class="aspect-[4/3] w-full object-cover transition-transform duration-700 ease-cine group-hover:scale-105">
+        </div>
+        <div class="border-t-[3px] border-volt p-6">
+          <p class="num-red text-4xl" aria-hidden="true">03</p>
+          <h3 class="mt-3 font-display text-xl font-semibold uppercase">Tested before dispatch</h3>
+          <p class="mt-3 text-sm leading-relaxed text-muted">Every unit is load-tested and inspected before it leaves the unit, with the check recorded against its serial number.</p>
+        </div>
+      </article>
+    </div>
+    <a href="about.html#manufacturing" class="btn mt-10 border border-white/30 text-white hover:border-volt hover:text-volt reveal">Inside the Unit</a>
+  </div>
+</section>
 
-<section class="py-12 sm:py-16">
-  <div class="shell">
+<!-- ============ 06 GALLERY ============ -->
+<section class="bg-white text-neutral-900">
+  <div class="shell py-16 sm:py-24">
+    <p class="sec-index reveal">06 <span class="sec-name">/&nbsp;&nbsp;Gallery</span></p>
+    <h2 class="h-section reveal mt-6 max-w-3xl text-neutral-900">Equipment in the wild.</h2>
+    <p class="reveal mt-5 max-w-2xl text-base leading-relaxed text-neutral-600 sm:text-lg">Installations we have supplied, fitted and handed over. Real floors, real kit.</p>
+    <div class="masonry mt-12">
+      <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&amp;fit=crop&amp;w=900&amp;q=70" alt="Mat-based group session" width="900" height="650" loading="lazy" decoding="async" data-placeholder="image" class="reveal w-full object-cover">
+      <img src="https://images.unsplash.com/photo-1550345332-09e3ac987658?auto=format&amp;fit=crop&amp;w=900&amp;q=70" alt="Athlete training at a rack" width="900" height="1100" loading="lazy" decoding="async" data-placeholder="image" class="reveal w-full object-cover">
+      <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&amp;fit=crop&amp;w=900&amp;q=70" alt="Hands lifting dumbbells from a rack" width="900" height="650" loading="lazy" decoding="async" data-placeholder="image" class="reveal w-full object-cover">
+      <img src="https://images.unsplash.com/photo-1591258370814-01609b341790?auto=format&amp;fit=crop&amp;w=900&amp;q=70" alt="Floor exercise with dumbbells" width="900" height="1100" loading="lazy" decoding="async" data-placeholder="image" class="reveal w-full object-cover">
+      <img src="https://images.unsplash.com/photo-1623874228601-f4193c7b1818?auto=format&amp;fit=crop&amp;w=900&amp;q=70" alt="Dumbbells on a plyo box" width="900" height="650" loading="lazy" decoding="async" data-placeholder="image" class="reveal w-full object-cover">
+      <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&amp;fit=crop&amp;w=900&amp;q=70" alt="Deadlift silhouette in a dark gym" width="900" height="1100" loading="lazy" decoding="async" data-placeholder="image" class="reveal w-full object-cover">
+    </div>
+    <a href="gallery.html" class="link-more reveal mt-8">View full gallery <span class="arr" aria-hidden="true">&rarr;</span></a>
+  </div>
+</section>
 
+<!-- ============ 07 WHY ARJFIT ============ -->
+<section class="bg-[#F4F3F0] text-neutral-900">
+  <div class="shell py-16 sm:py-24">
     <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-      <div class="media aspect-[4/5] reveal">
-        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w" sizes="(min-width: 1024px) 45vw, 100vw" alt="Welding a machine frame at the ARJFIT manufacturing unit" width="1000" height="1250" loading="lazy" decoding="async" data-placeholder="image">
+      <div class="reveal relative order-2 lg:order-1">
+        <div class="absolute -bottom-3 -left-3 h-24 w-24 border-b-[3px] border-l-[3px] border-volt" aria-hidden="true"></div>
+        <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" alt="Power rack, bench, barbell and dumbbells on a commercial floor" width="1200" height="900" loading="lazy" decoding="async" data-placeholder="image" class="aspect-[4/3] w-full object-cover">
       </div>
-      <div>
-    <p class="marker reveal">02 &nbsp;/&nbsp; What We Do</p>
-    <h2 class="h-section reveal mt-5 max-w-3xl">From raw steel<br>to a working floor.</h2>
-    
-        <p class="lede reveal mt-6">
-          We manufacture commercial gym equipment in our own unit, supply it across
-          India, and service it afterwards. Same team, same accountability, from the
-          first layout drawing to the annual maintenance visit.
-        </p>
-        <p class="lede reveal mt-4">
-          That matters most when something goes wrong. There is no distributor to chase
-          and no importer waiting on a container — the people who built the machine are
-          the ones who come and fix it.
-        </p>
-        <div class="reveal mt-8 grid gap-4 sm:grid-cols-2">
-          <div class="card"><h3 class="h-card">Manufacture</h3><p class="mt-3 text-sm text-muted">Fabricated, finished and load-tested in-house.</p></div>
-          <div class="card"><h3 class="h-card">Supply</h3><p class="mt-3 text-sm text-muted">Delivered and installed by our own technicians.</p></div>
-          <div class="card"><h3 class="h-card">Service</h3><p class="mt-3 text-sm text-muted">AMC and breakdown repair, any brand.</p></div>
-          <div class="card"><h3 class="h-card">Support</h3><p class="mt-3 text-sm text-muted">Spares held in stock for what we build.</p></div>
-        </div>
-        <a href="about.html" class="btn-ghost reveal mt-8">About ARJFIT</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ PRODUCT ============ -->
-
-<section class="border-t border-line bg-surface py-12 sm:py-16">
-  <div class="shell">
-    <p class="marker reveal">03 &nbsp;/&nbsp; Our Series</p>
-    <h2 class="h-section reveal mt-5 max-w-3xl">Commercial gym equipment.</h2>
-    <p class="lede reveal mt-5">Cardio, strength, multi stations and free weights — supplied, installed and serviced. Pricing on request.</p>
-    <div class="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-
-      <a href="cardio.html" class="reveal group relative overflow-hidden rounded-2xl border border-line" data-cursor="Explore">
-        <div class="media aspect-[4/3] rounded-none">
-          <img src="https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1280" srcset="https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=960 960w, https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1280 1280w" sizes="(min-width: 1024px) 23vw, 50vw" alt="Cardio Series — ARJFIT equipment" width="600" height="450" loading="lazy" decoding="async" data-placeholder="image" class="opacity-55 transition-all duration-700 ease-cine group-hover:scale-105 group-hover:opacity-75">
-        </div>
-        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink to-transparent p-4 pt-10">
-          <span class="block font-display text-base uppercase text-bone">Cardio Series</span>
-          <span class="mt-1 block text-[0.65rem] uppercase tracking-eyebrow text-volt">View range &rarr;</span>
-        </span>
-      </a>
-      <a href="strength.html" class="reveal group relative overflow-hidden rounded-2xl border border-line" data-cursor="Explore">
-        <div class="media aspect-[4/3] rounded-none">
-          <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w" sizes="(min-width: 1024px) 23vw, 50vw" alt="Strength Series — ARJFIT equipment" width="600" height="450" loading="lazy" decoding="async" data-placeholder="image" class="opacity-55 transition-all duration-700 ease-cine group-hover:scale-105 group-hover:opacity-75">
-        </div>
-        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink to-transparent p-4 pt-10">
-          <span class="block font-display text-base uppercase text-bone">Strength Series</span>
-          <span class="mt-1 block text-[0.65rem] uppercase tracking-eyebrow text-volt">View range &rarr;</span>
-        </span>
-      </a>
-      <a href="strength.html#multi-station" class="reveal group relative overflow-hidden rounded-2xl border border-line" data-cursor="Explore">
-        <div class="media aspect-[4/3] rounded-none">
-          <img src="https://images.pexels.com/photos/5327505/pexels-photo-5327505.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1280" srcset="https://images.pexels.com/photos/5327505/pexels-photo-5327505.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/photos/5327505/pexels-photo-5327505.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=960 960w, https://images.pexels.com/photos/5327505/pexels-photo-5327505.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1280 1280w" sizes="(min-width: 1024px) 23vw, 50vw" alt="Multi Stations — ARJFIT equipment" width="600" height="450" loading="lazy" decoding="async" data-placeholder="image" class="opacity-55 transition-all duration-700 ease-cine group-hover:scale-105 group-hover:opacity-75">
-        </div>
-        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink to-transparent p-4 pt-10">
-          <span class="block font-display text-base uppercase text-bone">Multi Stations</span>
-          <span class="mt-1 block text-[0.65rem] uppercase tracking-eyebrow text-volt">View range &rarr;</span>
-        </span>
-      </a>
-      <a href="strength.html#free-weights" class="reveal group relative overflow-hidden rounded-2xl border border-line" data-cursor="Explore">
-        <div class="media aspect-[4/3] rounded-none">
-          <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w" sizes="(min-width: 1024px) 23vw, 50vw" alt="Dumbbells and Plates — ARJFIT equipment" width="600" height="450" loading="lazy" decoding="async" data-placeholder="image" class="opacity-55 transition-all duration-700 ease-cine group-hover:scale-105 group-hover:opacity-75">
-        </div>
-        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink to-transparent p-4 pt-10">
-          <span class="block font-display text-base uppercase text-bone">Dumbbells &amp; Plates</span>
-          <span class="mt-1 block text-[0.65rem] uppercase tracking-eyebrow text-volt">View range &rarr;</span>
-        </span>
-      </a>
-    </div>
-    <div class="reveal mt-10 flex flex-wrap gap-3">
-      <a href="product.html" class="btn-volt">Browse Our Series</a>
-      <a href="contact.html" class="btn-ghost">Request a Quote</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SERVICES STRIP ============ -->
-
-<section class="border-t border-line py-12 sm:py-16">
-  <div class="shell">
-    <p class="marker reveal">04 &nbsp;/&nbsp; Services</p>
-    <h2 class="h-section reveal mt-5 max-w-3xl">Design, supply, install, maintain.</h2>
-    
-    <div class="mt-12 grid gap-6 md:grid-cols-3">
-
-      <article class="card reveal">
-        <span class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line text-volt">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 3h18v18H3zM3 9h18M9 9v12"/></svg>
-        </span>
-        <h3 class="h-card mt-5">Layout &amp; Design</h3>
-        <p class="mt-3 text-sm leading-relaxed text-muted">Site survey and floor planning before anything is quoted, so the equipment fits the space and the service access works.</p>
-      </article>
-      <article class="card reveal">
-        <span class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line text-volt">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 21h18M5 21V9l7-5 7 5v12M10 21v-6h4v6"/></svg>
-        </span>
-        <h3 class="h-card mt-5">Installation &amp; Shifting</h3>
-        <p class="mt-3 text-sm leading-relaxed text-muted">Delivery, assembly, levelling and commissioning by our own technicians — and relocation when you move.</p>
-      </article>
-      <article class="card reveal">
-        <span class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line text-volt">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 1-5 5L4 17v3h3l5.7-5.7a4 4 0 0 1 5-5z"/></svg>
-        </span>
-        <h3 class="h-card mt-5">Maintenance &amp; Repair</h3>
-        <p class="mt-3 text-sm leading-relaxed text-muted">Annual maintenance contracts and breakdown repair, including machines we did not supply.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ MANUFACTURING ============ -->
-
-<section class="py-12 sm:py-16">
-  <div class="shell">
-    <p class="marker reveal">05 &nbsp;/&nbsp; Manufacturing</p>
-    <h2 class="h-section reveal mt-5 max-w-3xl">Made in our own unit.</h2>
-    
-    <div class="mt-14 grid gap-6 md:grid-cols-3">
-
-      <article class="reveal group">
-        <div class="media aspect-[4/3]">
-          <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w" sizes="(min-width: 768px) 32vw, 100vw" alt="In-house fabrication at the ARJFIT manufacturing unit" width="800" height="600" loading="lazy" decoding="async" data-placeholder="image" class="transition-transform duration-700 ease-cine group-hover:scale-105">
-        </div>
-        <h3 class="h-card mt-6">In-house fabrication</h3>
-        <p class="mt-3 text-sm leading-relaxed text-muted">Frames cut, welded and finished on our own shop floor, so tolerances and lead times stay under our control.</p>
-      </article>
-      <article class="reveal group">
-        <div class="media aspect-[4/3]">
-          <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w" sizes="(min-width: 768px) 32vw, 100vw" alt="Materials and finish at the ARJFIT manufacturing unit" width="800" height="600" loading="lazy" decoding="async" data-placeholder="image" class="transition-transform duration-700 ease-cine group-hover:scale-105">
-        </div>
-        <h3 class="h-card mt-6">Materials &amp; finish</h3>
-        <p class="mt-3 text-sm leading-relaxed text-muted">Commercial-gauge steel, powder-coated finish and commercial-grade upholstery rated for continuous daily use.</p>
-      </article>
-      <article class="reveal group">
-        <div class="media aspect-[4/3]">
-          <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w" sizes="(min-width: 768px) 32vw, 100vw" alt="Tested before dispatch at the ARJFIT manufacturing unit" width="800" height="600" loading="lazy" decoding="async" data-placeholder="image" class="transition-transform duration-700 ease-cine group-hover:scale-105">
-        </div>
-        <h3 class="h-card mt-6">Tested before dispatch</h3>
-        <p class="mt-3 text-sm leading-relaxed text-muted">Every unit is load-tested and inspected before it leaves the unit, with the check recorded against its serial number.</p>
-      </article>
-    </div>
-    <a href="about.html#manufacturing" class="btn-ghost reveal mt-10">Inside the Unit</a>
-  </div>
-</section>
-
-<!-- ============ SOLUTIONS ============ -->
-<section class="border-t border-line bg-surface py-12 sm:py-16">
-  <div class="shell">
-    <p class="marker reveal">06 &nbsp;/&nbsp; Solutions</p>
-    <h2 class="h-section reveal mt-5">Built for every kind of floor.</h2>
-    <p class="lede reveal mt-5">From a single studio to a multi-location chain, the setup is planned around the space and the people using it.</p>
-    <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-      <article class="card reveal">
-        <span class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-line text-volt">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6 7v10M3 9v6M18 7v10M21 9v6M6 12h12"/></svg>
-        </span>
-        <h3 class="h-card mt-5">Commercial gyms &amp; chains</h3>
-        <p class="mt-3 text-sm leading-relaxed text-muted">Full floors built for continuous daily use, with servicing close at hand.</p>
-      </article>
-      <article class="card reveal">
-        <span class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-line text-volt">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c1.5-3.5 4-5 7-5s5.5 1.5 7 5"/></svg>
-        </span>
-        <h3 class="h-card mt-5">Boutique &amp; PT studios</h3>
-        <p class="mt-3 text-sm leading-relaxed text-muted">Compact, high-quality setups where every square foot has to earn its place.</p>
-      </article>
-      <article class="card reveal">
-        <span class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-line text-volt">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 20V9l9-5 9 5v11M9 20v-5h6v5"/></svg>
-        </span>
-        <h3 class="h-card mt-5">Hotels &amp; clubhouses</h3>
-        <p class="mt-3 text-sm leading-relaxed text-muted">Equipment chosen for residents and guests of every fitness level.</p>
-      </article>
-      <article class="card reveal">
-        <span class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-line text-volt">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2M3 13h18"/></svg>
-        </span>
-        <h3 class="h-card mt-5">Corporate wellness</h3>
-        <p class="mt-3 text-sm leading-relaxed text-muted">Office gyms planned around the space available and the team using it.</p>
-      </article>
-      <article class="card reveal">
-        <span class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-line text-volt">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c2 2 10 2 12 0v-5"/></svg>
-        </span>
-        <h3 class="h-card mt-5">Schools &amp; institutions</h3>
-        <p class="mt-3 text-sm leading-relaxed text-muted">Durable equipment for supervised use by students and staff.</p>
-      </article>
-      <article class="card reveal">
-        <span class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-line text-volt">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 11l9-7 9 7v9H3z"/><path d="M9 20v-6h6v6"/></svg>
-        </span>
-        <h3 class="h-card mt-5">Home gyms</h3>
-        <p class="mt-3 text-sm leading-relaxed text-muted">Commercial-grade machines sized for a spare room or terrace.</p>
-      </article>
-    </div>
-    <a href="product.html" class="btn-ghost reveal mt-10">See setup plans</a>
-  </div>
-</section>
-
-<!-- ============ FACILITY ============ -->
-
-<section class="py-12 sm:py-16">
-  <div class="shell">
-    <p class="marker reveal">07 &nbsp;/&nbsp; Gallery</p>
-    <h2 class="h-section reveal mt-5 max-w-3xl">Equipment in the wild.</h2>
-    <p class="lede reveal mt-5">Installations we have supplied, fitted and handed over. Real floors, real kit.</p>
-    <div class="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      <div class="media aspect-square reveal lg:col-span-2 lg:aspect-[2/1]">
-        <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w" sizes="(min-width: 1024px) 50vw, 100vw" alt="Main strength floor with racks and platforms" width="1200" height="600" loading="lazy" decoding="async" data-placeholder="image">
-      </div>
-      <div class="media aspect-square reveal"><img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w" sizes="(min-width: 1024px) 25vw, 50vw" alt="Dumbbell and accessory area" width="600" height="600" loading="lazy" decoding="async" data-placeholder="image"></div>
-      <div class="media aspect-square reveal"><img src="https://images.unsplash.com/photo-1764595753275-d9278a0b8f56?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1764595753275-d9278a0b8f56?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1764595753275-d9278a0b8f56?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1764595753275-d9278a0b8f56?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w" sizes="(min-width: 1024px) 25vw, 50vw" alt="Conditioning and turf zone" width="600" height="600" loading="lazy" decoding="async" data-placeholder="image"></div>
-    </div>
-    <a href="gallery.html" class="btn-ghost reveal mt-10">View Full Gallery</a>
-  </div>
-</section>
-
-<!-- ============ WHY US ============ -->
-
-<section class="border-y border-line bg-surface py-12 sm:py-16">
-  <div class="shell">
-<div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-      <div>
-    <p class="marker reveal">08 &nbsp;/&nbsp; Why Us</p>
-    <h2 class="h-section reveal mt-5 max-w-3xl">One team, end to end.</h2>
-    
-        <p class="lede reveal mt-6">
+      <div class="order-1 lg:order-2">
+        <p class="sec-index reveal">07 <span class="sec-name">/&nbsp;&nbsp;Why us</span></p>
+        <h2 class="h-section reveal mt-6 text-neutral-900">One team.<br>End to end.</h2>
+        <p class="reveal mt-6 max-w-2xl text-base leading-relaxed text-neutral-600 sm:text-lg">
           Most buyers deal with a trader for the equipment, a contractor for the install
           and someone else again when a machine fails. We manufacture, deliver, install
-          and service — so there is one number to call when something needs sorting.
+          and service &mdash; so there is one number to call when something needs sorting.
         </p>
-        <ul class="reveal mt-8 space-y-4">
-          <li class="flex gap-3 text-sm text-muted">
-            <svg class="mt-1 shrink-0 text-volt" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M4 12l6 6L20 6"/></svg>
-            <span>Manufacturer pricing, without a distributor margin on top</span>
-          </li>
-          <li class="flex gap-3 text-sm text-muted">
-            <svg class="mt-1 shrink-0 text-volt" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M4 12l6 6L20 6"/></svg>
-            <span>Spares held for the machines we build, not sourced on request</span>
-          </li>
-          <li class="flex gap-3 text-sm text-muted">
-            <svg class="mt-1 shrink-0 text-volt" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M4 12l6 6L20 6"/></svg>
-            <span>Technicians who assembled the unit are the ones who service it</span>
-          </li>
-          <li class="flex gap-3 text-sm text-muted">
-            <svg class="mt-1 shrink-0 text-volt" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M4 12l6 6L20 6"/></svg>
-            <span>Layout drawings before you commit to a quote</span>
-          </li>
-        </ul>
-        <a href="about.html" class="btn-ghost reveal mt-8">About ARJFIT</a>
-      </div>
-      <div class="media aspect-[3/4] reveal">
-        <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&amp;fit=crop&amp;w=1280&amp;q=72" srcset="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&amp;fit=crop&amp;w=640&amp;q=72 640w, https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&amp;fit=crop&amp;w=960&amp;q=72 960w, https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&amp;fit=crop&amp;w=1280&amp;q=72 1280w" sizes="(min-width: 1024px) 45vw, 100vw" alt="ARJFIT technician commissioning equipment" width="900" height="1200" loading="lazy" decoding="async" data-placeholder="image">
+        <div class="reveal mt-8">
+          <div class="spec-row !border-neutral-200">
+            <span class="num-red text-3xl" aria-hidden="true">01</span>
+            <div><h3 class="font-display text-lg font-semibold uppercase">Manufacturer pricing</h3><p class="mt-1 text-sm text-neutral-600">Without a distributor margin on top.</p></div>
+          </div>
+          <div class="spec-row !border-neutral-200">
+            <span class="num-red text-3xl" aria-hidden="true">02</span>
+            <div><h3 class="font-display text-lg font-semibold uppercase">Spares &amp; support</h3><p class="mt-1 text-sm text-neutral-600">Spares held for the machines we build, not sourced on request.</p></div>
+          </div>
+          <div class="spec-row !border-neutral-200">
+            <span class="num-red text-3xl" aria-hidden="true">03</span>
+            <div><h3 class="font-display text-lg font-semibold uppercase">Technicians who know the machines</h3><p class="mt-1 text-sm text-neutral-600">The technicians who assembled the unit are the ones who service it.</p></div>
+          </div>
+          <div class="spec-row !border-neutral-200">
+            <span class="num-red text-3xl" aria-hidden="true">04</span>
+            <div><h3 class="font-display text-lg font-semibold uppercase">Layout support before you commit</h3><p class="mt-1 text-sm text-neutral-600">Layout drawings before you commit to a quote.</p></div>
+          </div>
+        </div>
+        <a href="about.html" class="btn mt-9 border border-neutral-900 text-neutral-900 hover:border-volt hover:text-volt reveal">About ARJFIT</a>
       </div>
     </div>
   </div>
 </section>
 
-
-<section class="py-12 sm:py-16">
-  <div class="shell">
-    <p class="marker reveal">09 &nbsp;/&nbsp; Testimonials</p>
-    <h2 class="h-section reveal mt-5 max-w-3xl">In their words.</h2>
-    
-    <p class="ph-badge reveal mt-6" data-placeholder="testimonial">Template slots — awaiting real, consented member quotes</p>
-    <a href="testimonials.html" class="btn-ghost reveal mt-6">All Testimonials</a>
-    <div class="mt-10 grid gap-6 md:grid-cols-3">
-
-      <figure class="card reveal" data-placeholder="testimonial">
-        <div class="flex gap-1 text-volt" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7-6.2-3.3L5.8 21 7 14.2 2 9.4l7-.9z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7-6.2-3.3L5.8 21 7 14.2 2 9.4l7-.9z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7-6.2-3.3L5.8 21 7 14.2 2 9.4l7-.9z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7-6.2-3.3L5.8 21 7 14.2 2 9.4l7-.9z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7-6.2-3.3L5.8 21 7 14.2 2 9.4l7-.9z"/></svg></div>
-        <blockquote class="mt-5 text-sm leading-relaxed text-muted">
-          &ldquo;Member quote 1 goes here — a short, specific account of what changed
+<!-- ============ 08 TESTIMONIALS ============ -->
+<section class="border-y border-neutral-200 bg-white text-neutral-900" data-rail>
+  <div class="shell py-16 sm:py-24">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <div>
+        <p class="sec-index reveal">08 <span class="sec-name">/&nbsp;&nbsp;Testimonials</span></p>
+        <h2 class="h-section reveal mt-6 text-neutral-900">In their words.</h2>
+        <p class="reveal mt-5 max-w-2xl text-base leading-relaxed text-neutral-600" data-placeholder="copy">Template slots &mdash; awaiting real, consented customer quotes.</p>
+      </div>
+      <div class="flex gap-2">
+        <button type="button" data-rail-prev aria-controls="testi-track" aria-label="Previous testimonials"
+                class="inline-flex h-12 w-12 items-center justify-center border border-neutral-300 text-neutral-900 transition-colors hover:border-volt hover:text-volt disabled:cursor-default disabled:opacity-35">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button type="button" data-rail-next aria-controls="testi-track" aria-label="Next testimonials"
+                class="inline-flex h-12 w-12 items-center justify-center border border-neutral-300 text-neutral-900 transition-colors hover:border-volt hover:text-volt disabled:cursor-default disabled:opacity-35">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="testi-track" data-rail-track tabindex="0" role="region" aria-label="Customer testimonials"
+         class="reveal mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-4 focus-visible:outline-offset-4">
+      <figure class="w-[85%] shrink-0 snap-start border border-neutral-200 bg-[#F4F3F0] p-7 sm:w-[46%] lg:w-[calc(33.333%-14px)]" data-placeholder="testimonial">
+        <div class="flex gap-1 text-volt" aria-label="Rated 5 out of 5"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7-6.2-3.3L5.8 21 7 14.2 2 9.4l7-.9z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7-6.2-3.3L5.8 21 7 14.2 2 9.4l7-.9z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7-6.2-3.3L5.8 21 7 14.2 2 9.4l7-.9z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7-6.2-3.3L5.8 21 7 14.2 2 9.4l7-.9z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7-6.2-3.3L5.8 21 7 14.2 2 9.4l7-.9z"/></svg></div>
+        <blockquote class="mt-5 text-sm leading-relaxed text-neutral-600">
+          &ldquo;Member quote 1 goes here &mdash; a short, specific account of what changed
           since they started training. Two or three sentences reads best.&rdquo;
         </blockquote>
-        <figcaption class="mt-6 border-t border-line pt-5 text-xs uppercase tracking-eyebrow text-volt/70">
+        <figcaption class="mt-6 border-t-2 border-volt pt-5 text-xs font-semibold uppercase tracking-[0.2em] text-neutral-900">
           [ Member name ] &middot; [ Programme ]
         </figcaption>
       </figure>
-      <figure class="card reveal" data-placeholder="testimonial">
-        <div class="flex gap-1 text-volt" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7-6.2-3.3L5.8 21 7 14.2 2 9.4l7-.9z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7-6.2-3.3L5.8 21 7 14.2 2 9.4l7-.9z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7-6.2-3.3L5.8 21 7 14.2 2 9.4l7-.9z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7-6.2-3.3L5.8 21 7 14.2 2 9.4l7-.9z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7-6.2-3.3L5.8 21 7 14.2 2 9.4l7-.9z"/></svg></div>
-        <blockquote class="mt-5 text-sm leading-relaxed text-muted">
-          &ldquo;Member quote 2 goes here — a short, specific account of what changed
+      <figure class="w-[85%] shrink-0 snap-start border border-neutral-200 bg-[#F4F3F0] p-7 sm:w-[46%] lg:w-[calc(33.333%-14px)]" data-placeholder="testimonial">
+        <div class="flex gap-1 text-volt" aria-label="Rated 5 out of 5"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7-6.2-3.3L5.8 21 7 14.2 2 9.4l7-.9z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7-6.2-3.3L5.8 21 7 14.2 2 9.4l7-.9z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7-6.2-3.3L5.8 21 7 14.2 2 9.4l7-.9z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7-6.2-3.3L5.8 21 7 14.2 2 9.4l7-.9z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7-6.2-3.3L5.8 21 7 14.2 2 9.4l7-.9z"/></svg></div>
+        <blockquote class="mt-5 text-sm leading-relaxed text-neutral-600">
+          &ldquo;Member quote 2 goes here &mdash; a short, specific account of what changed
           since they started training. Two or three sentences reads best.&rdquo;
         </blockquote>
-        <figcaption class="mt-6 border-t border-line pt-5 text-xs uppercase tracking-eyebrow text-volt/70">
+        <figcaption class="mt-6 border-t-2 border-volt pt-5 text-xs font-semibold uppercase tracking-[0.2em] text-neutral-900">
           [ Member name ] &middot; [ Programme ]
         </figcaption>
       </figure>
-      <figure class="card reveal" data-placeholder="testimonial">
-        <div class="flex gap-1 text-volt" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7-6.2-3.3L5.8 21 7 14.2 2 9.4l7-.9z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7-6.2-3.3L5.8 21 7 14.2 2 9.4l7-.9z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7-6.2-3.3L5.8 21 7 14.2 2 9.4l7-.9z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7-6.2-3.3L5.8 21 7 14.2 2 9.4l7-.9z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7-6.2-3.3L5.8 21 7 14.2 2 9.4l7-.9z"/></svg></div>
-        <blockquote class="mt-5 text-sm leading-relaxed text-muted">
-          &ldquo;Member quote 3 goes here — a short, specific account of what changed
+      <figure class="w-[85%] shrink-0 snap-start border border-neutral-200 bg-[#F4F3F0] p-7 sm:w-[46%] lg:w-[calc(33.333%-14px)]" data-placeholder="testimonial">
+        <div class="flex gap-1 text-volt" aria-label="Rated 5 out of 5"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7-6.2-3.3L5.8 21 7 14.2 2 9.4l7-.9z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7-6.2-3.3L5.8 21 7 14.2 2 9.4l7-.9z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7-6.2-3.3L5.8 21 7 14.2 2 9.4l7-.9z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7-6.2-3.3L5.8 21 7 14.2 2 9.4l7-.9z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7-6.2-3.3L5.8 21 7 14.2 2 9.4l7-.9z"/></svg></div>
+        <blockquote class="mt-5 text-sm leading-relaxed text-neutral-600">
+          &ldquo;Member quote 3 goes here &mdash; a short, specific account of what changed
           since they started training. Two or three sentences reads best.&rdquo;
         </blockquote>
-        <figcaption class="mt-6 border-t border-line pt-5 text-xs uppercase tracking-eyebrow text-volt/70">
+        <figcaption class="mt-6 border-t-2 border-volt pt-5 text-xs font-semibold uppercase tracking-[0.2em] text-neutral-900">
           [ Member name ] &middot; [ Programme ]
         </figcaption>
       </figure>
     </div>
+    <a href="testimonials.html" class="link-more reveal mt-8">All testimonials <span class="arr" aria-hidden="true">&rarr;</span></a>
   </div>
 </section>
 
-
-<!-- ============ ENQUIRE ============ -->
-<section class="border-y border-line py-12 sm:py-16">
-  <div class="shell">
-    <p class="marker reveal">10 &nbsp;/&nbsp; Enquire</p>
-    <h2 class="h-section reveal mt-5">How can we help?</h2>
-    <p class="lede reveal mt-5">Pick the route that fits. Each one goes straight to our sales and service team.</p>
-    <div class="mt-12 grid gap-5 md:grid-cols-3">
-      <article class="reveal group relative flex min-h-[360px] items-end overflow-hidden rounded-2xl border border-line">
-        <img src="assets/images/hero-1600.jpg" alt="Commercial gym floor fitted with ARJFIT equipment" width="1920" height="1080" loading="lazy" decoding="async"
-             class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-cine group-hover:scale-105">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/55 to-black/10" aria-hidden="true"></div>
-        <div class="relative p-7">
-          <h3 class="h-card text-white">Dealership enquiry</h3>
-          <p class="mt-2 text-sm leading-relaxed text-white/80">Stock and sell ARJFIT equipment in your city.</p>
-          <a href="contact.html" data-enquire="Dealership enquiry" data-cursor="Apply" class="btn-volt mt-6">Apply now</a>
-        </div>
-      </article>
-      <article class="reveal group relative flex min-h-[360px] items-end overflow-hidden rounded-2xl border border-line">
-        <img src="assets/images/platloaded-hero.jpg" alt="Plate-loaded strength station" width="960" height="1440" loading="lazy" decoding="async"
-             class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-cine group-hover:scale-105">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/55 to-black/10" aria-hidden="true"></div>
-        <div class="relative p-7">
-          <h3 class="h-card text-white">Gym setup enquiry</h3>
-          <p class="mt-2 text-sm leading-relaxed text-white/80">Plan, supply and install a complete floor.</p>
-          <a href="contact.html" data-enquire="Gym setup enquiry" data-cursor="Apply" class="btn-volt mt-6">Apply now</a>
-        </div>
-      </article>
-      <article class="reveal group relative flex min-h-[360px] items-end overflow-hidden rounded-2xl border border-line">
-        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&amp;fit=crop&amp;w=900&amp;q=70" alt="Technician welding a machine frame" width="900" height="600" loading="lazy" decoding="async"
-             class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-cine group-hover:scale-105">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/55 to-black/10" aria-hidden="true"></div>
-        <div class="relative p-7">
-          <h3 class="h-card text-white">Service enquiry</h3>
-          <p class="mt-2 text-sm leading-relaxed text-white/80">AMC, repairs and spare parts for commercial machines.</p>
-          <a href="contact.html" data-enquire="Service enquiry" data-cursor="Apply" class="btn-volt mt-6">Apply now</a>
-        </div>
-      </article>
+<!-- ============ FINAL CTA ============ -->
+<section class="relative overflow-hidden bg-ink text-white">
+  <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&amp;fit=crop&amp;w=1920&amp;q=70" alt="" aria-hidden="true" width="1920" height="800" loading="lazy" decoding="async" data-placeholder="image" class="absolute inset-0 h-full w-full object-cover object-center">
+  <div class="absolute inset-0 bg-black/80" aria-hidden="true"></div>
+  <div class="absolute inset-x-0 top-0 h-[3px] bg-volt" aria-hidden="true"></div>
+  <div class="shell relative py-20 sm:py-28">
+    <div class="max-w-3xl">
+      <p class="sec-index reveal">09 <span class="sec-name !text-white/60">/&nbsp;&nbsp;Get started</span></p>
+      <h2 class="reveal mt-6 font-display text-[clamp(2.5rem,7vw,5.5rem)] font-semibold uppercase leading-[0.95]">Ready to build<br>a <span class="text-volt">stronger</span> fitness space?</h2>
+      <p class="reveal mt-6 max-w-xl text-base leading-relaxed text-white/80 sm:text-lg">Share your floor plan, dimensions and requirements. Our team can help you plan the right equipment setup.</p>
+      <div class="reveal mt-9 flex flex-wrap gap-3">
+        <a href="contact.html" class="btn-volt" data-cursor="Quote">Request a Quote</a>
+        <a href="product.html" class="btn border border-white/50 text-white hover:border-volt hover:text-volt">Browse Equipment</a>
+      </div>
+      <p class="reveal mt-8 text-sm text-white/60">Prefer to talk? Call <a href="tel:+917756013456" class="font-semibold text-white underline decoration-volt underline-offset-4 hover:text-volt">+91 77560 13456</a></p>
     </div>
   </div>
 </section>
-
 
 <!-- Enquiry popup. Opens from any [data-enquire] link; falls back to contact.html without JS. -->
 <div data-enquire-modal class="fixed inset-0 z-[70] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="enquire-title">
   <div class="absolute inset-0 bg-ink/80 backdrop-blur-sm" data-enquire-close aria-hidden="true"></div>
-  <div class="relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl border border-line bg-surface p-6 sm:p-8">
+  <div class="relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-sm border border-line bg-surface p-6 sm:p-8">
     <div class="flex items-start justify-between gap-4">
       <div>
         <p class="eyebrow">Request a quote</p>
         <h3 id="enquire-title" class="h-card mt-2">Enquire now.</h3>
       </div>
       <button type="button" data-enquire-close aria-label="Close enquiry form"
-              class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-line text-xl leading-none text-bone transition-colors hover:border-volt hover:text-volt">&times;</button>
+              class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-sm border border-line text-xl leading-none text-bone transition-colors hover:border-volt hover:text-volt">&times;</button>
     </div>
     <form class="mt-6 grid gap-4" action="https://formsubmit.co/mailid.tom@gmail.com" method="post">
       <input type="hidden" name="_subject" value="New Enquiry — ARJFIT Website">
@@ -724,29 +806,29 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
       <div>
         <label for="eq-about" class="eyebrow-muted mb-2 block">Enquiring about</label>
         <input id="eq-about" name="about" type="text" readonly tabindex="-1" data-enquire-about
-               class="w-full rounded-xl border border-line bg-surface2 px-4 py-3.5 text-sm text-bone focus:outline-none">
+               class="w-full rounded-sm border border-line bg-surface2 px-4 py-3.5 text-sm text-bone focus:outline-none">
       </div>
       <div class="grid gap-4 sm:grid-cols-2">
         <div>
           <label for="eq-name" class="eyebrow-muted mb-2 block">Name</label>
           <input id="eq-name" name="name" maxlength="60" type="text" required autocomplete="name" placeholder="Your name"
-                 class="w-full rounded-xl border border-line bg-ink px-4 py-3.5 text-sm text-bone placeholder:text-muted/60 transition-colors focus:border-volt focus:outline-none">
+                 class="w-full rounded-sm border border-line bg-ink px-4 py-3.5 text-sm text-bone placeholder:text-muted/60 transition-colors focus:border-volt focus:outline-none">
         </div>
         <div>
           <label for="eq-phone" class="eyebrow-muted mb-2 block">Phone</label>
           <input id="eq-phone" name="phone" maxlength="15" type="tel" required autocomplete="tel" placeholder="+91"
-                 class="w-full rounded-xl border border-line bg-ink px-4 py-3.5 text-sm text-bone placeholder:text-muted/60 transition-colors focus:border-volt focus:outline-none">
+                 class="w-full rounded-sm border border-line bg-ink px-4 py-3.5 text-sm text-bone placeholder:text-muted/60 transition-colors focus:border-volt focus:outline-none">
         </div>
       </div>
       <div>
         <label for="eq-email" class="eyebrow-muted mb-2 block">Email</label>
         <input id="eq-email" name="email" maxlength="100" type="email" autocomplete="email" placeholder="you@example.com"
-               class="w-full rounded-xl border border-line bg-ink px-4 py-3.5 text-sm text-bone placeholder:text-muted/60 transition-colors focus:border-volt focus:outline-none">
+               class="w-full rounded-sm border border-line bg-ink px-4 py-3.5 text-sm text-bone placeholder:text-muted/60 transition-colors focus:border-volt focus:outline-none">
       </div>
       <div>
         <label for="eq-message" class="eyebrow-muted mb-2 block">Message</label>
         <textarea id="eq-message" name="message" maxlength="2000" rows="3" placeholder="Quantity, city, timeline — anything useful."
-                  class="w-full rounded-xl border border-line bg-ink px-4 py-3.5 text-sm text-bone placeholder:text-muted/60 transition-colors focus:border-volt focus:outline-none"></textarea>
+                  class="w-full rounded-sm border border-line bg-ink px-4 py-3.5 text-sm text-bone placeholder:text-muted/60 transition-colors focus:border-volt focus:outline-none"></textarea>
       </div>
       <div>
         <button type="submit" class="btn-volt w-full">Send Enquiry</button>
@@ -758,7 +840,7 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
 
 </main>
 <!-- Persistent call / WhatsApp rail. Sits above the footer on every page. -->
-<div class="fixed bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-5 z-40 flex flex-col gap-3 print:hidden">
+<div class="fixed bottom-24 right-5 z-40 flex flex-col gap-3 print:hidden md:bottom-[max(1.25rem,env(safe-area-inset-bottom))]">
   <a href="https://wa.me/917756013456"
      aria-label="Message ARJFIT on WhatsApp"
      class="group inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-black/40 transition-transform duration-300 ease-cine [@media(hover:hover)]:hover:scale-110 focus-visible:scale-110 sm:h-14 sm:w-14">
@@ -770,29 +852,35 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
     <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
   </a>
 </div>
-<button data-theme-toggle class="theme-toggle print:hidden" aria-label="Switch between dark and light mode" title="Toggle dark / light">
+<!-- Sticky mobile quote bar. -->
+<div class="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-ink/95 px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 backdrop-blur-md md:hidden print:hidden">
+  <div class="grid grid-cols-[1fr_1.4fr] gap-3">
+    <a href="tel:+917756013456" class="btn border border-white/25 text-white hover:border-volt hover:text-volt !px-4">Call Now</a>
+    <a href="contact.html" class="btn-volt !px-4" data-cursor="Quote">Request a Quote</a>
+  </div>
+</div>
+<button data-theme-toggle class="theme-toggle print:hidden max-md:bottom-24" aria-label="Switch between dark and light mode" title="Toggle dark / light">
   <svg class="icon-moon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
   <svg class="icon-sun" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
 </button>
-<footer class="border-t border-line bg-surface">
+<footer class="border-t-[3px] border-volt bg-[#0B0B0D] text-bone">
   <div class="shell py-16 sm:py-20">
     <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
       <div class="lg:col-span-2">
         <a href="index.html" class="inline-block" aria-label="ARJFIT home"><img src="assets/logo.png" alt="ARJFIT — Fitness Equipments" class="h-14 w-auto"></a>
         <p class="lede mt-5 max-w-sm text-sm">A strength and conditioning gym built around coaching, not crowds. Train with intent.</p>
         <div class="mt-7 flex gap-3">
-          <a href="#" aria-label="ARJFIT on Instagram" data-placeholder="link" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line text-muted transition-colors hover:border-volt hover:text-volt">
+          <a href="#" aria-label="ARJFIT on Instagram" data-placeholder="link" class="inline-flex h-11 w-11 items-center justify-center border border-white/20 text-muted transition-colors hover:border-volt hover:text-volt">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
           </a>
-          <a href="#" aria-label="ARJFIT on Facebook" data-placeholder="link" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line text-muted transition-colors hover:border-volt hover:text-volt">
+          <a href="#" aria-label="ARJFIT on Facebook" data-placeholder="link" class="inline-flex h-11 w-11 items-center justify-center border border-white/20 text-muted transition-colors hover:border-volt hover:text-volt">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg>
           </a>
-          <a href="https://wa.me/917756013456" aria-label="ARJFIT on WhatsApp" data-placeholder="link" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line text-muted transition-colors hover:border-volt hover:text-volt">
+          <a href="https://wa.me/917756013456" aria-label="ARJFIT on WhatsApp" data-placeholder="link" class="inline-flex h-11 w-11 items-center justify-center border border-white/20 text-muted transition-colors hover:border-volt hover:text-volt">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.7 15L2 22l5.2-1.3A10 10 0 1 0 12 2zm5.1 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .1-3.2-.8-2.7-1.2-4.4-4-4.5-4.1-.1-.2-1-1.4-1-2.6s.6-1.8.9-2.1c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.5c-.1.2-.3.3-.1.6.1.3.7 1.2 1.5 1.9 1 .9 1.8 1.1 2.1 1.3.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.5-.1l2 .9c.2.1.4.2.4.3.1.2.1.7-.1 1.2z"/></svg>
           </a>
         </div>
       </div>
-      
       <div>
         <h3 class="eyebrow-muted mb-5">Explore</h3>
         <ul class="space-y-3">
@@ -830,8 +918,8 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
       </div>
     </div>
 
-    <div class="rule my-10"></div>
-    <div class="flex flex-col gap-4 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
+    <div class="my-10 h-px w-full bg-white/10"></div>
+    <div class="flex flex-col gap-4 pb-16 text-xs text-muted sm:flex-row sm:items-center sm:justify-between md:pb-0">
       <p>&copy; <span id="yr">2026</span> ARJFIT. All rights reserved.</p>
       <p data-placeholder="copy">Photography shown is licensed stock, used as placeholder art direction.</p>
     </div>
