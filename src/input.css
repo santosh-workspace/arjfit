@@ -263,6 +263,15 @@
     @apply inline-flex h-11 w-11 items-center justify-center rounded-full text-bone
            transition-colors duration-200 hover:bg-surface2 hover:text-volt;
   }
+  /* Mobile: the control bar sits on white, so dots and arrows go dark
+     with an ARJFIT-red active dot. Desktop (md+) is untouched. */
+  @media (max-width: 767px) {
+    .hero-dot::before { border-color: rgb(150 150 158); }
+    .hero-dot:hover::before { border-color: rgb(23 24 29); }
+    .hero-dot.is-active::before { border-color: rgb(var(--c-volt)); background: rgb(var(--c-volt)); }
+    .slide-ctrl { color: rgb(23 24 29); }
+    .slide-ctrl:hover { background: rgb(0 0 0 / 0.06); }
+  }
   [data-pause] .icon-play { display: none; }
   [data-pause].is-paused .icon-play { display: block; }
   [data-pause].is-paused .icon-pause { display: none; }
