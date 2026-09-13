@@ -372,6 +372,9 @@
   .cat-card {
     @apply relative block overflow-hidden rounded-sm bg-ink;
   }
+  /* White-background product cutouts melt into light-grey tiles,
+     reading as transparent PNGs without touching the assets. */
+  .cutout { mix-blend-mode: multiply; }
   .cat-card img { transition: transform .7s cubic-bezier(.22,1,.36,1), opacity .5s; }
   .cat-card:hover img { transform: scale(1.06); }
   .cat-card .cat-bar { transition: background-color .3s; }
