@@ -301,6 +301,7 @@
       eqLastFocus = document.activeElement;
       if (eqAbout) eqAbout.value = name || '';
       eqModal.classList.remove('hidden');
+      eqModal.classList.add('flex');
       document.documentElement.style.overflow = 'hidden';
       document.body.style.overflow = 'hidden';
       var first = eqModal.querySelector('input[name="name"]');
@@ -308,6 +309,7 @@
     };
     var eqClose = function () {
       eqModal.classList.add('hidden');
+      eqModal.classList.remove('flex');
       document.documentElement.style.overflow = '';
       document.body.style.overflow = '';
       if (eqLastFocus && eqLastFocus.focus) eqLastFocus.focus();
