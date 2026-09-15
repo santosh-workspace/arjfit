@@ -223,6 +223,10 @@
   /* Product card photos: fully visible on white, never cropped. */
   article.card .media { background: #fff; aspect-ratio: 1 / 1; }
   article.card .media img { object-fit: contain; }
+  /* Long catalogue pages (Strength, Accessories): skip rendering
+     off-screen cards until scrolled to. Intrinsic size reserves
+     layout space so scroll position never jumps. */
+  article.card { content-visibility: auto; contain-intrinsic-size: auto 620px; }
   /* Cinematic darkening so white type stays legible over photography. */
   .media-scrim::after {
     content: '';
