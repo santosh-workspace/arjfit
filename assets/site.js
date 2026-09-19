@@ -286,6 +286,56 @@
     track.addEventListener('scroll', function () { window.requestAnimationFrame(sync); }, { passive: true });
     window.addEventListener('resize', sync);
     sync();
+
+    /* Continuous marquee: add data-rail-autoplay on the rail. Cards are
+       duplicated once for a seamless no-wait loop. Pauses on hover,
+       focus, touch and hidden tabs; disabled under reduced motion. */
+    if (rail.hasAttribute('data-rail-autoplay') && !reduced) {
+      track.style.setProperty('scroll-snap-type', 'none', 'important');
+      var MARQUEE_SPEED = 55; /* px per second */
+      Array.prototype.slice.call(track.children).forEach(function (c) {
+        var cl = c.cloneNode(true);
+        cl.setAttribute('aria-hidden', 'true');
+        Array.prototype.slice.call(cl.querySelectorAll('a, button')).forEach(function (el) { el.tabIndex = -1; });
+        track.appendChild(cl);
+      });
+      var loopW = 0;
+      var measure = function () { loopW = track.scrollWidth / 2; };
+      measure();
+      window.addEventListener('resize', measure);
+      var held = false, lastT = null, resumeT = null;
+      var hold = function () {
+        held = true;
+        if (resumeT) { clearTimeout(resumeT); resumeT = null; }
+      };
+      var release = function (delay) {
+        if (resumeT) clearTimeout(resumeT);
+        resumeT = setTimeout(function () { held = false; resumeT = null; }, delay || 0);
+      };
+      rail.addEventListener('mouseenter', function () { hold(); });
+      rail.addEventListener('mouseleave', function () { release(600); });
+      rail.addEventListener('focusin', function () { hold(); });
+      rail.addEventListener('focusout', function (e) {
+        if (!rail.contains(e.relatedTarget)) release(600);
+      });
+      track.addEventListener('pointerdown', function () { hold(); }, { passive: true });
+      track.addEventListener('pointerup', function () { release(1500); }, { passive: true });
+      track.addEventListener('pointercancel', function () { release(1500); }, { passive: true });
+      var frame = function (t) {
+        if (!held && !document.hidden && loopW > 0) {
+          if (lastT !== null) {
+            var nx = track.scrollLeft + (MARQUEE_SPEED * (t - lastT)) / 1000;
+            if (nx >= loopW) nx -= loopW;
+            track.scrollLeft = nx;
+          }
+          lastT = t;
+        } else {
+          lastT = null;
+        }
+        window.requestAnimationFrame(frame);
+      };
+      window.requestAnimationFrame(frame);
+    }
   });
 
   /* The popup and form checks run before the motion guard below, so they
