@@ -50,4 +50,34 @@
     <lastmod>2026-09-15</lastmod>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://arjfit.example/plate-loaded.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://arjfit.example/pin-loaded.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://arjfit.example/multi-station.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://arjfit.example/racks-benches-cages.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://arjfit.example/dumbbells-plates-bars.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://arjfit.example/merchandise.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <priority>0.8</priority>
+  </url>
 </urlset>
