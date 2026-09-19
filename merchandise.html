@@ -123,59 +123,39 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
   <div class="shell relative z-10 pb-14 pt-20 sm:pb-20">
     <p class="marker-hero reveal">01 &nbsp;/&nbsp; Merchandise</p>
     <h1 class="reveal mt-6 max-w-3xl" style="font-size:clamp(1.8rem,5.2vw,4.9rem);text-transform:none">Train in it.<br>Carry it. Live it.</h1>
-    <p class="lede-hero reveal mt-6">Tees, tanks, singlets, shakers, towels and gym bags — 9 essentials. No cart, no checkout — tap <strong class="text-bone">Enquire</strong> on anything you like and we confirm size, colour and delivery on call / WhatsApp.</p>
+    <p class="lede-hero reveal mt-6">Tees, tanks, singlets, shakers, water jar and gym bag — 8 essentials. No cart, no checkout — tap <strong class="text-bone">Enquire</strong> on anything you like and we confirm size, colour and delivery on call / WhatsApp.</p>
     <div class="reveal mt-8 flex flex-wrap gap-3">
-      <a href="#range" class="btn-volt">All 9 Products</a>
+      <a href="#range" class="btn-volt">All 8 Products</a>
       <a href="contact.html" class="btn-ghost">Enquire Now</a>
     </div>
   </div>
 </section>
 
-<!-- ============ RANGE: all 9 products, same prices as reference ============ -->
+<!-- ============ RANGE: all 8 products, same prices as reference ============ -->
 <section id="range" class="scroll-mt-20 py-20 sm:py-28">
   <div class="shell-narrow">
     <p class="marker reveal">02 &nbsp;/&nbsp; Range</p>
-    <h2 class="h-section reveal mt-5 max-w-3xl">Merchandise — all 9.</h2>
+    <h2 class="h-section reveal mt-5 max-w-3xl">Merchandise — all 8.</h2>
     <p class="lede reveal mt-5">Apparel, shakers, towel and bags at the same prices as listed on the reference store. Tap <strong class="text-bone">Enquire</strong> instead of adding to cart — images below are your current <code class="text-[0.85em]">assets/images</code> placeholders, swap them with your final shoot anytime.</p>
     <div class="mt-12 grid gap-6 sm:grid-cols-2">
 
-      <!-- 1. Signature Oversized T-shirt Black — Rs 1100 (MRP 2200) -->
-      <article id="product-signature-oversized-tee" class="card reveal group flex scroll-mt-20 flex-col overflow-hidden !p-0">
-        <div class="media aspect-[4/3] rounded-none">
-          <!-- TODO: replace with your oversized black tee image -->
-          <img src="assets/images/Mens-1.jpg" sizes="(min-width: 640px) 45vw, 90vw" alt="Signature Oversized T-shirt Black" width="900" height="675" loading="lazy" decoding="async" class="transition-transform duration-700 ease-cine group-hover:scale-105">
-        </div>
-        <div class="flex flex-1 flex-col p-6 sm:p-7">
-          <p class="eyebrow">ARJFIT &middot; Apparel</p>
-          <h3 class="h-card mt-2">Signature Oversized T-shirt Black</h3>
-          <p class="mt-3 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-            <span class="font-display text-2xl text-bone">&#8377;1,100</span>
-            <span class="text-xs uppercase tracking-eyebrow text-muted">GST INCLUDED.</span>
-          </p>
-          <p class="mt-3 text-sm leading-relaxed text-muted">Relaxed oversized drop-shoulder tee, signature chest print. Training, travel and everyday wear.</p>
-          <div class="mt-4 flex flex-wrap gap-2" role="group" aria-label="Sizes for Signature Oversized T-shirt Black" data-sizes>
-            <button type="button" data-size="S">S</button><button type="button" data-size="M">M</button><button type="button" data-size="L">L</button><button type="button" data-size="XL">XL</button><button type="button" data-size="2XL">2XL</button>
-          </div>
-          <dl class="mt-5 space-y-2.5 text-sm">
-            <div class="flex gap-3"><dt class="w-32 shrink-0 font-semibold text-bone">Category:</dt><dd class="text-muted">Merchandise – Oversized Tee</dd></div>
-            <div class="flex gap-3"><dt class="w-32 shrink-0 font-semibold text-bone">Fit:</dt><dd class="text-muted">Oversized, breathable training fabric</dd></div>
-            <div class="flex gap-3"><dt class="w-32 shrink-0 font-semibold text-bone">Delivery:</dt><dd class="text-muted">7–15 working days, confirm on enquiry</dd></div>
-          </dl>
-          <div class="rule my-5"></div>
-          <a href="contact.html?enquiry=Signature%20Oversized%20T-shirt%20Black" data-enquire="Signature Oversized T-shirt Black" class="btn-volt mt-auto w-full">Enquire Now</a>
-        </div>
-      </article>
-
-      <!-- 2. Logo Training T-shirt Black — Rs 750 (MRP 1500) -->
+      <!-- 1. Logo Training T-shirt Black — Rs 399 -->
       <article id="product-logo-training-tee" class="card reveal group flex scroll-mt-20 flex-col overflow-hidden !p-0">
-        <div class="media aspect-[4/3] rounded-none">
-          <img src="assets/images/Mens-2.jpg" sizes="(min-width: 640px) 45vw, 90vw" alt="Logo Training T-shirt Black" width="900" height="675" loading="lazy" decoding="async" class="transition-transform duration-700 ease-cine group-hover:scale-105">
+        <div class="media aspect-[4/3] rounded-none" data-mini-slider>
+          <img src="assets/images/Mens-1.jpg" sizes="(min-width: 640px) 45vw, 90vw" alt="Logo Training T-shirt Black — view 1" width="1280" height="1280" loading="lazy" decoding="async" class="mini-slide is-active transition-transform duration-700 ease-cine group-hover:scale-105">
+          <img src="assets/images/Mens-2.jpg" sizes="(min-width: 640px) 45vw, 90vw" alt="Logo Training T-shirt Black — view 2" width="1280" height="1280" loading="lazy" decoding="async" class="mini-slide transition-transform duration-700 ease-cine group-hover:scale-105">
+          <button type="button" data-mini-prev aria-label="Previous image" class="mini-nav mini-prev">&#8249;</button>
+          <button type="button" data-mini-next aria-label="Next image" class="mini-nav mini-next">&#8250;</button>
+          <div class="mini-dots" aria-label="Product images">
+            <button type="button" data-mini-dot aria-label="Show image 1" class="is-on"></button>
+            <button type="button" data-mini-dot aria-label="Show image 2"></button>
+          </div>
         </div>
         <div class="flex flex-1 flex-col p-6 sm:p-7">
           <p class="eyebrow">ARJFIT &middot; Apparel</p>
           <h3 class="h-card mt-2">Logo Training T-shirt Black</h3>
           <p class="mt-3 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-            <span class="font-display text-2xl text-bone">&#8377;750</span>
+            <span class="font-display text-2xl text-bone">&#8377;399</span>
             <span class="text-xs uppercase tracking-eyebrow text-muted">GST INCLUDED.</span>
           </p>
           <p class="mt-3 text-sm leading-relaxed text-muted">Premium athletic-fit tee with bold branding. Training, travel and everyday performance wear.</p>
@@ -192,16 +172,23 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
         </div>
       </article>
 
-      <!-- 3. EST. 1994 Heritage Tank — From Rs 850 (MRP 1700) -->
+      <!-- 2. EST. 1994 Heritage Tank — From Rs 399 -->
       <article id="product-heritage-tank" class="card reveal group flex scroll-mt-20 flex-col overflow-hidden !p-0">
-        <div class="media aspect-[4/3] rounded-none">
-          <img src="assets/images/Mens-3.jpg" sizes="(min-width: 640px) 45vw, 90vw" alt="EST. 1994 Heritage Tank" width="900" height="675" loading="lazy" decoding="async" class="transition-transform duration-700 ease-cine group-hover:scale-105">
+        <div class="media aspect-[4/3] rounded-none" data-mini-slider>
+          <img src="assets/images/Mens-3.jpg" sizes="(min-width: 640px) 45vw, 90vw" alt="EST. 1994 Heritage Tank — view 1" width="1024" height="1024" loading="lazy" decoding="async" class="mini-slide is-active transition-transform duration-700 ease-cine group-hover:scale-105">
+          <img src="assets/images/Mens-5.jpg" sizes="(min-width: 640px) 45vw, 90vw" alt="EST. 1994 Heritage Tank — view 2" width="1024" height="1024" loading="lazy" decoding="async" class="mini-slide transition-transform duration-700 ease-cine group-hover:scale-105">
+          <button type="button" data-mini-prev aria-label="Previous image" class="mini-nav mini-prev">&#8249;</button>
+          <button type="button" data-mini-next aria-label="Next image" class="mini-nav mini-next">&#8250;</button>
+          <div class="mini-dots" aria-label="Product images">
+            <button type="button" data-mini-dot aria-label="Show image 1" class="is-on"></button>
+            <button type="button" data-mini-dot aria-label="Show image 2"></button>
+          </div>
         </div>
         <div class="flex flex-1 flex-col p-6 sm:p-7">
           <p class="eyebrow">ARJFIT &middot; Apparel</p>
           <h3 class="h-card mt-2">EST. 1994 Heritage Tank</h3>
           <p class="mt-3 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-            <span class="font-display text-2xl text-bone">From &#8377;850</span>
+            <span class="font-display text-2xl text-bone">&#8377;399</span>
             <span class="text-xs uppercase tracking-eyebrow text-muted">GST INCLUDED.</span>
           </p>
           <p class="mt-3 text-sm leading-relaxed text-muted">Sleeveless heritage training tank, deep armhole for overhead and pulling work.</p>
@@ -218,7 +205,7 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
         </div>
       </article>
 
-      <!-- 4. EST. 1994 Heritage Training Singlet — From Rs 550 (MRP 1100) -->
+      <!-- 3. EST. 1994 Heritage Training Singlet — From Rs 399 -->
       <article id="product-heritage-singlet" class="card reveal group flex scroll-mt-20 flex-col overflow-hidden !p-0">
         <div class="media aspect-[4/3] rounded-none">
           <img src="assets/images/Mens-4.jpg" sizes="(min-width: 640px) 45vw, 90vw" alt="EST. 1994 Heritage Training Singlet" width="900" height="675" loading="lazy" decoding="async" class="transition-transform duration-700 ease-cine group-hover:scale-105">
@@ -227,7 +214,7 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
           <p class="eyebrow">ARJFIT &middot; Apparel</p>
           <h3 class="h-card mt-2">EST. 1994 Heritage Training Singlet</h3>
           <p class="mt-3 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-            <span class="font-display text-2xl text-bone">From &#8377;550</span>
+            <span class="font-display text-2xl text-bone">&#8377;299</span>
             <span class="text-xs uppercase tracking-eyebrow text-muted">GST INCLUDED.</span>
           </p>
           <p class="mt-3 text-sm leading-relaxed text-muted">Classic stringer-style training singlet with heritage logo print.</p>
@@ -244,7 +231,33 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
         </div>
       </article>
 
-      <!-- 5. Clear Pro Shaker 500ml — Rs 399 (MRP 798) -->
+      <!-- 4. Women's Training T-shirt — Rs 399 -->
+      <article id="product-womens-training-tee" class="card reveal group flex scroll-mt-20 flex-col overflow-hidden !p-0">
+        <div class="media aspect-[4/3] rounded-none">
+          <img src="assets/images/Women-tshirt.jpg" sizes="(min-width: 640px) 45vw, 90vw" alt="Women's Training T-shirt" width="1280" height="1280" loading="lazy" decoding="async" class="transition-transform duration-700 ease-cine group-hover:scale-105">
+        </div>
+        <div class="flex flex-1 flex-col p-6 sm:p-7">
+          <p class="eyebrow">ARJFIT &middot; Apparel</p>
+          <h3 class="h-card mt-2">Women's Training T-shirt</h3>
+          <p class="mt-3 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <span class="font-display text-2xl text-bone">&#8377;399</span>
+            <span class="text-xs uppercase tracking-eyebrow text-muted">GST INCLUDED.</span>
+          </p>
+          <p class="mt-3 text-sm leading-relaxed text-muted">Women's training tee — lightweight everyday training wear.</p>
+          <div class="mt-4 flex flex-wrap gap-2" role="group" aria-label="Sizes for Women's Training T-shirt" data-sizes>
+            <button type="button" data-size="S">S</button><button type="button" data-size="M">M</button><button type="button" data-size="L">L</button><button type="button" data-size="XL">XL</button>
+          </div>
+          <dl class="mt-5 space-y-2.5 text-sm">
+            <div class="flex gap-3"><dt class="w-32 shrink-0 font-semibold text-bone">Category:</dt><dd class="text-muted">Merchandise – Training Tee</dd></div>
+            <div class="flex gap-3"><dt class="w-32 shrink-0 font-semibold text-bone">Fit:</dt><dd class="text-muted">Women's regular training fit</dd></div>
+            <div class="flex gap-3"><dt class="w-32 shrink-0 font-semibold text-bone">Delivery:</dt><dd class="text-muted">7–15 working days, confirm on enquiry</dd></div>
+          </dl>
+          <div class="rule my-5"></div>
+          <a href="contact.html?enquiry=Women%27s%20Training%20T-shirt" data-enquire="Women's Training T-shirt" class="btn-volt mt-auto w-full">Enquire Now</a>
+        </div>
+      </article>
+
+      <!-- 5. Clear Pro Shaker 500ml — Rs 199 -->
       <article id="product-shaker-500" class="card reveal group flex scroll-mt-20 flex-col overflow-hidden !p-0">
         <div class="media aspect-[4/3] rounded-none">
           <img src="assets/images/Shaker.jpg" sizes="(min-width: 640px) 45vw, 90vw" alt="Clear Pro Shaker 500ml" width="900" height="675" loading="lazy" decoding="async" class="transition-transform duration-700 ease-cine group-hover:scale-105">
@@ -253,7 +266,7 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
           <p class="eyebrow">ARJFIT &middot; Hydration</p>
           <h3 class="h-card mt-2">Clear Pro Shaker — 500ml</h3>
           <p class="mt-3 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-            <span class="font-display text-2xl text-bone">&#8377;399</span>
+            <span class="font-display text-2xl text-bone">&#8377;199</span>
             <span class="text-xs uppercase tracking-eyebrow text-muted">GST INCLUDED.</span>
           </p>
           <p class="mt-3 text-sm leading-relaxed text-muted">Leak-proof 500ml shaker with mixing ball, measurement marks and carry loop.</p>
@@ -267,7 +280,7 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
         </div>
       </article>
 
-      <!-- 6. Clear Pro Shaker 600ml — Rs 499 (MRP 998) -->
+      <!-- 6. Clear Pro Shaker 600ml — Rs 199 -->
       <article id="product-shaker-600" class="card reveal group flex scroll-mt-20 flex-col overflow-hidden !p-0">
         <div class="media aspect-[4/3] rounded-none">
           <img src="assets/images/Shaker-1.jpg" sizes="(min-width: 640px) 45vw, 90vw" alt="Clear Pro Shaker 600ml" width="900" height="675" loading="lazy" decoding="async" class="transition-transform duration-700 ease-cine group-hover:scale-105">
@@ -276,7 +289,7 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
           <p class="eyebrow">ARJFIT &middot; Hydration</p>
           <h3 class="h-card mt-2">Clear Pro Shaker — 600ml</h3>
           <p class="mt-3 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-            <span class="font-display text-2xl text-bone">&#8377;499</span>
+            <span class="font-display text-2xl text-bone">&#8377;199</span>
             <span class="text-xs uppercase tracking-eyebrow text-muted">GST INCLUDED.</span>
           </p>
           <p class="mt-3 text-sm leading-relaxed text-muted">Larger 600ml shaker for protein, pre-workout and intra-workout mixes.</p>
@@ -290,40 +303,46 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
         </div>
       </article>
 
-      <!-- 7. Gym Towel — Rs 300 (MRP 600) -->
-      <article id="product-gym-towel" class="card reveal group flex scroll-mt-20 flex-col overflow-hidden !p-0">
+      <!-- 7. Water Jar — price to confirm -->
+      <article id="product-water-jar" class="card reveal group flex scroll-mt-20 flex-col overflow-hidden !p-0">
         <div class="media aspect-[4/3] rounded-none">
-          <!-- TODO: replace with your gym towel image -->
-          <img src="assets/images/Gym-kit.jpg" sizes="(min-width: 640px) 45vw, 90vw" alt="Gym Towel" width="900" height="675" loading="lazy" decoding="async" class="transition-transform duration-700 ease-cine group-hover:scale-105">
+          <img src="assets/images/WaterJar.jpg" sizes="(min-width: 640px) 45vw, 90vw" alt="Water Jar" width="1280" height="1280" loading="lazy" decoding="async" class="transition-transform duration-700 ease-cine group-hover:scale-105">
         </div>
         <div class="flex flex-1 flex-col p-6 sm:p-7">
-          <p class="eyebrow">ARJFIT &middot; Essentials</p>
-          <h3 class="h-card mt-2">Gym Towel</h3>
+          <p class="eyebrow">ARJFIT &middot; Hydration</p>
+          <h3 class="h-card mt-2">Water Jar</h3>
           <p class="mt-3 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-            <span class="font-display text-2xl text-bone">&#8377;300</span>
+            <span class="font-display text-2xl text-bone">&#8377;299</span>
             <span class="text-xs uppercase tracking-eyebrow text-muted">GST INCLUDED.</span>
           </p>
-          <p class="mt-3 text-sm leading-relaxed text-muted">Quick-dry training towel — benches, machines and cardio handles.</p>
+          <p class="mt-3 text-sm leading-relaxed text-muted">High-capacity water jar for long training sessions — gym floor, travel and all-day hydration.</p>
           <dl class="mt-5 space-y-2.5 text-sm">
-            <div class="flex gap-3"><dt class="w-32 shrink-0 font-semibold text-bone">Category:</dt><dd class="text-muted">Merchandise – Towel</dd></div>
-            <div class="flex gap-3"><dt class="w-32 shrink-0 font-semibold text-bone">Use:</dt><dd class="text-muted">Training hygiene, sweat management</dd></div>
+            <div class="flex gap-3"><dt class="w-32 shrink-0 font-semibold text-bone">Category:</dt><dd class="text-muted">Merchandise – Hydration</dd></div>
+            <div class="flex gap-3"><dt class="w-32 shrink-0 font-semibold text-bone">Use:</dt><dd class="text-muted">All-day hydration, gym and travel</dd></div>
             <div class="flex gap-3"><dt class="w-32 shrink-0 font-semibold text-bone">Delivery:</dt><dd class="text-muted">7–15 working days, confirm on enquiry</dd></div>
           </dl>
           <div class="rule my-5"></div>
-          <a href="contact.html?enquiry=Gym%20Towel" data-enquire="Gym Towel" class="btn-volt mt-auto w-full">Enquire Now</a>
+          <a href="contact.html?enquiry=Water%20Jar" data-enquire="Water Jar" class="btn-volt mt-auto w-full">Enquire Now</a>
         </div>
       </article>
 
-      <!-- 8. String Bag — Rs 354 (MRP 708) -->
+      <!-- 8. String Bag — Rs 399 -->
       <article id="product-string-bag" class="card reveal group flex scroll-mt-20 flex-col overflow-hidden !p-0">
-        <div class="media aspect-[4/3] rounded-none">
-          <img src="assets/images/gym-bag.jpg" sizes="(min-width: 640px) 45vw, 90vw" alt="String Bag" width="900" height="675" loading="lazy" decoding="async" class="transition-transform duration-700 ease-cine group-hover:scale-105">
+        <div class="media aspect-[4/3] rounded-none" data-mini-slider>
+          <img src="assets/images/gym-bag.jpg" sizes="(min-width: 640px) 45vw, 90vw" alt="String Bag — view 1" width="896" height="1200" loading="lazy" decoding="async" class="mini-slide is-active transition-transform duration-700 ease-cine group-hover:scale-105">
+          <img src="assets/images/Gym-kit.jpg" sizes="(min-width: 640px) 45vw, 90vw" alt="String Bag — view 2" width="1024" height="1024" loading="lazy" decoding="async" class="mini-slide transition-transform duration-700 ease-cine group-hover:scale-105">
+          <button type="button" data-mini-prev aria-label="Previous image" class="mini-nav mini-prev">&#8249;</button>
+          <button type="button" data-mini-next aria-label="Next image" class="mini-nav mini-next">&#8250;</button>
+          <div class="mini-dots" aria-label="Product images">
+            <button type="button" data-mini-dot aria-label="Show image 1" class="is-on"></button>
+            <button type="button" data-mini-dot aria-label="Show image 2"></button>
+          </div>
         </div>
         <div class="flex flex-1 flex-col p-6 sm:p-7">
           <p class="eyebrow">ARJFIT &middot; Carry</p>
           <h3 class="h-card mt-2">String Bag</h3>
           <p class="mt-3 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-            <span class="font-display text-2xl text-bone">&#8377;354</span>
+            <span class="font-display text-2xl text-bone">&#8377;399</span>
             <span class="text-xs uppercase tracking-eyebrow text-muted">GST INCLUDED.</span>
           </p>
           <p class="mt-3 text-sm leading-relaxed text-muted">Lightweight drawstring bag — shoes, belt, towel and shaker for daily sessions.</p>
@@ -337,32 +356,8 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
         </div>
       </article>
 
-      <!-- 9. Strap Bag — Rs 708 (MRP 1416) -->
-      <article id="product-strap-bag" class="card reveal group flex scroll-mt-20 flex-col overflow-hidden !p-0">
-        <div class="media aspect-[4/3] rounded-none">
-          <!-- TODO: replace with your strap bag image (Mens-5 is a placeholder) -->
-          <img src="assets/images/Mens-5.jpg" sizes="(min-width: 640px) 45vw, 90vw" alt="Strap Bag" width="900" height="675" loading="lazy" decoding="async" class="transition-transform duration-700 ease-cine group-hover:scale-105">
-        </div>
-        <div class="flex flex-1 flex-col p-6 sm:p-7">
-          <p class="eyebrow">ARJFIT &middot; Carry</p>
-          <h3 class="h-card mt-2">Strap Bag</h3>
-          <p class="mt-3 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-            <span class="font-display text-2xl text-bone">&#8377;708</span>
-            <span class="text-xs uppercase tracking-eyebrow text-muted">GST INCLUDED.</span>
-          </p>
-          <p class="mt-3 text-sm leading-relaxed text-muted">Strap-carry gym bag — kit, shoes and accessories in one grab-and-go bag.</p>
-          <dl class="mt-5 space-y-2.5 text-sm">
-            <div class="flex gap-3"><dt class="w-32 shrink-0 font-semibold text-bone">Category:</dt><dd class="text-muted">Merchandise – Bag</dd></div>
-            <div class="flex gap-3"><dt class="w-32 shrink-0 font-semibold text-bone">Style:</dt><dd class="text-muted">Shoulder strap, everyday gym carry</dd></div>
-            <div class="flex gap-3"><dt class="w-32 shrink-0 font-semibold text-bone">Delivery:</dt><dd class="text-muted">7–15 working days, confirm on enquiry</dd></div>
-          </dl>
-          <div class="rule my-5"></div>
-          <a href="contact.html?enquiry=Strap%20Bag" data-enquire="Strap Bag" class="btn-volt mt-auto w-full">Enquire Now</a>
-        </div>
-      </article>
-
     </div>
-    <p class="reveal mt-8 text-xs text-muted">Prices match the reference store sale prices, GST included. Spare asset images ready for swaps: <code class="text-[0.85em]">Mens-6.jpg</code>, <code class="text-[0.85em]">Women-tshirt.jpg</code>, <code class="text-[0.85em]">WaterJar.jpg</code>, <code class="text-[0.85em]">Shaker.jpg</code>.</p>
+    <p class="reveal mt-8 text-xs text-muted">Prices match the reference store sale prices, GST included. Spare asset images ready for swaps: <code class="text-[0.85em]">Mens-6.jpg</code>.</p>
   </div>
 </section>
 
@@ -553,6 +548,37 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
         link.setAttribute('href', 'contact.html?enquiry=' + encodeURIComponent(name));
       }
     });
+  });
+
+  // Mini image slider for product cards (e.g. Mens-1 <-> Mens-2).
+  var mStyle = document.createElement('style');
+  mStyle.textContent = '[data-mini-slider]{position:relative;overflow:hidden}[data-mini-slider] .mini-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s ease}[data-mini-slider] .mini-slide.is-active{opacity:1}.mini-nav{position:absolute;top:50%;transform:translateY(-50%);width:2rem;height:2rem;border-radius:999px;background:rgba(0,0,0,.55);color:#fff;font-size:1rem;line-height:1;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s}[data-mini-slider]:hover .mini-nav,.mini-nav:focus-visible{opacity:1}.mini-prev{left:.6rem}.mini-next{right:.6rem}.mini-dots{position:absolute;left:50%;bottom:.6rem;transform:translateX(-50%);display:flex;gap:.4rem}.mini-dots button{width:.5rem;height:.5rem;border-radius:999px;background:rgba(255,255,255,.45);padding:0}.mini-dots button.is-on{background:var(--volt,#d6f542)}';
+  document.head.appendChild(mStyle);
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('[data-mini-slider]').forEach(function (box) {
+    var slides = Array.prototype.slice.call(box.querySelectorAll('.mini-slide'));
+    var dots = Array.prototype.slice.call(box.querySelectorAll('[data-mini-dot]'));
+    var i = 0, timer = null;
+    var show = function (n) {
+      i = (n + slides.length) % slides.length;
+      slides.forEach(function (s, k) { s.classList.toggle('is-active', k === i); });
+      dots.forEach(function (d, k) { d.classList.toggle('is-on', k === i); });
+    };
+    var stop = function () { if (timer) { clearInterval(timer); timer = null; } };
+    var start = function () {
+      stop();
+      if (reduceMotion || slides.length < 2) return;
+      timer = setInterval(function () { show(i + 1); }, 4000);
+    };
+    var prev = box.querySelector('[data-mini-prev]');
+    var next = box.querySelector('[data-mini-next]');
+    if (prev) prev.addEventListener('click', function (e) { e.preventDefault(); show(i - 1); start(); });
+    if (next) next.addEventListener('click', function (e) { e.preventDefault(); show(i + 1); start(); });
+    dots.forEach(function (d, k) { d.addEventListener('click', function (e) { e.preventDefault(); show(k); start(); }); });
+    box.addEventListener('mouseenter', stop);
+    box.addEventListener('mouseleave', start);
+    show(0); start();
   });
 })();
 </script>
