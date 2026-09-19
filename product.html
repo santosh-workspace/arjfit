@@ -570,6 +570,19 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
         </dl>
 
         <a href="contact.html?enquiry=Ascent%20Series" data-enquire="Ascent Series" class="btn-volt reveal w-full">Enquire About Ascent Series</a>
+
+        <div class="card reveal group mt-6 overflow-hidden !p-0">
+          <button type="button" data-quickview="assets/images/Ascent-detail.jpg" data-quickview-alt="Ascent Series plan detail" aria-label="Quick view the Ascent Series plan image"
+                  class="media relative block aspect-[4/3] w-full overflow-hidden rounded-none">
+            <img src="assets/images/Ascent-detail.jpg" alt="Ascent Series plan detail" width="1254" height="1254" loading="lazy" decoding="async" class="h-full w-full object-cover transition-transform duration-500 ease-cine group-hover:scale-105">
+            <span class="absolute inset-0 flex items-center justify-center bg-ink/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100" aria-hidden="true">
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-volt text-xl font-bold leading-none text-onAccent">+</span>
+            </span>
+          </button>
+          <div class="p-5">
+            <button type="button" data-quickview="assets/images/Ascent-detail.jpg" data-quickview-alt="Ascent Series plan detail" class="btn-ghost w-full !px-4 !py-2.5">Quick View</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -792,6 +805,19 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
         </dl>
 
         <a href="contact.html?enquiry=Evolve%20Series" data-enquire="Evolve Series" class="btn-volt reveal w-full">Enquire About Evolve Series</a>
+
+        <div class="card reveal group mt-6 overflow-hidden !p-0">
+          <button type="button" data-quickview="assets/images/Evolve-detail.jpg" data-quickview-alt="Evolve Series plan detail" aria-label="Quick view the Evolve Series plan image"
+                  class="media relative block aspect-[4/3] w-full overflow-hidden rounded-none">
+            <img src="assets/images/Evolve-detail.jpg" alt="Evolve Series plan detail" width="1254" height="1254" loading="lazy" decoding="async" class="h-full w-full object-cover transition-transform duration-500 ease-cine group-hover:scale-105">
+            <span class="absolute inset-0 flex items-center justify-center bg-ink/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100" aria-hidden="true">
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-volt text-xl font-bold leading-none text-onAccent">+</span>
+            </span>
+          </button>
+          <div class="p-5">
+            <button type="button" data-quickview="assets/images/Evolve-detail.jpg" data-quickview-alt="Evolve Series plan detail" class="btn-ghost w-full !px-4 !py-2.5">Quick View</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1260,6 +1286,19 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
         </dl>
 
         <a href="contact.html?enquiry=Prestige%20Series" data-enquire="Prestige Series" class="btn-volt reveal w-full">Enquire About Prestige Series</a>
+
+        <div class="card reveal group mt-6 overflow-hidden !p-0">
+          <button type="button" data-quickview="assets/images/Prestige-detail.jpg" data-quickview-alt="Prestige Series plan detail" aria-label="Quick view the Prestige Series plan image"
+                  class="media relative block aspect-[4/3] w-full overflow-hidden rounded-none">
+            <img src="assets/images/Prestige-detail.jpg" alt="Prestige Series plan detail" width="1254" height="1254" loading="lazy" decoding="async" class="h-full w-full object-cover transition-transform duration-500 ease-cine group-hover:scale-105">
+            <span class="absolute inset-0 flex items-center justify-center bg-ink/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100" aria-hidden="true">
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-volt text-xl font-bold leading-none text-onAccent">+</span>
+            </span>
+          </button>
+          <div class="p-5">
+            <button type="button" data-quickview="assets/images/Prestige-detail.jpg" data-quickview-alt="Prestige Series plan detail" class="btn-ghost w-full !px-4 !py-2.5">Quick View</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1364,6 +1403,17 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
   </div>
 </div>
 
+<!-- Quick-view lightbox. Opens from any [data-quickview] button. -->
+<div data-quickview-modal class="fixed inset-0 z-[70] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Plan image quick view">
+  <div class="absolute inset-0 bg-ink/90 backdrop-blur-sm" data-quickview-close aria-hidden="true"></div>
+  <figure class="relative max-h-[90vh] w-full max-w-3xl">
+    <img data-quickview-img src="" alt="" class="max-h-[80vh] w-full rounded-2xl border border-line object-contain">
+    <figcaption data-quickview-caption class="mt-3 text-center text-sm text-muted"></figcaption>
+    <button type="button" data-quickview-close aria-label="Close quick view"
+            class="absolute -top-3 right-2 inline-flex h-11 w-11 items-center justify-center rounded-full border border-line bg-surface text-xl leading-none text-bone transition-colors hover:border-volt hover:text-volt">&times;</button>
+  </figure>
+</div>
+
 </main>
 <!-- Persistent call / WhatsApp rail. Sits above the footer on every page. -->
 <div class="fixed bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-5 z-40 flex flex-col gap-3 print:hidden">
@@ -1449,5 +1499,43 @@ if(m==='light')document.documentElement.setAttribute('data-theme','light');}catc
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
 <script src="assets/site.js" defer></script>
 <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+<script>
+// Quick-view lightbox for plan visuals. Any [data-quickview] button opens
+// the modal with the given image; closes on backdrop, button or Escape.
+(function () {
+  var modal = document.querySelector('[data-quickview-modal]');
+  if (!modal) return;
+  var img = modal.querySelector('[data-quickview-img]');
+  var caption = modal.querySelector('[data-quickview-caption]');
+  var lastFocus = null;
+  var open = function (src, alt) {
+    lastFocus = document.activeElement;
+    if (img) { img.src = src; img.alt = alt || 'Plan visual'; }
+    if (caption) caption.textContent = alt || '';
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
+    var btn = modal.querySelector('[data-quickview-close]');
+    if (btn) btn.focus();
+  };
+  var close = function () {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.documentElement.style.overflow = '';
+    document.body.style.overflow = '';
+    if (img) img.src = '';
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  };
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest('[data-quickview]');
+    if (t) { e.preventDefault(); open(t.getAttribute('data-quickview'), t.getAttribute('data-quickview-alt')); return; }
+    if (e.target.closest('[data-quickview-close]')) close();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) close();
+  });
+})();
+</script>
 </body>
 </html>
