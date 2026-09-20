@@ -1,6 +1,7 @@
 /* ARJFIT — site interactions.
-   GSAP is loaded from CDN and used only for scroll reveals and the hero
-   parallax. Everything degrades to plain visible content if it fails. */
+   GSAP is self-hosted in assets/vendor and used only for scroll reveals
+   and the hero parallax. Everything degrades to plain visible content
+   if it fails. */
 (function () {
   'use strict';
 

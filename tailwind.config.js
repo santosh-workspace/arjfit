@@ -3,7 +3,7 @@
 // Rebuild the stylesheet after changing any classes in the HTML:
 //   npx tailwindcss@3 -i src/input.css -o assets/styles.css --minify
 module.exports = {
-  content: ['./*.html', './assets/*.js'],
+  content: ['./*.html', './assets/site.js'],
   theme: {
     extend: {
       // Colours resolve through CSS variables so the whole palette can be
