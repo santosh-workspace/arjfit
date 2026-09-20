@@ -66,7 +66,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://arjfit.example/racks-benches-cages.html</loc>
+    <loc>https://arjfit.example/racks-benches.html</loc>
     <lastmod>2026-09-19</lastmod>
     <priority>0.8</priority>
   </url>
@@ -78,6 +78,11 @@
   <url>
     <loc>https://arjfit.example/merchandise.html</loc>
     <lastmod>2026-09-19</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://arjfit.example/cages.html</loc>
+    <lastmod>2026-09-20</lastmod>
     <priority>0.8</priority>
   </url>
 </urlset>
