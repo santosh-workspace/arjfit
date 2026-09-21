@@ -292,17 +292,13 @@
        duplicated once for a seamless no-wait loop. Pauses on hover,
        focus, touch and hidden tabs; disabled under reduced motion. */
     if (rail.hasAttribute('data-rail-autoplay') && !reduced) {
-      track.style.setProperty('scroll-snap-type', 'none', 'important');
       var MARQUEE_SPEED = 55; /* px per second */
-      Array.prototype.slice.call(track.children).forEach(function (c) {
-        var cl = c.cloneNode(true);
-        cl.setAttribute('aria-hidden', 'true');
-        Array.prototype.slice.call(cl.querySelectorAll('a, button')).forEach(function (el) { el.tabIndex = -1; });
-        track.appendChild(cl);
-      });
+      /* Autoplay (card cloning + rAF loop) starts only when the rail is
+         near the viewport, so initial page load ships half the DOM and no
+         always-on animation work. Manual scroll/arrows work from the start. */
+      var railVisible = false, marqueeOn = false;
       var loopW = 0;
-      var measure = function () { loopW = track.scrollWidth / 2; };
-      measure();
+      var measure = function () { if (marqueeOn) loopW = track.scrollWidth / 2; };
       window.addEventListener('resize', measure);
       var held = false, lastT = null, resumeT = null;
       var hold = function () {
@@ -323,7 +319,7 @@
       track.addEventListener('pointerup', function () { release(1500); }, { passive: true });
       track.addEventListener('pointercancel', function () { release(1500); }, { passive: true });
       var frame = function (t) {
-        if (!held && !document.hidden && loopW > 0) {
+        if (marqueeOn && railVisible && !held && !document.hidden && loopW > 0) {
           if (lastT !== null) {
             var nx = track.scrollLeft + (MARQUEE_SPEED * (t - lastT)) / 1000;
             if (nx >= loopW) nx -= loopW;
@@ -335,7 +331,29 @@
         }
         window.requestAnimationFrame(frame);
       };
-      window.requestAnimationFrame(frame);
+      var initMarquee = function () {
+        if (marqueeOn) return;
+        marqueeOn = true;
+        track.style.setProperty('scroll-snap-type', 'none', 'important');
+        Array.prototype.slice.call(track.children).forEach(function (c) {
+          var cl = c.cloneNode(true);
+          cl.setAttribute('aria-hidden', 'true');
+          Array.prototype.slice.call(cl.querySelectorAll('a, button')).forEach(function (el) { el.tabIndex = -1; });
+          track.appendChild(cl);
+        });
+        measure();
+        window.requestAnimationFrame(frame);
+      };
+      if ('IntersectionObserver' in window) {
+        var railIO = new IntersectionObserver(function (entries) {
+          railVisible = entries[0].isIntersecting;
+          if (railVisible) initMarquee();
+        }, { rootMargin: '400px' });
+        railIO.observe(rail);
+      } else {
+        railVisible = true;
+        initMarquee();
+      }
     }
   });
 
