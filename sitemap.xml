@@ -80,9 +80,11 @@
     <lastmod>2026-09-19</lastmod>
     <priority>0.8</priority>
   </url>
+  <!-- TEMP-DISABLED Cages: hidden on request. To restore, delete this comment line and the END line.
   <url>
     <loc>https://www.arjfit.com/cages.html</loc>
     <lastmod>2026-09-20</lastmod>
     <priority>0.8</priority>
   </url>
+  END TEMP-DISABLED Cages -->
 </urlset>
